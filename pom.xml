@@ -18,11 +18,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Hello-World</name>
-	<description>This is a Hello-World project for the students of Design &amp; Testing.</description>
+	<name>Acme-toolki</name>
+	<description>This is the acme-toolkit project</description>
 
 	<groupId>Acme</groupId>	
-	<artifactId>Hello-World-22.0</artifactId>
+	<artifactId>Acme-toolkit</artifactId>
 	<version>22.0</version>
 	<packaging>war</packaging>
 
