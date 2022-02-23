@@ -307,3 +307,4 @@
 2022-02-23 18:27:57.099 TRACE [org.hibernate.type.descriptor.sql.BasicBinder@main] binding parameter [3] as [INTEGER] - [7] 
 2022-02-23 18:27:58.757 INFO  [acme.framework.configuration.ShutdownConfiguration@main] The system is shutting down... 
 2022-02-23 18:27:58.815 DEBUG [acme.Launcher@main] Exit code = 0 
+
