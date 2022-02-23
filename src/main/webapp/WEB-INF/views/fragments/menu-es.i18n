@@ -18,6 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.favourite-link-mario = 53933686C: Espinosa Rodríguez, Mario
 master.menu.anonymous.favourite-link-Javi = 25628230C: Terroba Orozco, Javier
 master.menu.anonymous.favourite-link-manu = 54180994D: Padilla Tabuenca, Manuel
 
