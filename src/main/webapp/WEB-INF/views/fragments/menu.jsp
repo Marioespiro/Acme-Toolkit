@@ -20,6 +20,8 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-mario" action="https://www.youtube.com/watch?v=VKMw2it8dQY"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Javi" action="https://www.youtube.com"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-manu" action="https://www.reddit.com/r/Eldenring/"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
