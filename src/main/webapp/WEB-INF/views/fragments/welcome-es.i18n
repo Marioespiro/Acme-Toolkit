@@ -9,7 +9,5 @@
 # they accept any liabilities with respect to them.
 
 master.welcome.title = ¡Bienvenidos!
-master.welcome.text = \
-	¡Hola mundo!  Nunca antes ha sido tan sencillo desarrollar un \
-	proyecto y hacerlo funcionar.
+master.welcome.text = Acme-toolkit, el proyecto para aprender en la asignatura de Diseño y Pruebas 2.
 ﻿
