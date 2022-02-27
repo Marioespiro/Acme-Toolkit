@@ -9,6 +9,4 @@
 # they accept any liabilities with respect to them.
 
 master.welcome.title = Welcome!
-master.welcome.text = \
-	Hello World! Never before has it bee easier to get your \
-	project up and running!
+master.welcome.text = Acme-toolkit, the project to learn in the Design and Testing 2 subject.
