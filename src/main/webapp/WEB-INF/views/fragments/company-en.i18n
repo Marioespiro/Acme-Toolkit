@@ -9,10 +9,8 @@
 # they accept any liabilities with respect to them.
 
 master.company.title = The company
-master.company.text = \
-	Hello World, Inc. is a fictitious company that provides a starter \
-	project for the students of the Design and Testing subject of the \
-	Software Engineering Curriculum of the University of Sevilla.
+master.company.text = Acme Toolkit, Inc. Is a fictitious company that owns a project developed by students of the Design and Testing 2 subject \ 
+						of the Software Engineering Curriculum of the University of Seville.
 master.company.name = Acme, Inc.
 master.company.address = 01 Acme Drive, Wondercity, Wonderland
 master.company.phone = +1 000 111 222
