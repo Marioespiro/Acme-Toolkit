@@ -45,4 +45,6 @@ public class Tool extends AbstractEntity {
 	
 	@URL
 	protected String			link;
+	
+	// Relations -------------------------------------------------------------
 }
