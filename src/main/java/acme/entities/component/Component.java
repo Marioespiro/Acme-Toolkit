@@ -1,5 +1,4 @@
-
-package acme.entities.tools;
+package acme.entities.component;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,13 +16,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Tool extends AbstractEntity {
-
+public class Component extends AbstractEntity {
+	
 	// Serialisation identifier
 
 	private static final long	serialVersionUID	= 1L;
+	
+	// Attributes -------------------------------------------------------------
 
-	// Attributes
 	@NotBlank
 	@Length(max = 101)
 	protected String			name;
@@ -31,7 +31,7 @@ public class Tool extends AbstractEntity {
 	@Column(unique = true)
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String			code;
-	
+
 	@NotBlank
 	@Length(max = 101)
 	protected String			technology;
@@ -45,4 +45,6 @@ public class Tool extends AbstractEntity {
 	
 	@URL
 	protected String			link;
+	
+	// Relations -------------------------------------------------------------
 }
