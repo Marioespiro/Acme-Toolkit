@@ -1,4 +1,4 @@
-package acme.entities;
+package acme.entities.patronages;
 
 import java.util.Date;
 
@@ -38,10 +38,11 @@ public class Patronage extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(max = 256)
+	@Length(max = 255)
 	protected String legalStuff;
 	
 	@PositiveOrZero
+	@NotNull
 	protected Integer budget;
 	
 	@NotNull

@@ -1,4 +1,4 @@
-package acme.entities;
+package acme.entities.patronages;
 
 
 public enum Status {
