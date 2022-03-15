@@ -19,6 +19,7 @@ public class Toolkit extends AbstractEntity {
  
 	protected static final long serialVersionUID = 1L;
 	
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	@Column(unique = true)
 	protected String code;
@@ -37,6 +38,8 @@ public class Toolkit extends AbstractEntity {
 	
 	@URL
 	protected String link;
+	
+	
 	
 	
 
