@@ -37,7 +37,7 @@ public class Patronage extends AbstractEntity {
 	
 	@NotNull
 	//@Enumerated(EnumType.STRING)
-	protected Status status;
+	protected PatronageStatus status;
 	
 	@NotBlank
 	@Column(unique = true)
