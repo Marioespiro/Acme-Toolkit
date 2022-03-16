@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.items.ItemType;
-import acme.entities.patronages.Status;
+import acme.entities.patronages.PatronageStatus;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -27,16 +27,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	Double maxRetailPriceItems(Enum<ItemType> type);
 
 	@Query("select avg(datediff(t.budget, t.retailPrice)) from Patronage t where t.status = :type")
-	Double averageBugdetProposedPatronage(Enum<Status> type);
+	Double averageBugdetProposedPatronage(Enum<PatronageStatus> type);
 	
 	@Query("select stddev(datediff(t.budget, t.retailPrice)) from Patronage t where t.status = :type")
-	Double deviationBugdetPatronage(Enum<Status> type);
+	Double deviationBugdetPatronage(Enum<PatronageStatus> type);
 	
 	@Query("select min(datediff(t.budget,t.retailPrice)) from Patronage t where t.status = :type")
-	Double minimumBugdetPatronage(Enum<Status> type);
+	Double minimumBugdetPatronage(Enum<PatronageStatus> type);
 	
 	@Query("select max(datediff(t.budget,t.retailPrice)) from Patronage t where t.status = :type")
-	Double maximumBugdetPatronage(Enum<Status> type);
+	Double maximumBugdetPatronage(Enum<PatronageStatus> type);
 
 	/*
 	 * 
