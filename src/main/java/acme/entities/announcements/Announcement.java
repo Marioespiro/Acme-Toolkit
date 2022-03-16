@@ -21,17 +21,23 @@ import lombok.Setter;
 @Setter
 public class Announcement extends AbstractEntity {
 	
+	// Serialisation identifier
+
+	protected static final long	serialVersionUID = 1L;
+	
+	// Attributes 
+	
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date CreationDate;
 	
 	@NotBlank
-	@Length(max = 100)
+	@Length(min=1, max=100)
 	protected String Title;
 	
 	@NotBlank
-	@Length(max = 100)
+	@Length(min=1, max=255)
 	protected String Body;
 	
 	@NotNull
