@@ -15,7 +15,7 @@ package acme.features.administrator.dashboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.dashboard.AdministratorDashboard;
+import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;

@@ -1,5 +1,5 @@
 
-package acme.dashboard;
+package acme.forms;
 
 import java.io.Serializable;
 

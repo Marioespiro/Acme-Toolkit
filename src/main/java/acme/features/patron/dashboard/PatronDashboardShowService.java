@@ -2,8 +2,8 @@ package acme.features.patron.dashboard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.entities.dashboard.PatronDashboard;
-import acme.entities.patronages.Status;
+import acme.entities.patronages.PatronageStatus;
+import acme.forms.PatronDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -53,21 +53,21 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 			final Double						maximumBugdetDeniedPatronage;
 
 //			final List<Patronage> totalPatronage = this.repository.all;
-			totalNumberOfProposedPatronages = this.repository.totalNumberOfPatronages(Status.PROPOSED);
-			totalNumberOfAcceptedPatronages = this.repository.totalNumberOfPatronages(Status.ACCEPTED);
-			totalNumberOfDeniedPatronages = this.repository.totalNumberOfPatronages(Status.DENIED);
-			averageBugdetProposedPatronage = this.repository.averageBugdetProposedPatronage(Status.PROPOSED);
-			deviationBugdetProposedPatronage = this.repository.deviationBugdetPatronage(Status.PROPOSED);
-			minimumBugdetProposedPatronage = this.repository.minimumBugdetPatronage(Status.PROPOSED);
-			maximumBugdetProposedPatronage = this.repository.maximumBugdetPatronage(Status.PROPOSED);
-			averageBugdetAcceptedPatronage = this.repository.averageBugdetProposedPatronage(Status.ACCEPTED);
-			deviationBugdetAcceptedPatronage = this.repository.deviationBugdetPatronage(Status.ACCEPTED);
-			minimumBugdetAcceptedPatronage = this.repository.minimumBugdetPatronage(Status.ACCEPTED);
-			maximumBugdetAcceptedPatronage = this.repository.maximumBugdetPatronage(Status.ACCEPTED);
-			averageBugdetDeniedPatronage = this.repository.averageBugdetProposedPatronage(Status.DENIED);
-			deviationBugdetDeniedPatronage = this.repository.deviationBugdetPatronage(Status.DENIED);
-			minimumBugdetDeniedPatronage = this.repository.minimumBugdetPatronage(Status.DENIED);
-			maximumBugdetDeniedPatronage = this.repository.maximumBugdetPatronage(Status.DENIED);
+			totalNumberOfProposedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.PROPOSED);
+			totalNumberOfAcceptedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.ACCEPTED);
+			totalNumberOfDeniedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.DENIED);
+			averageBugdetProposedPatronage = this.repository.averageBugdetProposedPatronage(PatronageStatus.PROPOSED);
+			deviationBugdetProposedPatronage = this.repository.deviationBugdetPatronage(PatronageStatus.PROPOSED);
+			minimumBugdetProposedPatronage = this.repository.minimumBugdetPatronage(PatronageStatus.PROPOSED);
+			maximumBugdetProposedPatronage = this.repository.maximumBugdetPatronage(PatronageStatus.PROPOSED);
+			averageBugdetAcceptedPatronage = this.repository.averageBugdetProposedPatronage(PatronageStatus.ACCEPTED);
+			deviationBugdetAcceptedPatronage = this.repository.deviationBugdetPatronage(PatronageStatus.ACCEPTED);
+			minimumBugdetAcceptedPatronage = this.repository.minimumBugdetPatronage(PatronageStatus.ACCEPTED);
+			maximumBugdetAcceptedPatronage = this.repository.maximumBugdetPatronage(PatronageStatus.ACCEPTED);
+			averageBugdetDeniedPatronage = this.repository.averageBugdetProposedPatronage(PatronageStatus.DENIED);
+			deviationBugdetDeniedPatronage = this.repository.deviationBugdetPatronage(PatronageStatus.DENIED);
+			minimumBugdetDeniedPatronage = this.repository.minimumBugdetPatronage(PatronageStatus.DENIED);
+			maximumBugdetDeniedPatronage = this.repository.maximumBugdetPatronage(PatronageStatus.DENIED);
 			
 			result = new PatronDashboard();
 			result.setTotalNumberOfAcceptedPatronages(totalNumberOfAcceptedPatronages);

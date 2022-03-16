@@ -4,7 +4,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.entities.dashboard.PatronDashboard;
+import acme.forms.PatronDashboard;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Patron;
 
