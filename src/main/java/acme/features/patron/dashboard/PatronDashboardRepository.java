@@ -5,9 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.patronages.PatronageStatus;
 import acme.framework.repositories.AbstractRepository;
+
+
 @Repository
 public interface PatronDashboardRepository extends AbstractRepository {
-@Query("select count(t) from Patronage where t.status = :type")
+@Query("select count(t) from Patronage t where t.status = :type")
 Integer 					totalNumberOfPatronages(Enum<PatronageStatus> type);
 @Query("select avg(datediff(t.budget, t.retailPrice)) from Patronage t where t.status = :type")
 Double						averageBugdetProposedPatronage(Enum<PatronageStatus> type);
