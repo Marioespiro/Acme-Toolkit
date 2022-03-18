@@ -12,7 +12,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -48,7 +47,6 @@ public class Patronage extends AbstractEntity {
 	@Length(max = 255)
 	protected String legalStuff;
 	
-	@PositiveOrZero
 	@NotNull
 	@Valid
 	protected Money budget;
@@ -66,7 +64,6 @@ public class Patronage extends AbstractEntity {
 	@NotNull
 	protected Date endingTime;
 	
-	@PositiveOrZero
 	@NotNull
 	@Valid
 	protected Money retailPrice;

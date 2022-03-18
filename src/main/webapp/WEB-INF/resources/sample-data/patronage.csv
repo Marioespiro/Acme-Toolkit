@@ -1,0 +1,4 @@
+key,status,code,legalStuff,budget,periodOfTime,creationTime,endingTime,retailPrice,link,key:inventor,key:patron
+patronage-01,PROPOSED,"DEF-456","Some legal stuff","USD 20,000.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"USD 10,000.00","https://www.google.com/",inventor-01,patron-01
+patronage-02,DENIED,"FDE-465","Some legal stuff","USD 30,000.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"USD 10,000.00","https://www.google.com/",inventor-02,patron-01
+patronage-03,ACCEPTED,"EFD-564","Some legal stuff","USD 44,400.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"USD 10,000.00","https://www.google.com/",inventor-01,patron-02
