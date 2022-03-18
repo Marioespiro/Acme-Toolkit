@@ -14,6 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Patron extends UserRole {
+	
 	// Serialisation identifier -----------------------------------------------
     protected static final long    serialVersionUID    = 1L;
 

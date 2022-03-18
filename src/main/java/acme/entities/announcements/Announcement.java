@@ -30,21 +30,20 @@ public class Announcement extends AbstractEntity {
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date CreationDate;
+	protected Date creationDate;
 	
 	@NotBlank
 	@Length(min=1, max=100)
-	protected String Title;
+	protected String title;
 	
 	@NotBlank
 	@Length(min=1, max=255)
-	protected String Body;
+	protected String body;
 	
-	@NotNull
-	protected Boolean flag;
+	protected boolean flag;
 	
 	@URL
-	protected String Url;
+	protected String url;
 	
 	
 }

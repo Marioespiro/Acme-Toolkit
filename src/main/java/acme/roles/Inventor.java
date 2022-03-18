@@ -15,6 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Inventor extends UserRole {
+	
 	// Serialisation identifier -----------------------------------------------
 
     protected static final long    serialVersionUID    = 1L;

@@ -2,6 +2,9 @@ package acme.entities.systemConfigurations;
 
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -18,17 +21,25 @@ public class SystemConfiguration extends AbstractEntity {
 
 	// Attributes
 	
+	@NotBlank
 	protected String systemCurrency;
 	
+	@NotBlank
 	protected String acceptedCurrencies;
 	
+	@NotBlank
 	protected String strongSpamTerms;
 	
-	protected Integer strongSpamThreshold;
+	@Min(0)
+	@Max(100)
+	protected double strongSpamThreshold;
 	
+	@NotBlank
 	protected String weakSpamTerms;
 	
-	protected Integer weakSpamThreshold;
+	@Min(0)
+	@Max(100)
+	protected double weakSpamThreshold;
 
 
 }
