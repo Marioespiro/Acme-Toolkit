@@ -266,11 +266,11 @@ increased with every new patronage report.</panel_attributes>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 PatronDashboard
 --
-+ totalNumberOfPatronagesByStatus: Map&lt;PatronageStatus, int&gt;
-+ averageBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, double&gt;
-+ deviationBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, double&gt;
-+ maximumBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, double&gt;
-+ minimumBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, double&gt;
++ totalNumberOfPatronagesByStatus: Map&lt;PatronageStatus, Integer&gt;
++ averageBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, Double&gt;
++ deviationBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, Double&gt;
++ maximumBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, Double&gt;
++ minimumBudgetOfPatronagesStatusByCurrency: Map&lt;Pair&lt;String, PatronageStatus&gt;, Double&gt;
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
@@ -303,21 +303,21 @@ bg=gray
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AdministratorDashboard
 --
-+ totalNumberOfComponents: int
-+ averageRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, double&gt;
-+ deviationRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, double&gt;
-+ minimumRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, double&gt;
-+ maximumRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, double&gt;
-+ totalNumberOfTools: int
-+ averageRetailPriceOfToolsByCurrency: Map&lt;String, double&gt;
-+ deviationRetailPriceOfToolsByCurrency: Map&lt;String, double&gt;
-+ minimumRetailPriceOfToolsByCurrency: Map&lt;String, double&gt;
-+ maximumRetailPriceOfToolsByCurrency: Map&lt;String, double&gt;
-+ totalNumberOfPatronagesByStatus: Map&lt;PatronageStatus, int&gt;
-+ averagePatronagesBudgetByStatus: Map&lt;PatronageStatus, double&gt;
-+ deviationPatronagesBudgetByStatus: Map&lt;PatronageStatus, double&gt;
-+ minimumPatronagesBudgetByStatus: Map&lt;PatronageStatus, double&gt;
-+ maximumPatronagesBudgetByStatus: Map&lt;PatronageStatus, double&gt;
++ totalNumberOfComponents: Integer
++ averageRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ deviationRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ minimumRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ maximumRetailPriceOfComponentsByTechnologyAndCurrency: Map&lt;Pair&lt;String, String&gt;, Double&gt;
++ totalNumberOfTools: Integer
++ averageRetailPriceOfToolsByCurrency: Map&lt;String, Double&gt;
++ deviationRetailPriceOfToolsByCurrency: Map&lt;String, Double&gt;
++ minimumRetailPriceOfToolsByCurrency: Map&lt;String, Double&gt;
++ maximumRetailPriceOfToolsByCurrency: Map&lt;String, Double&gt;
++ totalNumberOfPatronagesByStatus: Map&lt;PatronageStatus, Integer&gt;
++ averagePatronagesBudgetByStatus: Map&lt;PatronageStatus, Double&gt;
++ deviationPatronagesBudgetByStatus: Map&lt;PatronageStatus, Double&gt;
++ minimumPatronagesBudgetByStatus: Map&lt;PatronageStatus, Double&gt;
++ maximumPatronagesBudgetByStatus: Map&lt;PatronageStatus, Double&gt;
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

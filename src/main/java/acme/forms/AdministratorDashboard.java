@@ -2,7 +2,11 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
+import acme.entities.patronages.PatronageStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,17 +19,22 @@ public class AdministratorDashboard implements Serializable {
 
 	// Attributes
 	
-	Integer						totalItems;
-
-	Double						averageRetailPriceItems;
-	Double						deviationRetailPriceItems;
-	Integer						minRetailPriceItems;
-	Integer						maxRetailPriceItems;
-
-	Double						averageBudgetPatronages;
-	Double						deviationBudgetPatronages;
-	Integer						minBudgetPatronages;
-	Integer						maxBudgetPatronages;
+	Integer								totalNumberOfComponents;
+	Map<Pair<String, String>, Double>	averageRetailPriceOfComponentsByTechnologyAndCurrency;
+	Map<Pair<String, String>, Double>	deviationRetailPriceOfComponentsByTechnologyAndCurrency;
+	Map<Pair<String, String>, Double>	minimumRetailPriceOfComponentsByTechnologyAndCurrency;
+	Map<Pair<String, String>, Double>	maximumRetailPriceOfComponentsByTechnologyAndCurrency;
+	Integer								totalNumberOfTools;
+	Map<String, Double>					averageRetailPriceOfToolsByCurrency;
+	Map<String, Double>					deviationRetailPriceOfToolsByCurrency;
+	Map<String, Double>					minimumRetailPriceOfToolsByCurrency;
+	Map<String, Double>					maximumRetailPriceOfToolsByCurrency;
+	Map<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
+	Map<PatronageStatus, Double>		averagePatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
+	
 	
 	// Derived attributes -----------------------------------------------------
 
