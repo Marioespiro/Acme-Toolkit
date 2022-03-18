@@ -82,7 +82,7 @@ bg=yellow</panel_attributes>
       <h>42</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-AbstractUserIdentity
+UserRole
 bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
@@ -622,10 +622,10 @@ m2=1..n</panel_attributes>
 SystemConfiguration
 --
 + systemCurrency: String {NotBlank, Default ("EUR")} 
-+ acceptedCurrencies: String {NotBlank, Default ("EUR", "USD", "GBP")} 
-+ strongSpamTerms: String {NotBlank, Default ("sex"; "hard core"; "viagra"; "cialis"; "sexo"; "núcleo duro")}
++ acceptedCurrencies: String {NotBlank, Default ("EUR;USD;GBP")} 
++ strongSpamTerms: String {NotBlank, Default ("sex;hard core;viagra;cialis;sexo;núcleo duro")}
 + strongSpamThreshold: double {Min(0.0), Max(100.0) , Default(10.0)}
-+ weakSpamTerms: String {NotBlank, Default("sexy"; "nigeria"; "you've won"; "one million"; "has ganado"; "un millón")}
++ weakSpamTerms: String {NotBlank, Default("sexy;nigeria;you've won;one million;has ganado;un millón")}
 + weakSpamThreshold: double {Min(0.0), Max(100.0), Default(25.0)}
 bg=green
 </panel_attributes>

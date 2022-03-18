@@ -34,8 +34,6 @@ public class Patronage extends AbstractEntity {
 
 	// Attributes
 	
-	@NotNull
-	//@Enumerated(EnumType.STRING)
 	protected PatronageStatus status;
 	
 	@NotBlank
@@ -44,11 +42,9 @@ public class Patronage extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(max = 255)
+	@Length(min = 1, max = 255)
 	protected String legalStuff;
 	
-	@NotNull
-	@Valid
 	protected Money budget;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -64,8 +60,6 @@ public class Patronage extends AbstractEntity {
 	@NotNull
 	protected Date endingTime;
 	
-	@NotNull
-	@Valid
 	protected Money retailPrice;
 	
 	@URL
