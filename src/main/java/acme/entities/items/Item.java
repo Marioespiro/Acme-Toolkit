@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -43,7 +42,6 @@ public class Item extends AbstractEntity {
 	@Length(max = 255)
 	protected String			description;
 	
-	@PositiveOrZero
 	@NotNull
 	protected Money			retailPrice;
 	
