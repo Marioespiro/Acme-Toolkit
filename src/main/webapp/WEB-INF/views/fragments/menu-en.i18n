@@ -31,6 +31,7 @@ master.menu.anonymous.favourite-link-ezequiel = 45814719F: Pérez Sosa, Ezequiel
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down

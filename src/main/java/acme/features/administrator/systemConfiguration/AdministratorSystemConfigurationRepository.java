@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.configuration;
+package acme.features.administrator.systemConfiguration;
 
 import java.util.Collection;
 
@@ -21,10 +21,7 @@ import acme.entities.systemConfigurations.SystemConfiguration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AdministratorConfigurationRepository extends AbstractRepository {
-
-	@Query("select sc from SystemConfiguration sc where sc.id = :id")
-	SystemConfiguration findConfigurationById(int id);
+public interface AdministratorSystemConfigurationRepository extends AbstractRepository {
 
 	@Query("select sc from SystemConfiguration sc")
 	Collection<SystemConfiguration> findAllConfigurations();

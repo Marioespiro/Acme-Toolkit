@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.configuration;
+package acme.features.administrator.systemConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +25,12 @@ import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorConfigurationShowService implements AbstractShowService<Administrator, SystemConfiguration> {
+public class AdministratorSystemConfigurationShowService implements AbstractShowService<Administrator, SystemConfiguration> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AdministratorConfigurationRepository repository;
+	protected AdministratorSystemConfigurationRepository repository;
 
 	// AbstractShowService<Administrator, Announcement> interface --------------
 
@@ -48,7 +48,7 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "systemCurrency", "acceptedCurrencies", "strongSpamTerms", "strongSpamThreshold", "weakSpamTerms", "weakSpamThreshHold");
+		request.unbind(entity, model, "systemCurrency", "acceptedCurrencies", "strongSpamTerms", "strongSpamThreshold", "weakSpamTerms", "weakSpamThreshold");
 	}
 
 	@Override
@@ -58,9 +58,8 @@ public class AdministratorConfigurationShowService implements AbstractShowServic
 		final SystemConfiguration result;
 		
 		final List<SystemConfiguration> allConfigurations = new ArrayList<>(this.repository.findAllConfigurations());
-		final Integer id = allConfigurations.get(0).getId();
-		
-		result = this.repository.findConfigurationById(id);
+		result = allConfigurations.get(0);
+		System.out.println(result);
 		
 		return result;
 	}
