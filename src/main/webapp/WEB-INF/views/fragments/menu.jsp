@@ -26,6 +26,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-andrea" action="https://www.instagram.com/p/CaZ_40ds93W/?utm_medium=copy_link"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-ezequiel" action="https://www.twitch.tv/"/>
 		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
@@ -35,6 +36,11 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.authenticated.list-tools" action="/authenticated/item/list-tool"/>
+			<acme:menu-suboption code="master.menu.authenticated.list-components" action="/authenticated/item/list-component"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
@@ -42,6 +48,8 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
