@@ -58,5 +58,6 @@ master.menu.user-account.become-consumer = Hazte consumidor
 # master.menu.authenticated ####################################################
 
 master.menu.authenticated = Autenticado  
+master.menu.authenticated.list-currencies = Listar monedas
 master.menu.authenticated.list-components = Listar componentes
 master.menu.authenticated.list-tools = Listar herramientas
