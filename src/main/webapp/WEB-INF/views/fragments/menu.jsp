@@ -36,7 +36,7 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.list-tools" action="/authenticated/item/list-tool"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-components" action="/authenticated/item/list-component"/>
 		</acme:menu-option>
