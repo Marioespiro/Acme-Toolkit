@@ -31,6 +31,7 @@ master.menu.anonymous.favourite-link-ezequiel = 45814719F: Pérez Sosa, Ezequiel
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
@@ -53,3 +54,15 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+
+# master.menu.authenticated ####################################################
+
+master.menu.authenticated = Autenticado  
+master.menu.authenticated.list-currencies = Listar monedas
+master.menu.authenticated.list-components = Listar componentes
+master.menu.authenticated.list-tools = Listar herramientas
+
+# master.menu.any ####################################################
+master.menu.any = Cualquiera
+master.menu.any.list-components = Listar componentes
+master.menu.any.list-tools = Listar herramientas
