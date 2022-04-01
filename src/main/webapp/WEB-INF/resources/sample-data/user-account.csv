@@ -1,5 +1,0 @@
-key,enabled,identity,password,username
-user-account-inventor-01,true,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",inventor1,inventor1
-user-account-inventor-02,true,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",inventor2,inventor2
-user-account-patron-01,true,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",patron1,patron1
-user-account-patron-02,true,"UserIdentity{name: 'John', surname: 'Doe', email: 'john.doe@acme.com'}",patron2,patron2
