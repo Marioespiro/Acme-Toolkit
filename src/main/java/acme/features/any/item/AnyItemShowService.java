@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAnnouncementListService.java
+ * AuthenticatedAnnouncementShowService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,9 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.item;
-
-import java.util.Collection;
+package acme.features.any.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,18 +18,18 @@ import org.springframework.stereotype.Service;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
-import acme.framework.services.AbstractListService;
+import acme.framework.roles.Any;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedComponentListService implements AbstractListService<Authenticated, Item> {
+public class AnyItemShowService implements AbstractShowService<Any, Item> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedItemRepository repository;
+	protected AnyItemRepository repository;
 
-	// AbstractListService<Administrator, Item> interface --------------
+	// AbstractShowService<Administrator, Announcement> interface --------------
 
 
 	@Override
@@ -40,15 +38,6 @@ public class AuthenticatedComponentListService implements AbstractListService<Au
 
 		return true;
 	}
-	
-	@Override
-	public Collection<Item> findMany(final Request<Item> request) {
-		assert request != null;
-
-		Collection<Item> result;
-		result = this.repository.findAllComponents();
-		return result;
-	}
 
 	@Override
 	public void unbind(final Request<Item> request, final Item entity, final Model model) {
@@ -56,9 +45,21 @@ public class AuthenticatedComponentListService implements AbstractListService<Au
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
+		request.unbind(entity, model, "name", "code", "description", "technology", "retailPrice", "link");
 	}
 
-	
+	@Override
+	public Item findOne(final Request<Item> request) {
+		assert request != null;
+
+		Item result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		result = this.repository.findItemById(id);
+		
+
+		return result;
+	}
 
 }

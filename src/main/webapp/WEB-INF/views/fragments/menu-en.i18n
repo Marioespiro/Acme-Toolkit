@@ -59,5 +59,9 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.authenticated = Authenticated  
 master.menu.authenticated.list-currencies = List currencies
-master.menu.authenticated.list-components = List components
-master.menu.authenticated.list-tools = List tools
+
+ 
+# master.menu.any ####################################################
+master.menu.any = Any
+master.menu.any.list-components = List components
+master.menu.any.list-tools = List tools
