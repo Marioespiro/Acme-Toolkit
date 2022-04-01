@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.administrator.systemConfiguration;
+package acme.features.authenticated.systemConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +21,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.systemConfigurations.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Administrator;
+import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorSystemConfigurationShowService implements AbstractShowService<Administrator, SystemConfiguration> {
+public class AuthenticatedSystemConfigurationShowService implements AbstractShowService<Authenticated, SystemConfiguration> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AdministratorSystemConfigurationRepository repository;
+	protected AuthenticatedSystemConfigurationRepository repository;
 
 	// AbstractShowService<Administrator, Announcement> interface --------------
 
@@ -48,7 +48,7 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "systemCurrency", "acceptedCurrencies", "strongSpamTerms", "strongSpamThreshold", "weakSpamTerms", "weakSpamThreshold");
+		request.unbind(entity, model, "systemCurrency", "acceptedCurrencies");
 	}
 
 	@Override
