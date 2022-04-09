@@ -1,0 +1,24 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+patron.dashboard.list.title = Patron Dashboard
+
+patron.dashboard.list.label.totalProposed = Total number proposed patronages
+patron.dashboard.list.label.totalAccepted = Total number accepted patronages
+patron.dashboard.list.label.totalDenied = Total number denied patronages
+patron.dashboard.list.label.averageDenied = Average denied patronages
+patron.dashboard.list.label.averageAccepted = Average accepted patronages
+patron.dashboard.list.label.averageProposed = Average proposed patronages
+patron.dashboard.list.label.status = Status
+patron.dashboard.list.label.currency = Currency
+patron.dashboard.list.label.average = Average
+patron.dashboard.list.label.deviation = Deviation
+patron.dashboard.list.label.minimun = Minimun
+patron.dashboard.list.label.maximun = Maximun

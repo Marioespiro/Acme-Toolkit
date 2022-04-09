@@ -3,11 +3,15 @@ package acme.features.patron.dashboard;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.dashboard.PatronDashboard;
+import acme.forms.PatronDashboard;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Patron;
 
+@Controller
+@RequestMapping("/authenticated/patron-dashboard/")
 public class PatronDashboardController extends AbstractController<Patron, PatronDashboard> {
 	// Internal state ---------------------------------------------------------
 
@@ -19,7 +23,7 @@ public class PatronDashboardController extends AbstractController<Patron, Patron
 
 		@PostConstruct
 		protected void initialise() {
-//			super.addBasicCommand(BasicCommand.SHOW, this.showService);
+			super.addCommand("show", this.showService);
 		}
 
 }
