@@ -66,3 +66,8 @@ master.menu.authenticated.list-tools = Listar herramientas
 master.menu.any = Cualquiera
 master.menu.any.list-components = Listar componentes
 master.menu.any.list-tools = Listar herramientas
+
+# master.menu.inventor ####################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-patronages = Listar patrocinios
