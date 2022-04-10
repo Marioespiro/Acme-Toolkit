@@ -139,7 +139,7 @@ Announcement
 + creationDate: Date {Temporal(TIMESTAMP), Past, NotNull}
 + title: String {NotBlank, Length(1,100)}
 + body: String {NotBlank, Length(1,255)}
-+ flag: boolean 
++ critical: boolean 
 + link: String {URL}
 
 bg=green</panel_attributes>
