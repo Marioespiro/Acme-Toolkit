@@ -16,7 +16,14 @@ Integer					totalNumberOfPatronages(Enum<PatronageStatus> type);
 Collection<String> currencies();
 
 @Query("select avg(t.budget.amount) from Patronage t where t.status = :type and t.budget.currency = :currency ")
-Double						averageBugdetProposedPatronage(Enum<PatronageStatus> type, String currency);
+Double						averageBugdetPatronage(Enum<PatronageStatus> type, String currency);
 
+@Query("select stddev(t.budget.amount) from Patronage t where t.status = :type and t.budget.currency = :currency ")
+Double						deviationBugdetPatronage(Enum<PatronageStatus> type, String currency);
 
+@Query("select min(t.budget.amount) from Patronage t where t.status = :type and t.budget.currency = :currency ")
+Double						minBugdetPatronage(Enum<PatronageStatus> type, String currency);
+
+@Query("select max(t.budget.amount) from Patronage t where t.status = :type and t.budget.currency = :currency ")
+Double					maxBugdetPatronage(Enum<PatronageStatus> type, String currency);
 }
