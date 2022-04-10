@@ -72,4 +72,10 @@ master.menu.authenticated.list-announcements =List announcements
 master.menu.any = Any
 master.menu.any.list-components = List components
 master.menu.any.list-tools = List tools
+
+
+# master.menu.inventor ####################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.list-patronages = List patronages
 master.menu.any.list-chirps = List chirps

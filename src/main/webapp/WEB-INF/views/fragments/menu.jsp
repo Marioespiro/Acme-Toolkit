@@ -51,6 +51,10 @@
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list-patronage"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
