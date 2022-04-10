@@ -55,6 +55,11 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+# master.menu.patron ####################################################
+
+master.menu.patron = Patron
+master.menu.patron.dashboard = Patron Dashboard
+
 # master.menu.authenticated ####################################################
 
 master.menu.authenticated = Authenticated  
