@@ -47,7 +47,7 @@ public class PatronageReport extends AbstractEntity {
 	
 	@NotBlank
 	@Pattern(regexp = "〈[0-9]+〉:〈[0-9]{4}〉")
-	public String automaticSequenceNumber() {
+	public String getAutomaticSequenceNumber() {
 		return "〈" + this.getPatronage().getId() + "〉:〈" + this.getId() + "〉";
 	}
 	

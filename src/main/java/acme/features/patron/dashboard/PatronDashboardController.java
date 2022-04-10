@@ -11,7 +11,7 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Patron;
 
 @Controller
-@RequestMapping("/authenticated/patron-dashboard/")
+@RequestMapping("/patron/patron-dashboard/")
 public class PatronDashboardController extends AbstractController<Patron, PatronDashboard> {
 	// Internal state ---------------------------------------------------------
 
