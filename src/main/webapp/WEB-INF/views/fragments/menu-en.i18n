@@ -35,6 +35,7 @@ master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.dashboard = Dashboard
 
 # master.menu.provider ########################################################
 
@@ -55,13 +56,20 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+# master.menu.patron ####################################################
+
+master.menu.patron = Patron
+master.menu.patron.dashboard = Patron Dashboard
+
 # master.menu.authenticated ####################################################
 
 master.menu.authenticated = Authenticated  
 master.menu.authenticated.list-currencies = List currencies
+master.menu.authenticated.list-announcements =List announcements
 
  
 # master.menu.any ####################################################
 master.menu.any = Any
 master.menu.any.list-components = List components
 master.menu.any.list-tools = List tools
+master.menu.any.list-chirps = List chirps

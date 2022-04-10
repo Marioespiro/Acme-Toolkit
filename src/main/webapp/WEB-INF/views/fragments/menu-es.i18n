@@ -35,6 +35,7 @@ master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.dashboard = Panel de control
 
 # master.menu.provider ########################################################
 
@@ -45,6 +46,11 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.patron ####################################################
+
+master.menu.patron = Patrón
+master.menu.patron.dashboard = Panel Control Patrón
 
 # master.menu.user-account ####################################################
 
@@ -61,8 +67,10 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.list-currencies = Listar monedas
 master.menu.authenticated.list-components = Listar componentes
 master.menu.authenticated.list-tools = Listar herramientas
+master.menu.authenticated.list-announcements =Listar anuncios
 
 # master.menu.any ####################################################
 master.menu.any = Cualquiera
 master.menu.any.list-components = Listar componentes
 master.menu.any.list-tools = Listar herramientas
+master.menu.any.list-chirps = Listar mensajes
