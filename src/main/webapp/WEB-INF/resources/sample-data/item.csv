@@ -1,3 +1,5 @@
 key,name,code,technology,description,retailPrice,link,itemType,key:inventor
 item-01, "Item-01","ABC-123","Technology-01","Description of the item 01","EUR 15,000.98","https://www.google.com/",TOOL,inventor-01
-item-02, "Item-02","CBA-321","Technology-02","Description of the item 02","EUR 15,000.98","https://www.google.com/",COMPONENT,inventor-02
+item-02, "Item-02","CBA-321","Technology-02","Description of the item 02","EUR 13,000.98","https://www.google.com/",COMPONENT,inventor-02
+item-03, "Item-03","CBA-326","Technology-01","Description of the item 02","USD 15,000.98","https://www.google.com/",TOOL,inventor-02
+item-04, "Item-04","CBA-391","Technology-02","Description of the item 02","USD 25,000.98","https://www.google.com/",COMPONENT,inventor-02
