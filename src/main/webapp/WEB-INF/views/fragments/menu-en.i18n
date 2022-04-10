@@ -65,3 +65,4 @@ master.menu.authenticated.list-currencies = List currencies
 master.menu.any = Any
 master.menu.any.list-components = List components
 master.menu.any.list-tools = List tools
+master.menu.any.list-userAccounts = List user accounts
