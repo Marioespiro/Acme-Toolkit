@@ -1,19 +1,16 @@
 package acme.features.inventor.patronageReport;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronageReports.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageReportListService implements AbstractListService<Inventor, PatronageReport>{
+public class InventorPatronageReportShowService implements AbstractShowService<Inventor, PatronageReport>{
 
 	// Internal state
 	
@@ -26,23 +23,17 @@ public class InventorPatronageReportListService implements AbstractListService<I
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
 		
-//		final boolean result;
-//		int masterId;
-//		final PatronageReport patronageReport;
-//		
-//		masterId = request.getModel().getInteger("masterId");
 		return true;
 	}
 	
 	@Override
-	public Collection<PatronageReport> findMany(final Request<PatronageReport> request) {
+	public PatronageReport findOne(final Request<PatronageReport> request) {
 		assert request != null;
-		
-		Collection<PatronageReport> result;
-		Principal principal;
 
-		principal = request.getPrincipal();
-		result = this.repository.findAllPatronageReportsByInventorId(principal.getActiveRoleId());
+		PatronageReport result;
+		int id;
+		id = request.getModel().getInteger("id");
+		result = this.repository.findPatronageReportById(id);
 
 		return result;
 	}
@@ -54,13 +45,8 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		assert model != null;
 		
 		request.unbind(entity, model, "creationMoment", "memorandum", "link", "automaticSequenceNumber");
+		
 	}
 	
 	
-	
-	
-	
-	
 }
-
-

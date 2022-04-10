@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import java.util.Collection;
 
@@ -14,12 +14,12 @@ import acme.roles.Inventor;
 
 
 @Service
-public class AuthenticatedInventorPatronageListService implements AbstractListService<Inventor, Patronage> {
+public class InventorPatronageListService implements AbstractListService<Inventor, Patronage> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedInventorPatronageRepository repository;
+	protected InventorPatronageRepository repository;
 
 	// AbstractListService<Employer, Duty> interface ---------------------------
 	
@@ -35,17 +35,11 @@ public class AuthenticatedInventorPatronageListService implements AbstractListSe
 		assert request != null;
 
 		Collection<Patronage> result;
-//		int id;
-//		id = request.getModel().getInteger("id");
-//		result = this.repository.findAllPatronagesByInventorId(id);
 		Principal principal;
 
 		principal = request.getPrincipal();
 		result = this.repository.findAllPatronagesByInventorId(principal.getActiveRoleId());
-//		Principal principal;
-//
-//		principal = request.getPrincipal();
-//		result = this.repository.findManyByEmployerId(principal.getActiveRoleId());
+
 		return result;
 	}
 

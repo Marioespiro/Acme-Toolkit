@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import javax.annotation.PostConstruct;
 
@@ -12,27 +12,24 @@ import acme.roles.Inventor;
 
 @Controller
 @RequestMapping("/inventor/patronage/")
-public class AuthenticatedInventorPatronageController extends AbstractController<Inventor, Patronage> {
+public class InventorPatronageController extends AbstractController<Inventor, Patronage> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedInventorPatronageListService	listInventorPatronageService;
+	protected InventorPatronageListService	listService;
 
-//	@Autowired
-//	protected InventorPatronageListService	listInventorPatronageService;
 
 	@Autowired
-	protected AuthenticatedInventorPatronageShowService	showInventorPatronageService;
+	protected InventorPatronageShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		//super.addCommand("list-component","list", this.listComponentService);
-		super.addCommand("list-tool","list", this.listInventorPatronageService);
-		super.addCommand("show", this.showInventorPatronageService);
+		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 	}
 	
 }
