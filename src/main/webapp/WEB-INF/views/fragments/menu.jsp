@@ -46,7 +46,7 @@
 		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>
-			
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
