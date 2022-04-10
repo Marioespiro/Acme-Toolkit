@@ -44,10 +44,19 @@ public class AnyComponentListService implements AbstractListService<Any, Item> {
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
-
+		final Integer id;
 		Collection<Item> result;
-		result = this.repository.findAllComponents();
-		return result;
+		
+		if(request.getModel().hasAttribute("toolkitId")) {
+			id = request.getModel().getInteger("toolkitId");
+			result = this.repository.findComponentsByToolkit(id);
+			return result;
+		}else {
+			result = this.repository.findAllComponents();
+			return result;
+		}
+		
+		
 	}
 
 	@Override

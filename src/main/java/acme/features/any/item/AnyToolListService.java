@@ -44,10 +44,16 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
-
+		Integer id;
 		Collection<Item> result;
-		result = this.repository.findAllTools();
-		return result;
+		if(request.getModel().hasAttribute("toolkitId")) {
+			id = request.getModel().getInteger("toolkitId");
+			result = this.repository.findToolsByToolkit(id);
+			return result;
+		}else {
+			result = this.repository.findAllTools();
+			return result;
+		}
 	}
 
 	@Override

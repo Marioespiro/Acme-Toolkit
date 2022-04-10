@@ -23,7 +23,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
 @Controller
-@RequestMapping("/authenticated/toolkit/")
+@RequestMapping("/any/toolkit/")
 public class AnyToolkitController extends AbstractController<Any, Toolkit> {
 
 	// Internal state ---------------------------------------------------------
@@ -40,7 +40,7 @@ public class AnyToolkitController extends AbstractController<Any, Toolkit> {
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-toolkit","list", this.listToolkitService);
+		super.addCommand("list", this.listToolkitService);
 		super.addCommand("show", this.showToolkitService);
 	}
 
