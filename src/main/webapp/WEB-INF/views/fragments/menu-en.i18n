@@ -59,6 +59,7 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.authenticated = Authenticated  
 master.menu.authenticated.list-currencies = List currencies
+master.menu.authenticated.list-announcements =List announcements
 
  
 # master.menu.any ####################################################

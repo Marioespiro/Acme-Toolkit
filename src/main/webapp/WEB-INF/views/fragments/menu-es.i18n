@@ -61,6 +61,7 @@ master.menu.authenticated = Autenticado
 master.menu.authenticated.list-currencies = Listar monedas
 master.menu.authenticated.list-components = Listar componentes
 master.menu.authenticated.list-tools = Listar herramientas
+master.menu.authenticated.list-announcements =Listar anuncios
 
 # master.menu.any ####################################################
 master.menu.any = Cualquiera
