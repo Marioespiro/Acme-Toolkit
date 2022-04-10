@@ -17,5 +17,5 @@ authenticated.announcement.form.label.url = Url
 	
 
 authenticated.announcement.list.label.creationDate = Creation Date
-authenticated.announcement.list.label.critical = Status
+authenticated.announcement.list.label.critical = Critical
 authenticated.announcement.list.label.title = Title

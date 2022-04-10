@@ -14,6 +14,6 @@ authenticated.announcement.form.label.body = Cuerpo
 authenticated.announcement.form.label.critical = Crítico
 authenticated.announcement.form.label.url = Url
 
-authenticated.announcement.list.label.moment = Momento
-authenticated.announcement.list.label.status = Estatus
+authenticated.announcement.list.label.creationDate = Fecha de creación
+authenticated.announcement.list.label.critical = Crítico
 authenticated.announcement.list.label.title = Título
