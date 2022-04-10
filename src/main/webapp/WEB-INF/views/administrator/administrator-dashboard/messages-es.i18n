@@ -1,0 +1,30 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.title = Panel de control
+administrator.dashboard.form.label.total-tools = Herramientas totales
+administrator.dashboard.form.label.average-retail-price-items = Media precio venta al público
+administrator.dashboard.form.label.deviation-retail-price-items = Desviación precio venta al público
+administrator.dashboard.form.label.min-retail-price-items = Mínimo precio venta al público
+administrator.dashboard.form.label.max-retail-price-items = Máximo precio venta al público
+administrator.dashboard.form.label.average-budget-patronage = Presupuesto medio de patrocinio
+administrator.dashboard.form.label.deviation-budget-patronage = Desviación del presupuesto de patrocinio
+administrator.dashboard.form.label.minimum-budget-patronage = Mínimo precio del presupuesto de patrocinio
+administrator.dashboard.form.label.maximum-budget-patronage = Máximo precio del presupuesto de patrocinio
+administrator.dashboard.form.label.total-components = Componentes totales
+administrator.dashboard.form.label.average-retail-price =  Precio medio de venta al público
+administrator.dashboard.form.label.deviation-retail-price = Desviación venta al público
+administrator.dashboard.form.label.minimum-retail-price = Mínimo venta al público
+administrator.dashboard.form.label.maximum-retail-price = Máximo venta al público
+administrator.dashboard.form.label.average-retail-price = Presupuesto medio de patrocinio
+administrator.dashboard.form.label.deviation-retail-price = Patrocinio presupuestario de la desviación
+administrator.dashboard.form.label.minimum-retail-price = Presupuesto mínimo de patrocinio
+administrator.dashboard.form.label.maximum-retail-price = Presupuesto máximo de patrocinio
+administrator.dashboard.form.label.number.patronages = Número de patrocinios
