@@ -48,6 +48,10 @@
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>
 			
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
