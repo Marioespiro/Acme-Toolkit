@@ -60,6 +60,7 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.patron = Patron
 master.menu.patron.dashboard = Patron Dashboard
+master.menu.patron.list-patronage-reports = List patronage reports
 
 # master.menu.authenticated ####################################################
 

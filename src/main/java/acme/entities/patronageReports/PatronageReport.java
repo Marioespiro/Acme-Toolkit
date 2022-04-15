@@ -51,7 +51,7 @@ public class PatronageReport extends AbstractEntity {
 	
 	@NotBlank
 	public String getAutomaticSequenceNumber() {
-		return "〈" + this.getPatronage().getCode() + "〉:〈" + Integer.toString(this.getSerialNumber()) + "〉";
+		return "〈" + this.getPatronage().getCode() + "〉:〈" + String.format("%04d", this.getSerialNumber()) + "〉";
 	}
 	
 	// Relationships
