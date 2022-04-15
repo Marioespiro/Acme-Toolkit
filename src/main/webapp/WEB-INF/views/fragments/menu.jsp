@@ -10,7 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Provider,acme.roles.Consumer"%>
+<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Inventor,acme.roles.Patron"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -19,6 +19,11 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>
+			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>
+			<acme:menu-suboption code="master.menu.any.list-userAccounts" action="/any/user-account/list"/>
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list-recent"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-mario" action="https://www.youtube.com/watch?v=VKMw2it8dQY"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-Javi" action="https://www.youtube.com"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-manu" action="https://www.reddit.com/r/Eldenring/"/>
@@ -44,9 +49,6 @@
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.list-currencies" action="/authenticated/system-configuration/show"/>
 			<acme:menu-suboption code="master.menu.authenticated.list-announcements" action="/authenticated/announcement/list-recent"/>
-			
-		</acme:menu-option>
-		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.list-tools" action="/any/item/list-tool"/>
 			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list-component"/>
 			<acme:menu-suboption code="master.menu.any.list-userAccounts" action="/any/user-account/list"/>

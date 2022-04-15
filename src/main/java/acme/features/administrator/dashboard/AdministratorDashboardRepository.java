@@ -15,43 +15,43 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	
 	@Query("select count(i) from Item i where i.itemType = :type")
-	Integer totalItems(Enum<ItemType> type);
+	Integer totalItems(ItemType type);
 	@Query("select i.retailPrice.currency, i.technology, avg(i.retailPrice.amount) from Item i group by i.retailPrice.currency, i.technology")
-	List<Object[]> averageRetailPriceItemsByTC(Enum<ItemType> type);
+	List<Object[]> averageRetailPriceItemsByTC(ItemType type);
 
 	@Query("select i.retailPrice.currency, i.technology, stddev(i.retailPrice.amount) from Item i group by i.retailPrice.currency, i.technology")
-	List<Object[]> deviationRetailPriceItemsByTC(Enum<ItemType> type);
+	List<Object[]> deviationRetailPriceItemsByTC(ItemType type);
 
 	@Query("select i.retailPrice.currency, i.technology, min(i.retailPrice.amount) from Item i group by i.retailPrice.currency, i.technology")
-	List<Object[]> minRetailPriceItemsByTC(Enum<ItemType> type);
+	List<Object[]> minRetailPriceItemsByTC(ItemType type);
 
 	@Query("select i.retailPrice.currency, i.technology, max(i.retailPrice.amount) from Item i group by i.retailPrice.currency, i.technology")
-	List<Object[]> maxRetailPriceItemsByTC(Enum<ItemType> type);
+	List<Object[]> maxRetailPriceItemsByTC(ItemType type);
 	
 	@Query("select i.retailPrice.currency, avg(i.retailPrice.amount) from Item i group by i.retailPrice.currency")
-	List<Object[]> averageRetailPriceItemsByC(Enum<ItemType> type);
+	List<Object[]> averageRetailPriceItemsByC(ItemType type);
 
 	@Query("select i.retailPrice.currency, stddev(i.retailPrice.amount) from Item i group by i.retailPrice.currency")
-	List<Object[]> deviationRetailPriceItemsByC(Enum<ItemType> type);
+	List<Object[]> deviationRetailPriceItemsByC(ItemType type);
 
 	@Query("select i.retailPrice.currency, min(i.retailPrice.amount) from Item i group by i.retailPrice.currency")
-	List<Object[]> minRetailPriceItemsByC(Enum<ItemType> type);
+	List<Object[]> minRetailPriceItemsByC(ItemType type);
 	
 	@Query("select i.retailPrice.currency, max(i.retailPrice.amount) from Item i group by i.retailPrice.currency")
-	List<Object[]> maxRetailPriceItemsByC(Enum<ItemType> type);
+	List<Object[]> maxRetailPriceItemsByC(ItemType type);
 	
 	@Query("select count(t) from Patronage t where t.status = :type")
-	Integer totalNumberOfPatronagesByStatus(Enum<PatronageStatus> type);
+	Integer totalNumberOfPatronagesByStatus(PatronageStatus type);
 
 	@Query("select avg(t.budget.amount) from Patronage t where t.status = :type")
-	Double averageBugdetProposedPatronage(Enum<PatronageStatus> type);
+	Double averageBugdetProposedPatronage(PatronageStatus type);
 	
 	@Query("select stddev(t.budget.amount) from Patronage t where t.status = :type")
-	Double deviationBugdetPatronage(Enum<PatronageStatus> type);
+	Double deviationBugdetPatronage(PatronageStatus type);
 	
 	@Query("select min(t.budget.amount) from Patronage t where t.status = :type")
-	Double minimumBugdetPatronage(Enum<PatronageStatus> type);
+	Double minimumBugdetPatronage(PatronageStatus type);
 	
 	@Query("select max(t.budget.amount) from Patronage t where t.status = :type")
-	Double maximumBugdetPatronage(Enum<PatronageStatus> type);
+	Double maximumBugdetPatronage(PatronageStatus type);
 }
