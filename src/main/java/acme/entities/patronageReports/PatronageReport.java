@@ -3,6 +3,8 @@ package acme.entities.patronageReports;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -10,7 +12,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -43,12 +44,14 @@ public class PatronageReport extends AbstractEntity {
 	@URL
 	protected String link;
 	
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	protected int serialNumber;
+	
 	// Derived attributes
 	
 	@NotBlank
-	@Pattern(regexp = "〈[0-9]+〉:〈[0-9]{4}〉")
-	public String automaticSequenceNumber() {
-		return "〈" + this.getPatronage().getId() + "〉:〈" + this.getId() + "〉";
+	public String getAutomaticSequenceNumber() {
+		return "〈" + this.getPatronage().getCode() + "〉:〈" + Integer.toString(this.getSerialNumber()) + "〉";
 	}
 	
 	// Relationships

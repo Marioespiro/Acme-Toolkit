@@ -34,6 +34,7 @@ public class Patronage extends AbstractEntity {
 
 	// Attributes
 	
+	@NotNull
 	protected PatronageStatus status;
 	
 	@NotBlank
@@ -45,6 +46,7 @@ public class Patronage extends AbstractEntity {
 	@Length(min = 1, max = 255)
 	protected String legalStuff;
 	
+	@NotNull
 	protected Money budget;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -59,8 +61,6 @@ public class Patronage extends AbstractEntity {
 	@Past
 	@NotNull
 	protected Date endingTime;
-	
-	protected Money retailPrice;
 	
 	@URL
 	protected String link;
