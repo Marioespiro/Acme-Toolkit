@@ -45,11 +45,13 @@ public class Item extends AbstractEntity {
 	@Length(min = 1, max = 255)
 	protected String			description;
 	
+	@NotNull
 	protected Money			retailPrice;
 	
 	@URL
 	protected String			link;
 	
+	@NotNull
 	protected ItemType itemType;
 	
 	// Relations -------------------------------------------------------------

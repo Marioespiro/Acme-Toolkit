@@ -2,6 +2,7 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.EnumMap;
 import java.util.Map;
 
 import org.springframework.data.util.Pair;
@@ -19,21 +20,21 @@ public class AdministratorDashboard implements Serializable {
 
 	// Attributes
 	
-	Integer								totalNumberOfComponents;
+	int									totalNumberOfComponents;
 	Map<Pair<String, String>, Double>	averageRetailPriceOfComponentsByTechnologyAndCurrency;
 	Map<Pair<String, String>, Double>	deviationRetailPriceOfComponentsByTechnologyAndCurrency;
 	Map<Pair<String, String>, Double>	minimumRetailPriceOfComponentsByTechnologyAndCurrency;
 	Map<Pair<String, String>, Double>	maximumRetailPriceOfComponentsByTechnologyAndCurrency;
-	Integer								totalNumberOfTools;
+	int									totalNumberOfTools;
 	Map<String, Double>					averageRetailPriceOfToolsByCurrency;
 	Map<String, Double>					deviationRetailPriceOfToolsByCurrency;
 	Map<String, Double>					minimumRetailPriceOfToolsByCurrency;
 	Map<String, Double>					maximumRetailPriceOfToolsByCurrency;
-	Map<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
-	Map<PatronageStatus, Double>		averagePatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
+	EnumMap<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
+	EnumMap<PatronageStatus, Double>		averagePatronagesBudgetByStats;
+	EnumMap<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
+	EnumMap<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
+	EnumMap<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
 	
 	
 	// Derived attributes -----------------------------------------------------
