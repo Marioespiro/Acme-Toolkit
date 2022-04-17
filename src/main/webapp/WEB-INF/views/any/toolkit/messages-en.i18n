@@ -21,3 +21,4 @@ authenticated.item.list.label.title = Title
 authenticated.item.list.label.description = Description
 authenticated.item.list.label.assemblyNotes = Assembly Notes
 authenticated.item.list.label.link = Link
+authenticated.item.list.label.retailPrice = Retail price of the toolkit

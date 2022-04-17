@@ -12,8 +12,8 @@
 
 <%@page language="java"%>
 
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <acme:form readonly="true">
 	<acme:input-textbox code="authenticated.item.form.label.title" path="title"/>	
@@ -21,8 +21,9 @@
 	<acme:input-textarea code="authenticated.item.form.label.description" path="description"/>
 	<acme:input-textarea code="authenticated.item.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-textbox code="authenticated.item.form.label.link" path="link"/>
+	<acme:input-textbox code="authenticated.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:button code="authenticated.item.form.button.components" action="/any/item/list-component?toolkitId=${id}"/>	
-	<acme:button code="authenticated.item.form.button.tools" action="/any/item/list-tool?toolkitId=${id}"/>		
+	<acme:button code="authenticated.item.form.button.tools" action="/any/item/list-tool?toolkitId=${id}"/>	
 </acme:form>
 
 

@@ -21,3 +21,4 @@ authenticated.item.list.label.title = Título
 authenticated.item.list.label.description = Descripción
 authenticated.item.list.label.assemblyNotes = Notas de montaje
 authenticated.item.list.label.link = Link
+authenticated.item.list.label.retailPrice = Precio de venta del kit de herramientas
