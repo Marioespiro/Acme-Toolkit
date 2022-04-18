@@ -19,22 +19,8 @@
 	<acme:message code="authenticated.configuration.form.title.general-indicators"/>
 </h2>
 
-<table class="table table-sm">
-	<tr>
-		<th scope="row">
-			<acme:message code="authenticated.configuration.form.label.system-currency"/>
-		</th>
-		<td>
-			<acme:print value="${systemCurrency}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="authenticated.configuration.form.label.accepted-currencies"/>
-		</th>
-		<td>
-			<acme:print value="${acceptedCurrencies}"/>
-		</td>
-	</tr>
-</table>
+<acme:form readonly="true">
+	<acme:input-textbox code="administrator.configuration.form.label.system-currency" path="systemCurrency"/>	
+	<acme:input-textbox code="administrator.configuration.form.label.accepted-currencies" path="acceptedCurrencies"/>	
+</acme:form>
 
