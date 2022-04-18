@@ -37,16 +37,6 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.dashboard = Panel de control
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
-
 # master.menu.patron ####################################################
 
 master.menu.patron = Patrón
@@ -83,4 +73,4 @@ master.menu.any.list-chirps = Listar mensajes
 master.menu.inventor = Inventor
 master.menu.inventor.list-patronages = Listar patrocinios
 master.menu.inventor.list-patronage-reports = Listar informes de patrocinios
-master.menu.inventor.list-toolkits = Lista de kits de herramientas
+master.menu.inventor.list-toolkits = Listar kits de herramientas
