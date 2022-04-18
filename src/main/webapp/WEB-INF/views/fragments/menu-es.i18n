@@ -51,6 +51,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 master.menu.patron = Patrón
 master.menu.patron.dashboard = Panel Control Patrón
+master.menu.patron.list-patronages = Listar patrocinios
 master.menu.patron.list-patronage-reports = Listar informes de patrocinios
 
 # master.menu.user-account ####################################################
