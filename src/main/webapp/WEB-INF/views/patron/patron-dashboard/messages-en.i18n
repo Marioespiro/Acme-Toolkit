@@ -8,20 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-patron.dashboard.list.title = Patron Dashboard
+patron.dashboard.form.title = Patron Dashboard
 
-patron.dashboard.list.label.totalProposed = Total number proposed patronages
-patron.dashboard.list.label.totalAccepted = Total number accepted patronages
-patron.dashboard.list.label.totalDenied = Total number denied patronages
-patron.dashboard.list.label.averageDenied = Average denied patronages
-patron.dashboard.list.label.averageAccepted = Average accepted patronages
-patron.dashboard.list.label.averageProposed = Average proposed patronages
-patron.dashboard.list.label.deviationDenied = Deviation denied patronages
-patron.dashboard.list.label.deviationAccepted = Deviation accepted patronages
-patron.dashboard.list.label.deviationProposed = Deviation proposed patronages
-patron.dashboard.list.label.minDenied = Minimun denied patronages
-patron.dashboard.list.label.minAccepted = Minimun accepted patronages
-patron.dashboard.list.label.minProposed = Minimun proposed patronages
-patron.dashboard.list.label.maxDenied = Maximun denied patronages
-patron.dashboard.list.label.maxAccepted = Maximun accepted patronages
-patron.dashboard.list.label.maxProposed = Maximun proposed patronages
+patron.dashboard.form.label.total = Total number patronages
+patron.dashboard.form.label.average = Average patronages
+patron.dashboard.form.label.deviation = Deviation patronages
+patron.dashboard.form.label.min = Minimun patronages
+patron.dashboard.form.label.max = Maximun patronages
