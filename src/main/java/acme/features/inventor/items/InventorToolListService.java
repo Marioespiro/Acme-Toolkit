@@ -43,21 +43,35 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		int id;
 		Principal principal;
 		principal = request.getPrincipal();
-		final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(x -> x.getId()).collect(Collectors.toList());;
-		id = request.getModel().getInteger("toolkitId");
-		if(toolkits.contains(id)) {
+		if(request.getModel().hasAttribute("toolkitId")) {
+			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(x -> x.getId()).collect(Collectors.toList());;
+			id = request.getModel().getInteger("toolkitId");
+			if(toolkits.contains(id)) {
+				return true;
+			}
+			return false;
+			
+		}else {
 			return true;
 		}
-		return false;
+		
+		
 	}
 	
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
-
+		Integer id;
 		Collection<Item> result;
-		result = this.repository.findAllTools();
-		return result;
+		if(request.getModel().hasAttribute("toolkitId")) {
+			id = request.getModel().getInteger("toolkitId");
+			result = this.repository.findToolsByToolkit(id);
+			return result;
+		}else {
+			id = request.getPrincipal().getActiveRoleId();
+			result = this.repository.findToolsByInvertor(id);
+			return result;
+		}
 	}
 
 	@Override
