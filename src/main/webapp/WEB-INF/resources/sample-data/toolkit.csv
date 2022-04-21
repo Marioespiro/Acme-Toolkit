@@ -1,4 +1,7 @@
-key,code,title,description,assemblyNotes,link
-toolkit-01,"HIJ-000","Toolkit-01","Description of the Toolkit-01","Assembly notes of the toolkit","https://www.google.com"
-toolkit-02,"JIH-000","Toolkit-02","Description of the Toolkit-02","Assembly notes of the toolkit","https://www.google.com"
-toolkit-03,"IHJ-000","Toolkit-03","Description of the Toolkit-03","Assembly notes of the toolkit","https://www.google.com"
+key,code,title,description,assemblyNotes,link,isPublished
+toolkit-01,"HIJ-000","Toolkit-01","Description of the Toolkit-01","Assembly notes of the toolkit","https://www.google.com",true
+toolkit-02,"JIH-000","Toolkit-02","Description of the Toolkit-02","Assembly notes of the toolkit","https://www.google.com",false
+toolkit-03,"IHJ-000","Toolkit-03","Description of the Toolkit-03","Assembly notes of the toolkit","https://www.google.com",true
+toolkit-04,"HTJ-000","Toolkit-04","Description of the Toolkit-04","Assembly notes of the toolkit","https://www.google.com",false
+toolkit-05,"TIH-000","Toolkit-05","Description of the Toolkit-05","Assembly notes of the toolkit","https://www.google.com",true
+toolkit-06,"IHT-000","Toolkit-06","Description of the Toolkit-06","Assembly notes of the toolkit","https://www.google.com",false

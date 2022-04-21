@@ -65,6 +65,7 @@ master.menu.authenticated.list-announcements =Listar anuncios
 master.menu.any = Cualquiera
 master.menu.any.list-components = Listar componentes
 master.menu.any.list-tools = Listar herramientas
+master.menu.any.list-toolkits = Listar juegos de herramientas
 master.menu.any.list-userAccounts = Listar cuentas de usuario
 master.menu.any.list-chirps = Listar mensajes
 

@@ -64,6 +64,7 @@ master.menu.authenticated.list-announcements =List announcements
 master.menu.any = Any
 master.menu.any.list-components = List components
 master.menu.any.list-tools = List tools
+master.menu.any.list-toolkits = List toolkits
 master.menu.any.list-userAccounts = List user accounts
 master.menu.any.list-chirps = List chirps
 

@@ -31,6 +31,12 @@ public interface AnyItemRepository extends AbstractRepository {
 	
 	@Query("select i from Item i where i.itemType = acme.entities.items.ItemType.TOOL")
 	Collection<Item> findAllTools();
-
+	
+	@Query("select q.item from Quantity q where q.toolkit.id = :id and q.item.itemType = acme.entities.items.ItemType.TOOL")
+	Collection<Item> findToolsByToolkit(Integer id);
+	
+	@Query("select q.item from Quantity q where q.toolkit.id = :id and q.item.itemType = acme.entities.items.ItemType.COMPONENT")
+	Collection<Item> findComponentsByToolkit(Integer id);
+	
 
 }
