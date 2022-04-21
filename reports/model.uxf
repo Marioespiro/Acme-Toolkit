@@ -161,6 +161,7 @@ Toolkit
 + description: String {NotBlank, Length(1,255)}
 + assemblyNotes: String {NotBlank, Length(1,255)}
 + link: String {URL}
++ isPublished: Boolean {NotNull}
 bg=green
 </panel_attributes>
     <additional_attributes/>
