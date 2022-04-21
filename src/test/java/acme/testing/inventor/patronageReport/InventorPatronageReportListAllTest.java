@@ -25,7 +25,6 @@ public class InventorPatronageReportListAllTest extends TestHarness {
 			super.checkColumnHasValue(recordIndex, 1, creationMoment);
 			super.checkColumnHasValue(recordIndex, 2, memorandum);
 			super.checkColumnHasValue(recordIndex, 3, link);
-			//super.checkColumnHasValue(recordIndex, 4, patronage);
 
 			super.signOut();
 		}
