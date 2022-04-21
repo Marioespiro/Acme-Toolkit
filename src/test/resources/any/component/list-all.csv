@@ -1,3 +1,7 @@
 recordIndex,name,code,technology,price,description,url
-0,Item-02,CBA-321,Technology-02,"EUR 13,000.98","Description of the item 02","https://www.google.com/"
-1,Item-04,CBA-391,Technology-02,"USD 25,000.98","Description of the item 02","https://www.google.com/"
+0,"Item-02","CBA-321","Technology-02","EUR 15,000.98","Description of the item 02","https://www.google.com/"
+1,"Item-04","CPA-421","Technology-02","EUR 15,000.98","Description of the item 04","https://www.google.com/"
+2,"Item-06","PBA-341","Technology-02","EUR 15,000.98","Description of the item 06","https://www.google.com/"
+3,"Item-07","LBA-341","Technology-02","USD 15,000.98","Description of the item 07","https://www.google.com/"
+4,"Item-08","HBA-341","Technology-01","USD 15,000.98","Description of the item 08","https://www.google.com/"
+5,"Item-09","QBA-341","Technology-02","USD 15,000.98","Description of the item 09","https://www.google.com/",

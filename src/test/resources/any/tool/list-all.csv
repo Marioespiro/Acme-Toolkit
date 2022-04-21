@@ -1,3 +1,4 @@
 recordIndex,name,code,technology,price,description,url
-0,Item-01,ABC-123,Technology-01,"EUR 15,000.98","Description of the item 01","https://www.google.com/"
-1,Item-03,CBA-326,Technology-01,"USD 15,000.98","Description of the item 02","https://www.google.com/"
+0,"Item-01","ABC-123","Technology-01","EUR 15,000.98","Description of the item 01","https://www.google.com/"
+1,"Item-03","CCC-123","Technology-01","EUR 15,000.98","Description of the item 03","https://www.google.com/"
+2,"Item-05","ABP-124","Technology-01","EUR 15,000.98","Description of the item 05","https://www.google.com/"
