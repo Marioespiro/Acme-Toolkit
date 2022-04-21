@@ -73,3 +73,5 @@ master.menu.inventor = Inventor
 master.menu.inventor.list-patronages = List patronages
 master.menu.inventor.list-patronage-reports = List patronage reports
 master.menu.inventor.list-toolkits = List toolkits
+master.menu.inventor.list-components = List components
+master.menu.inventor.list-tools = List tools
