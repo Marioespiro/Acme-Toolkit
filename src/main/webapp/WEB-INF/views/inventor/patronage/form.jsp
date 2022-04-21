@@ -23,6 +23,7 @@
 	<acme:input-textbox code="authenticated.inventor.patronage.form.label.periodOfTime" path="periodOfTime"/>
 	<acme:input-textbox code="authenticated.inventor.patronage.form.label.creationTime" path="creationTime"/>
 	<acme:input-textarea code="authenticated.inventor.patronage.form.label.endingTime" path="endingTime"/>
-	<acme:input-textbox code="authenticated.item.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-textbox code="authenticated.inventor.patronage.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="authenticated.inventor.patronage.form.label.link" path="link"/>
+	<acme:button code="authenticated.inventor.patronage.form.button.patron" action="/any/user-account/show?id=${patron.userAccount.id}"/>
 </acme:form>

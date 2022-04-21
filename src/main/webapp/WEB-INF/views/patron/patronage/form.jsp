@@ -25,4 +25,5 @@
 	<acme:input-textarea code="authenticated.patron.patronage.form.label.endingTime" path="endingTime"/>
 	<acme:input-textbox code="authenticated.patron.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="authenticated.patron.patronage.form.label.link" path="link"/>
+	<acme:button code="authenticated.patron.patronage.form.button.inventor" action="/any/user-account/show?id=${inventor.userAccount.id}"/>
 </acme:form>

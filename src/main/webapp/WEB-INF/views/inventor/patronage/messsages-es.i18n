@@ -17,7 +17,7 @@ authenticated.inventor.patronage.form.label.creationTime = Fecha de creación
 authenticated.inventor.patronage.form.label.endingTime = Fecha de finalización
 authenticated.inventor.patronage.form.label.retailPrice = Precio
 authenticated.inventor.patronage.form.label.link = Link
-
+authenticated.inventor.patronage.form.button.patron = Patron
 
 authenticated.inventor.patronage.list.label.status = Estado
 authenticated.inventor.patronage.list.label.code = Código
