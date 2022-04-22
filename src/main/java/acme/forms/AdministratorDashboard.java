@@ -2,7 +2,6 @@
 package acme.forms;
 
 import java.io.Serializable;
-import java.util.EnumMap;
 import java.util.Map;
 
 import org.springframework.data.util.Pair;
@@ -30,11 +29,11 @@ public class AdministratorDashboard implements Serializable {
 	Map<String, Double>					deviationRetailPriceOfToolsByCurrency;
 	Map<String, Double>					minimumRetailPriceOfToolsByCurrency;
 	Map<String, Double>					maximumRetailPriceOfToolsByCurrency;
-	EnumMap<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
-	EnumMap<PatronageStatus, Double>		averagePatronagesBudgetByStats;
-	EnumMap<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
-	EnumMap<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
-	EnumMap<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
+	Map<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
+	Map<PatronageStatus, Double>		averagePatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
+	Map<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
 	
 	
 	// Derived attributes -----------------------------------------------------
