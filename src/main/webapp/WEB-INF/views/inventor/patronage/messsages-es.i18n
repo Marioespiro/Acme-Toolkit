@@ -12,18 +12,16 @@ authenticated.inventor.patronage.form.label.status = Estado
 authenticated.inventor.patronage.form.label.code = Código
 authenticated.inventor.patronage.form.label.legalStuff = Material legal
 authenticated.inventor.patronage.form.label.budget = Presupuesto
-authenticated.inventor.patronage.form.label.periodOfTime = Periodo de tiempo
+authenticated.inventor.patronage.form.label.startTime = Fecha de inicio
 authenticated.inventor.patronage.form.label.creationTime = Fecha de creación
 authenticated.inventor.patronage.form.label.endingTime = Fecha de finalización
-authenticated.inventor.patronage.form.label.retailPrice = Precio
 authenticated.inventor.patronage.form.label.link = Link
-
+authenticated.inventor.patronage.form.button.patron = Patron
 
 authenticated.inventor.patronage.list.label.status = Estado
 authenticated.inventor.patronage.list.label.code = Código
 authenticated.inventor.patronage.list.label.legalStuff = Material legal
 authenticated.inventor.patronage.list.label.budget = Presupuesto
-authenticated.inventor.patronage.list.label.periodOfTime = Periodo de tiempo
+authenticated.inventor.patronage.list.label.startTime = Fecha de inicio
 authenticated.inventor.patronage.list.label.creationTime = Fecha de creación
 authenticated.inventor.patronage.list.label.endingTime = Fecha de finalización
-authenticated.inventor.patronage.list.label.retailPrice = Precio

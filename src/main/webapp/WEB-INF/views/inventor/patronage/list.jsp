@@ -20,8 +20,7 @@
 	<acme:list-column code="authenticated.inventor.patronage.list.label.code" path="code" width="10%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.legalStuff" path="legalStuff" width="20%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.budget" path="budget" width="10%"/>
-	<acme:list-column code="authenticated.inventor.patronage.list.label.periodOfTime" path="periodOfTime" width="20%"/>
+	<acme:list-column code="authenticated.inventor.patronage.list.label.startTime" path="startTime" width="20%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.creationTime" path="creationTime" width="10%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.endingTime" path="endingTime" width="10%"/>
-	<acme:list-column code="authenticated.inventor.patronage.list.label.retailPrice" path="retailPrice" width="20%"/>
 </acme:list>
