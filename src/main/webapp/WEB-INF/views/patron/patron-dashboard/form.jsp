@@ -20,6 +20,7 @@
 	<acme:message code="patron.dashboard.form.title"/>
 </h2>
 <table class="table table-sm">
+	<caption><acme:message code="patron.dashboard.form.description-table"/></caption>
 		<tr>
 		<th scope="row">
 			<acme:message code="patron.dashboard.form.label.total"/>

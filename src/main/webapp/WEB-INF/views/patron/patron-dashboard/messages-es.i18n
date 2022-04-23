@@ -15,3 +15,4 @@ patron.dashboard.form.label.average = Media patrocinios
 patron.dashboard.form.label.deviation = Desviación patrocinios
 patron.dashboard.form.label.min = Mínimos patrocinios
 patron.dashboard.form.label.max = Máximo patrocinios
+patron.dashboard.form.description-table = Datos del panel de control
