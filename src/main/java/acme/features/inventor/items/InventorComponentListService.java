@@ -32,8 +32,10 @@ public class InventorComponentListService implements AbstractListService<Invento
 
 	// Internal state ---------------------------------------------------------
 
+	private static final String			TOOLKITID	= "toolkitId";
+
 	@Autowired
-	protected InventorItemRepository repository;
+	protected InventorItemRepository	repository;
 
 	// AbstractListService<Administrator, Item> interface --------------
 
@@ -43,28 +45,27 @@ public class InventorComponentListService implements AbstractListService<Invento
 		int id;
 		Principal principal;
 		principal = request.getPrincipal();
-		if(request.getModel().hasAttribute("toolkitId")) {
-			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());;
-			id = request.getModel().getInteger("toolkitId");
-			if(toolkits.contains(id)) {
-				return true;
+		if (request.getModel().hasAttribute(InventorComponentListService.TOOLKITID)) {
+			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
+			id = request.getModel().getInteger(InventorComponentListService.TOOLKITID);
+			if (!toolkits.contains(id)) {
+				return false;
 			}
-			return false;
-		}else {
-			return true;
 		}
+		return true;
+
 	}
-	
+
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
 		Integer id;
 		Collection<Item> result;
-		if(request.getModel().hasAttribute("toolkitId")) {
-			id = request.getModel().getInteger("toolkitId");
+		if (request.getModel().hasAttribute(InventorComponentListService.TOOLKITID)) {
+			id = request.getModel().getInteger(InventorComponentListService.TOOLKITID);
 			result = this.repository.findComponentsByToolkit(id);
 			return result;
-		}else {
+		} else {
 			id = request.getPrincipal().getActiveRoleId();
 			result = this.repository.findComponentsByInvertor(id);
 			return result;
@@ -79,7 +80,5 @@ public class InventorComponentListService implements AbstractListService<Invento
 
 		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
 	}
-
-	
 
 }

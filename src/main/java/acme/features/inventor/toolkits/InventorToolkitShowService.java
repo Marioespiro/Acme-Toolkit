@@ -31,12 +31,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		int id;
 		Principal principal;
 		principal = request.getPrincipal();
-		final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());;
+		final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
 		id = request.getModel().getInteger("id");
-		if(toolkits.contains(id)) {
-			return true;
-		}
-		return false;
+		return toolkits.contains(id);
 	}
 	
 	@Override

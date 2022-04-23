@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.systemConfiguration;
+package acme.features.authenticated.system_configuration;
 
 import javax.annotation.PostConstruct;
 
@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.systemConfigurations.SystemConfiguration;
+import acme.entities.system_configurations.SystemConfiguration;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
