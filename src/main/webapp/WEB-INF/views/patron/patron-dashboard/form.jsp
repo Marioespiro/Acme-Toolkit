@@ -15,6 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <h2>
 	<acme:message code="patron.dashboard.form.title"/>
@@ -36,7 +37,7 @@
 		</th>
 		<td>
 			<c:forEach items="${averageBudgetOfPatronagesStatusByCurrency}" var="entry">
-	    		${entry.key} = ${entry.value}<br>
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
 			</c:forEach>
 		</td>
 	</tr><tr>
@@ -45,7 +46,7 @@
 		</th>
 		<td>
 			<c:forEach items="${deviationBudgetOfPatronagesStatusByCurrency}" var="entry">
-	    		${entry.key} = ${entry.value}<br>
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
 			</c:forEach>
 		</td>
 	</tr><tr>
@@ -54,7 +55,7 @@
 		</th>
 		<td>
 			<c:forEach items="${maximumBudgetOfPatronagesStatusByCurrency}" var="entry">
-	    		${entry.key} = ${entry.value}<br>
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
 			</c:forEach>
 		</td>
 	</tr><tr>
@@ -63,7 +64,7 @@
 		</th>
 		<td>
 			<c:forEach items="${minimumBudgetOfPatronagesStatusByCurrency}" var="entry">
-	    		${entry.key} = ${entry.value}<br>
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
 			</c:forEach>
 		</td>
 	</tr>

@@ -1,5 +1,7 @@
 package acme.features.inventor.toolkits;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,10 +66,15 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		String res = "";
 		int i = 0;
 		for(final Object[] obj: retailPrice) {
+			final Double aux = Double.parseDouble(obj[0].toString());
+			final NumberFormat formatter = new DecimalFormat("#0.00");
+			final String formattedNumber = formatter.format(aux);
+			
 			if(i == 0) {
-				res =res.concat(obj[0].toString()).concat(obj[1].toString());
+				
+				res =res.concat(formattedNumber).concat(obj[1].toString());
 			}else {
-				res = res.concat("+").concat(obj[0].toString()).concat(obj[1].toString());
+				res = res.concat("+").concat(formattedNumber).concat(obj[1].toString());
 			}
 			i++;
 			
