@@ -1,5 +1,6 @@
 package acme.features.patron.dashboard;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,17 +35,17 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 			assert entity != null;
 			assert model != null;
 			request.unbind(entity, model, "totalNumberOfProposedPatronagesByStatus", "averageBudgetOfPatronagesStatusByCurrency", "deviationBudgetOfPatronagesStatusByCurrency", "maximumBudgetOfPatronagesStatusByCurrency", "minimumBudgetOfPatronagesStatusByCurrency");
-		};
+		}
 
 		@Override
 		public PatronDashboard findOne(final Request<PatronDashboard> request) {
 			assert request != null;
 			final PatronDashboard result;
-			final Map<PatronageStatus, Integer> totalNumberOfPatronages = new HashMap<PatronageStatus, Integer>();
-			final Map<Pair<String, PatronageStatus>, Double> averageBugdetPatronage = new HashMap<Pair<String, PatronageStatus >, Double>();
-			final Map<Pair<String, PatronageStatus>, Double> deviationBugdetPatronage = new HashMap<Pair<String, PatronageStatus>, Double>();
-			final Map<Pair<String, PatronageStatus>, Double> minimumBugdetPatronage = new HashMap<Pair<String, PatronageStatus>, Double>();
-			final Map<Pair<String, PatronageStatus>, Double> maximumBugdetPatronage = new HashMap<Pair<String, PatronageStatus>, Double>();
+			final EnumMap<PatronageStatus, Integer> totalNumberOfPatronages = new EnumMap<>(PatronageStatus.class);
+			final Map<Pair<String, PatronageStatus>, Double> averageBugdetPatronage = new HashMap<>();
+			final Map<Pair<String, PatronageStatus>, Double> deviationBugdetPatronage = new HashMap<>();
+			final Map<Pair<String, PatronageStatus>, Double> minimumBugdetPatronage = new HashMap<>();
+			final Map<Pair<String, PatronageStatus>, Double> maximumBugdetPatronage = new HashMap<>();
 			final Integer acceptedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.ACCEPTED);
 			final Integer deniedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.DENIED);
 			final Integer proposedPatronages = this.repository.totalNumberOfPatronages(PatronageStatus.PROPOSED);

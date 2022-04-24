@@ -1,4 +1,4 @@
-package acme.entities.systemConfigurations;
+package acme.entities.system_configurations;
 
 
 import javax.persistence.Entity;

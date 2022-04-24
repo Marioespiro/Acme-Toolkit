@@ -23,6 +23,7 @@
 	<acme:message code="administrator.dashboard.form.title"/>
 </h2>
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.description-table"/></caption>
 		<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.total-tools"/>

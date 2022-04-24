@@ -15,3 +15,4 @@ patron.dashboard.form.label.average = Average patronages
 patron.dashboard.form.label.deviation = Deviation patronages
 patron.dashboard.form.label.min = Minimun patronages
 patron.dashboard.form.label.max = Maximun patronages
+patron.dashboard.form.description-table = Control panel data

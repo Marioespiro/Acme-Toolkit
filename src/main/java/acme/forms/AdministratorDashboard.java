@@ -20,20 +20,20 @@ public class AdministratorDashboard implements Serializable {
 	// Attributes
 	
 	int									totalNumberOfComponents;
-	Map<Pair<String, String>, Double>	averageRetailPriceOfComponentsByTechnologyAndCurrency;
-	Map<Pair<String, String>, Double>	deviationRetailPriceOfComponentsByTechnologyAndCurrency;
-	Map<Pair<String, String>, Double>	minimumRetailPriceOfComponentsByTechnologyAndCurrency;
-	Map<Pair<String, String>, Double>	maximumRetailPriceOfComponentsByTechnologyAndCurrency;
+	private transient Map<Pair<String, String>, Double>	averageRetailPriceOfComponentsByTechnologyAndCurrency;
+	private transient Map<Pair<String, String>, Double>	deviationRetailPriceOfComponentsByTechnologyAndCurrency;
+	private transient Map<Pair<String, String>, Double>	minimumRetailPriceOfComponentsByTechnologyAndCurrency;
+	private transient Map<Pair<String, String>, Double>	maximumRetailPriceOfComponentsByTechnologyAndCurrency;
 	int									totalNumberOfTools;
-	Map<String, Double>					averageRetailPriceOfToolsByCurrency;
-	Map<String, Double>					deviationRetailPriceOfToolsByCurrency;
-	Map<String, Double>					minimumRetailPriceOfToolsByCurrency;
-	Map<String, Double>					maximumRetailPriceOfToolsByCurrency;
-	Map<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
-	Map<PatronageStatus, Double>		averagePatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
-	Map<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
+	private Map<String, Double>					averageRetailPriceOfToolsByCurrency;
+	private Map<String, Double>					deviationRetailPriceOfToolsByCurrency;
+	private Map<String, Double>					minimumRetailPriceOfToolsByCurrency;
+	private Map<String, Double>					maximumRetailPriceOfToolsByCurrency;
+	private Map<PatronageStatus, Integer>		totalNumberOfPatronagesByStatus;
+	private Map<PatronageStatus, Double>		averagePatronagesBudgetByStats;
+	private Map<PatronageStatus, Double>		deviationPatronagesBudgetByStats;
+	private Map<PatronageStatus, Double>		minimumPatronagesBudgetByStats;
+	private Map<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
 	
 	
 	// Derived attributes -----------------------------------------------------

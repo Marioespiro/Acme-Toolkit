@@ -1,11 +1,11 @@
-package acme.features.inventor.patronageReport;
+package acme.features.inventor.patronage_report;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.patronageReports.PatronageReport;
+import acme.entities.patronage_reports.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
@@ -25,12 +25,6 @@ public class InventorPatronageReportListService implements AbstractListService<I
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		
-//		final boolean result;
-//		int masterId;
-//		final PatronageReport patronageReport;
-//		
-//		masterId = request.getModel().getInteger("masterId");
 		return true;
 	}
 	

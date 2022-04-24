@@ -54,10 +54,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"averageRetailPriceOfToolsByCurrency", "deviationRetailPriceOfToolsByCurrency", "minimumRetailPriceOfToolsByCurrency", "maximumRetailPriceOfToolsByCurrency",
 			"totalNumberOfPatronagesByStatus", "averagePatronagesBudgetByStats", "deviationPatronagesBudgetByStats", "minimumPatronagesBudgetByStats", "maximumPatronagesBudgetByStats");
 	}
-	/*
-	 * 
-	EnumMap<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
-	 */
+
 
 	@Override
 	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
@@ -69,14 +66,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final EnumMap<PatronageStatus, Double> mapDeviationPD = new EnumMap<>(PatronageStatus.class);
 		final EnumMap<PatronageStatus, Double> mapMinumumPD = new EnumMap<>(PatronageStatus.class);
 		final EnumMap<PatronageStatus, Double> mapMaximumPD = new EnumMap<>(PatronageStatus.class);
-		final Map<String, Double> avrRtBC = new HashMap<String, Double>();
-		final Map<String, Double> dvaRtBC = new HashMap<String, Double>();
-		final Map<String, Double> minRtBC = new HashMap<String, Double>();
-		final Map<String, Double> maxRtBC = new HashMap<String, Double>();
-		final Map<Pair<String, String>, Double> avrRtBCT = new HashMap<Pair<String, String>, Double>();
-		final Map<Pair<String, String>, Double> dvaRtBCT = new HashMap<Pair<String, String>, Double>();
-		final Map<Pair<String, String>, Double> minRtBCT = new HashMap<Pair<String, String>, Double>();
-		final Map<Pair<String, String>, Double> maxRtBCT = new HashMap<Pair<String, String>, Double>();
+		final Map<String, Double> avrRtBC = new HashMap<>();
+		final Map<String, Double> dvaRtBC = new HashMap<>();
+		final Map<String, Double> minRtBC = new HashMap<>();
+		final Map<String, Double> maxRtBC = new HashMap<>();
+		final Map<Pair<String, String>, Double> avrRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> dvaRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> minRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> maxRtBCT = new HashMap<>();
 		
 		for(final PatronageStatus type: PatronageStatus.values()) {
 			for(final Object[] obj: this.repository.operationsPatronagesByStatus(type)) {

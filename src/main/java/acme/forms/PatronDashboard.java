@@ -18,11 +18,11 @@ public class PatronDashboard implements Serializable{
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	Map<PatronageStatus, Integer> 					totalNumberOfProposedPatronagesByStatus;
-	Map<Pair<String, PatronageStatus>, Double>		averageBudgetOfPatronagesStatusByCurrency;
-	Map<Pair<String, PatronageStatus>, Double>		deviationBudgetOfPatronagesStatusByCurrency;
-	Map<Pair<String, PatronageStatus>, Double>		maximumBudgetOfPatronagesStatusByCurrency;
-	Map<Pair<String, PatronageStatus>, Double>		minimumBudgetOfPatronagesStatusByCurrency;
+	private Map<PatronageStatus, Integer> 					totalNumberOfProposedPatronagesByStatus;
+	private transient Map<Pair<String, PatronageStatus>, Double>		averageBudgetOfPatronagesStatusByCurrency;
+	private transient Map<Pair<String, PatronageStatus>, Double>		deviationBudgetOfPatronagesStatusByCurrency;
+	private transient Map<Pair<String, PatronageStatus>, Double>		maximumBudgetOfPatronagesStatusByCurrency;
+	private transient Map<Pair<String, PatronageStatus>, Double>		minimumBudgetOfPatronagesStatusByCurrency;
 	
 	
 	
