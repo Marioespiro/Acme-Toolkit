@@ -1,4 +1,4 @@
-package acme.features.any.userAccounts;
+package acme.features.any.user_accounts;
 
 import javax.annotation.PostConstruct;
 
