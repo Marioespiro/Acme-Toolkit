@@ -13,7 +13,7 @@
 <%@page language="java"%>
 
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <acme:form readonly="true">
 	<acme:input-textbox code="authenticated.item.form.label.title" path="title"/>	
