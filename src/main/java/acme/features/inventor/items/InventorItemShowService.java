@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
@@ -42,19 +43,15 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		int id;
 		Principal principal;
 		principal = request.getPrincipal();
-		if(request.getModel().hasAttribute("toolkitId")) {
-			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(x -> x.getId()).collect(Collectors.toList());;
+		if (request.getModel().hasAttribute("toolkitId")) {
+			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
 			id = request.getModel().getInteger("toolkitId");
-			if(toolkits.contains(id)) {
-				return true;
+			if (!toolkits.contains(id)) {
+				return false;
 			}
-			return false;
-			
-		}else {
-			return true;
 		}
-		
-		
+		return true;
+
 	}
 
 	@Override
@@ -75,7 +72,6 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findItemById(id);
-		
 
 		return result;
 	}

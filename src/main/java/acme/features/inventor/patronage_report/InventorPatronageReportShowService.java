@@ -1,9 +1,9 @@
-package acme.features.inventor.patronageReport;
+package acme.features.inventor.patronage_report;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.patronageReports.PatronageReport;
+import acme.entities.patronage_reports.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;

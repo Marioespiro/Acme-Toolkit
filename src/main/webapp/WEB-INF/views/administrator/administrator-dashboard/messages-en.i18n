@@ -28,3 +28,4 @@ administrator.dashboard.form.label.deviation-retail-price = Deviation budget pat
 administrator.dashboard.form.label.minimum-retail-price = Minimum budget patronage
 administrator.dashboard.form.label.maximum-retail-price = Maximum budget patronage
 administrator.dashboard.form.label.number.patronages = Patronage's number
+administrator.dashboard.form.description-table = Control panel data

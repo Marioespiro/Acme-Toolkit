@@ -35,8 +35,8 @@ public class AnyItemShowService implements AbstractShowService<Any, Item> {
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-
 		return true;
+
 	}
 
 	@Override

@@ -1,27 +1,24 @@
-package acme.features.patron.patronageReport;
-
-import java.util.Collection;
+package acme.features.patron.patronage_report;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.patronageReports.PatronageReport;
+import acme.entities.patronage_reports.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
 @Service
-public class PatronPatronageReportListService implements AbstractListService<Patron, PatronageReport>{
-
+public class PatronPatronageReportShowService implements AbstractShowService<Patron, PatronageReport>{
+	
 	// Internal state
 	
 	@Autowired
 	protected PatronPatronageReportRepository repository;
 	
 	// Interface
-	
+
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
@@ -30,14 +27,13 @@ public class PatronPatronageReportListService implements AbstractListService<Pat
 	}
 	
 	@Override
-	public Collection<PatronageReport> findMany(final Request<PatronageReport> request) {
+	public PatronageReport findOne(final Request<PatronageReport> request) {
 		assert request != null;
 		
-		Collection<PatronageReport> result;
-		Principal principal;
-		
-		principal = request.getPrincipal();
-		result = this.repository.findAllPatronageReportsByPatronId(principal.getActiveRoleId());
+		PatronageReport result;
+		int id;
+		id = request.getModel().getInteger("id");
+		result = this.repository.findPatronageReportById(id);
 		
 		return result;
 	}

@@ -10,18 +10,18 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.systemConfiguration;
+package acme.features.administrator.system_configuration;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.systemConfigurations.SystemConfiguration;
+import acme.entities.system_configurations.SystemConfiguration;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedSystemConfigurationRepository extends AbstractRepository {
+public interface AdministratorSystemConfigurationRepository extends AbstractRepository {
 
 	@Query("select sc from SystemConfiguration sc")
 	Collection<SystemConfiguration> findAllConfigurations();

@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
@@ -31,6 +32,8 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 
 	// Internal state ---------------------------------------------------------
 
+	private static final String	TOOLKITID	= "toolkitId";
+	
 	@Autowired
 	protected InventorItemRepository repository;
 
@@ -43,31 +46,27 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		int id;
 		Principal principal;
 		principal = request.getPrincipal();
-		if(request.getModel().hasAttribute("toolkitId")) {
-			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(x -> x.getId()).collect(Collectors.toList());;
-			id = request.getModel().getInteger("toolkitId");
-			if(toolkits.contains(id)) {
-				return true;
+		if (request.getModel().hasAttribute(InventorToolListService.TOOLKITID)) {
+			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
+			id = request.getModel().getInteger(InventorToolListService.TOOLKITID);
+			if (!toolkits.contains(id)) {
+				return false;
 			}
-			return false;
-			
-		}else {
-			return true;
 		}
-		
-		
+		return true;
+
 	}
-	
+
 	@Override
 	public Collection<Item> findMany(final Request<Item> request) {
 		assert request != null;
 		Integer id;
 		Collection<Item> result;
-		if(request.getModel().hasAttribute("toolkitId")) {
-			id = request.getModel().getInteger("toolkitId");
+		if (request.getModel().hasAttribute(InventorToolListService.TOOLKITID)) {
+			id = request.getModel().getInteger(InventorToolListService.TOOLKITID);
 			result = this.repository.findToolsByToolkit(id);
 			return result;
-		}else {
+		} else {
 			id = request.getPrincipal().getActiveRoleId();
 			result = this.repository.findToolsByInvertor(id);
 			return result;
@@ -82,7 +81,5 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 
 		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
 	}
-
-	
 
 }

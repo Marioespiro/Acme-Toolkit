@@ -1,4 +1,4 @@
-package acme.features.any.userAccounts;
+package acme.features.any.user_accounts;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -42,10 +42,8 @@ public class AnyUserAccountstListService implements AbstractListService<Any, Use
 					isAdmin=true;
 				}
 			}
-			if(!isAdmin) {
-				if(!ua.isAnonymous()) {
-					result.add(ua);
-				}
+			if(Boolean.TRUE.equals(!isAdmin) && !ua.isAnonymous()) {
+				result.add(ua);
 			}
 		}
 		return result;
@@ -57,8 +55,6 @@ public class AnyUserAccountstListService implements AbstractListService<Any, Use
 		assert entity != null;
 		assert model != null;
 		model.setAttribute("roles", entity.getAuthorityString());
-		System.out.println(entity.getAuthorityString());
-		System.out.println(entity.getRoles());
 		request.unbind(entity, model, "username");
 	}
 }

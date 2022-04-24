@@ -1,11 +1,11 @@
-package acme.features.patron.patronageReport;
+package acme.features.patron.patronage_report;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.patronageReports.PatronageReport;
+import acme.entities.patronage_reports.PatronageReport;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
