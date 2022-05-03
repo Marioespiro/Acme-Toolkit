@@ -1,10 +1,10 @@
-key,name,code,technology,description,retailPrice,link,itemType,key:inventor
-item-01, "Item-01","ABC-123","Technology-01","Description of the item 01","EUR 15,000.98","https://www.google.com/",TOOL,inventor-01
-item-02, "Item-02","CBA-321","Technology-02","Description of the item 02","EUR 15,000.98","https://www.google.com/",COMPONENT,inventor-02
-item-03, "Item-03","CCC-123","Technology-01","Description of the item 03","EUR 15,000.98","https://www.google.com/",TOOL,inventor-01
-item-04, "Item-04","CPA-421","Technology-02","Description of the item 04","EUR 15,000.98","https://www.google.com/",COMPONENT,inventor-02
-item-05, "Item-05","ABP-124","Technology-01","Description of the item 05","EUR 15,000.98","https://www.google.com/",TOOL,inventor-01
-item-06, "Item-06","PBA-341","Technology-02","Description of the item 06","EUR 15,000.98","https://www.google.com/",COMPONENT,inventor-01
-item-07, "Item-07","LBA-341","Technology-02","Description of the item 07","USD 15,000.98","https://www.google.com/",COMPONENT,inventor-02
-item-08, "Item-08","HBA-341","Technology-01","Description of the item 08","USD 15,000.98","https://www.google.com/",COMPONENT,inventor-01
-item-09, "Item-09","QBA-341","Technology-02","Description of the item 09","USD 15,000.98","https://www.google.com/",COMPONENT,inventor-02
+key,name,code,technology,description,retailPrice,link,itemType,isPublished,key:inventor
+item-01, "Item-01","ABC-123","Technology-01","Description of the item 01","EUR 15,000.98","https://www.google.com/",TOOL,true,inventor-01
+item-02, "Item-02","CBA-321","Technology-02","Description of the item 02","EUR 15,000.98","https://www.google.com/",COMPONENT,true,inventor-02
+item-03, "Item-03","CCC-123","Technology-01","Description of the item 03","EUR 15,000.98","https://www.google.com/",TOOL,false,inventor-01
+item-04, "Item-04","CPA-421","Technology-02","Description of the item 04","EUR 15,000.98","https://www.google.com/",COMPONENT,true,inventor-02
+item-05, "Item-05","ABP-124","Technology-01","Description of the item 05","EUR 15,000.98","https://www.google.com/",TOOL,true,inventor-01
+item-06, "Item-06","PBA-341","Technology-02","Description of the item 06","EUR 15,000.98","https://www.google.com/",COMPONENT,true,inventor-01
+item-07, "Item-07","LBA-341","Technology-02","Description of the item 07","USD 15,000.98","https://www.google.com/",COMPONENT,true,inventor-02
+item-08, "Item-08","HBA-341","Technology-01","Description of the item 08","USD 15,000.98","https://www.google.com/",COMPONENT,false,inventor-01
+item-09, "Item-09","QBA-341","Technology-02","Description of the item 09","USD 15,000.98","https://www.google.com/",COMPONENT,false,inventor-02
