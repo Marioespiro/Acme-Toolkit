@@ -3,7 +3,6 @@ package acme.entities.toolkit;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -40,8 +39,7 @@ public class Toolkit extends AbstractEntity {
 	@URL
 	protected String link;
 	
-	@NotNull
-	protected Boolean isPublished;
+	protected boolean isPublished;
 	
 	
 	
