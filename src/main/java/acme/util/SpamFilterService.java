@@ -13,13 +13,22 @@ import spam_filter.SpamFilter;
 public class SpamFilterService {
 
 	@Autowired
-	protected static SpamFilterRepository repository;
+	protected SpamFilterRepository repository;
 	
-	public static void initFilter() {
+	private SpamFilterService(final SpamFilterRepository repository) {
+		this.repository = repository;
+	}
+	
+	private void initFilter() {
 		
-		final List<SystemConfiguration> allConfigurations = new ArrayList<>(SpamFilterService.repository.findAllConfigurations());
+		final List<SystemConfiguration> allConfigurations = new ArrayList<>(this.repository.findAllConfigurations());
 		final SystemConfiguration sysCon = allConfigurations.get(0);
 		
 		SpamFilter.initFilter(sysCon.getStrongSpamTerms(), sysCon.getWeakSpamTerms(), sysCon.getStrongSpamThreshold(), sysCon.getWeakSpamThreshold());
+	}
+	
+	public boolean isSpam(final String cadena) {
+		this.initFilter();
+		return SpamFilter.isSpam(cadena);
 	}
 }

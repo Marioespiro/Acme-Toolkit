@@ -22,6 +22,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
+import acme.util.SpamFilterService;
 
 @Service
 public class InventorToolCreateService implements AbstractCreateService<Inventor, Item> {
@@ -30,6 +31,9 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 
 	@Autowired
 	protected InventorItemRepository repository;
+	
+	@Autowired
+	protected SpamFilterService spamFilterService;
 
 	// AbstractCreateService<Employer, Job> interface -------------------------
 
@@ -51,7 +55,15 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			Item existing;
 
 			existing = this.repository.findItemByCode(entity.getCode());
-			errors.state(request, existing == null || existing.getId() == entity.getId(), "reference", "inventor.item.form.error.duplicated");
+			errors.state(request, existing == null, "code", "inventor.item.form.error.duplicated");
+		}
+		
+		if(this.spamFilterService.isSpam(entity.getDescription())) {
+			errors.state(request, false, "description", "inventor.item.form.error.spam");
+		}
+		
+		if(this.spamFilterService.isSpam(entity.getName())) {
+			errors.state(request, false, "name", "inventor.item.form.error.spam");
 		}
 
 	}
