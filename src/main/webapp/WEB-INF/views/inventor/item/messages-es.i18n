@@ -29,3 +29,5 @@ inventor.item.form.button.createTool = Crear herramienta
 
 inventor.component.list.button.create = Crear componente
 inventor.tool.list.button.create = Crear herramienta
+
+inventor.item.form.error.spam = Este campo tiene palabras spam
