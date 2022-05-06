@@ -22,4 +22,11 @@
 	<acme:list-column code="inventor.item.list.label.price" path="retailPrice" width="20%"/>
 </acme:list>
 
+<jstl:if test="${acme:anyOf(command, 'list-component')}">
+	<acme:button code="inventor.component.list.button.create" action="/inventor/item/create-component"/>
+</jstl:if>	
+<jstl:if test="${acme:anyOf(command, 'list-tool')}">
+	<acme:button code="inventor.tool.list.button.create" action="/inventor/item/create-tool"/>
+</jstl:if>	
+
 

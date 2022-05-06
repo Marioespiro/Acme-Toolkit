@@ -14,8 +14,18 @@ inventor.item.form.label.description = Descripción
 inventor.item.form.label.technology = Tecnologia
 inventor.item.form.label.retailPrice = Precio
 inventor.item.form.label.link = Enlace opcional
+inventor.item.form.label.published = Está publicado
 
 inventor.item.list.label.name = Nombre
 inventor.item.list.label.code = Código
 inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.price = Precio
+
+inventor.item.form.button.update = Actualizar ítem
+inventor.item.form.button.delete = Eliminar ítem
+inventor.item.form.button.publish = Publicar ítem
+inventor.item.form.button.createComponent = Crear componente
+inventor.item.form.button.createTool = Crear herramienta
+
+inventor.component.list.button.create = Crear componente
+inventor.tool.list.button.create = Crear herramienta
