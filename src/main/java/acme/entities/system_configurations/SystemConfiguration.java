@@ -9,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
+import spam_filter.SpamFilter;
 
 @Entity
 @Getter
@@ -40,6 +41,11 @@ public class SystemConfiguration extends AbstractEntity {
 	@Min(0)
 	@Max(100)
 	protected double weakSpamThreshold;
+	
+	
+	public void initFilter() {
+		SpamFilter.initFilter(this.strongSpamTerms, this.weakSpamTerms, this.strongSpamThreshold, this.weakSpamThreshold);
+	}
 
 
 }
