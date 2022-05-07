@@ -1,0 +1,9 @@
+# i18n-en.i18n
+
+authenticated.inventor.inventor.form.title.create = Become an inventor
+
+authenticated.inventor.inventor.form.label.company = Empresa
+authenticated.inventor.inventor.form.label.statement = Declaración
+authenticated.inventor.inventor.form.label.link = Link
+
+authenticated.inventor.inventor.form.button.create = registrarse
