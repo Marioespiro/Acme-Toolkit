@@ -15,7 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
     <acme:input-textbox code="authenticated.patron.patronage.form.label.status" path="status"/>	
 	<acme:input-textbox code="authenticated.patron.patronage.form.label.code" path="code"/>	
 	<acme:input-textbox code="authenticated.patron.patronage.form.label.legalStuff" path="legalStuff"/>	
@@ -25,4 +25,15 @@
 	<acme:input-textbox code="authenticated.patron.patronage.form.label.endingTime" path="endingTime"/>
 	<acme:input-textbox code="authenticated.patron.patronage.form.label.link" path="link"/>
 	<acme:button code="authenticated.patron.patronage.form.button.inventor" action="/any/user-account/show?id=${inventor.userAccount.id}"/>
+
+	<jstl:choose>	 
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && isPublished == false}">
+			<acme:submit code="authenticated.patron.patronage.form.button.update" action="/patron/patronage/update"/>
+			<acme:submit code="authenticated.patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
+			<acme:submit code="authenticated.patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
+		</jstl:when>
+		<jstl:when test="${acme:anyOf(command, 'create-patronage')}">
+			<acme:submit code="authenticated.patron.patronage.form.button.createPatronage" action="/patron/patronage/create-patronage"/>
+		</jstl:when>		
+	</jstl:choose>
 </acme:form>
