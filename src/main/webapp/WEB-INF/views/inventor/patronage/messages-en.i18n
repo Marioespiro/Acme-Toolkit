@@ -16,6 +16,7 @@ authenticated.inventor.patronage.form.label.startTime = Starting time
 authenticated.inventor.patronage.form.label.creationTime = Creation Time
 authenticated.inventor.patronage.form.label.endingTime = Ending Time
 authenticated.inventor.patronage.form.label.link = Link
+authenticated.inventor.patronage.form.label.published = Is published
 authenticated.inventor.patronage.form.button.patron = Patron
 
 
@@ -26,3 +27,8 @@ authenticated.inventor.patronage.list.label.budget = Budget
 authenticated.inventor.patronage.list.label.startTime = Starting time
 authenticated.inventor.patronage.list.label.creationTime = Creation Time
 authenticated.inventor.patronage.list.label.endingTime = Ending Time
+
+authenticated.inventor.patronage.form.button.accept = Accept patronage
+authenticated.inventor.patronage.form.button.deny = Deny patronage
+
+authenticated.inventor.patronage.form.error.duplicated = That code is already being used

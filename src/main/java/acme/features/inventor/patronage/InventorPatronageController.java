@@ -22,6 +22,12 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 
 	@Autowired
 	protected InventorPatronageShowService	showService;
+	
+	@Autowired
+	protected InventorPatronageAcceptService acceptService;
+	
+	@Autowired
+	protected InventorPatronageDenyService denyService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,6 +36,10 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		
+		super.addCommand("accept", "update", this.acceptService);
+		super.addCommand("deny", "update", this.denyService);
 	}
+	
 	
 }
