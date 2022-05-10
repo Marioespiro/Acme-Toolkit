@@ -12,10 +12,13 @@ any.chirp.form.label.title = Title
 any.chirp.form.label.author = Author
 any.chirp.form.label.body = Body
 any.chirp.form.label.email = Email
-any.chirp.form.label.creationDate = Creation date
+
+any.chirp.form.button.create = Create chirp
 
 any.chirp.list.label.title = Title
 any.chirp.list.label.author = Author
 any.chirp.list.label.body = Body
 any.chirp.list.label.email = Email
 any.chirp.list.label.creationDate = Creation date
+
+any.chirp.form.error.spam = This field has spam
