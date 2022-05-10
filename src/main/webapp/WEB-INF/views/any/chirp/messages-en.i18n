@@ -7,18 +7,21 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
-	
-any.chirp.form.label.title = Title
-any.chirp.form.label.author = Author
-any.chirp.form.label.body = Body
-any.chirp.form.label.email = Email
-
-any.chirp.form.button.create = Create chirp
 
 any.chirp.list.label.title = Title
 any.chirp.list.label.author = Author
 any.chirp.list.label.body = Body
 any.chirp.list.label.email = Email
 any.chirp.list.label.creationDate = Creation date
+	
+any.chirp.form.label.title = Title
+any.chirp.form.label.author = Author
+any.chirp.form.label.body = Body
+any.chirp.form.label.email = Email
+any.chirp.form.label.confirm = I am aware this chirp can't be deleted nor modified after its creation
+
+any.chirp.form.button.create = Create chirp
 
 any.chirp.form.error.spam = This field has spam
+any.chirp.form.error.must-confirm = You must confirm this field
+

@@ -65,17 +65,11 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert errors != null;
 		
 		
-		if(this.spamFilterService.isSpam(entity.getTitle())) {
-			errors.state(request, false, "title", "any.chirp.form.error.spam");
-		}
+		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), "title", "any.chirp.form.error.spam");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getAuthor()), "author", "any.chirp.form.error.spam");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getBody()), "body", "any.chirp.form.error.spam");
 		
-		if(this.spamFilterService.isSpam(entity.getAuthor())) {
-			errors.state(request, false, "author", "any.chirp.form.error.spam");
-		}
-		
-		if(this.spamFilterService.isSpam(entity.getBody())) {
-			errors.state(request, false, "body", "any.chirp.form.error.spam");
-		}
+		errors.state(request, request.getModel().getBoolean("confirm"), "confirm", "any.chirp.form.error.must-confirm");
 	}
 	
 	@Override
@@ -85,6 +79,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert model != null;
 		
 		request.unbind(entity, model, "title", "author", "body", "email", "creationDate");
+		model.setAttribute("confirm", "false");
 	}
 	
 	@Override

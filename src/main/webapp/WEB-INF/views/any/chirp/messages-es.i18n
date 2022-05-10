@@ -8,17 +8,19 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.chirp.form.label.title = Título
-any.chirp.form.label.author = Autor
-any.chirp.form.label.body = Cuerpo
-any.chirp.form.label.email = Email
-
-any.chirp.form.button.create = Crear mensaje
-
 any.chirp.list.label.title = Título
 any.chirp.list.label.author = Autor
 any.chirp.list.label.body = Cuerpo
 any.chirp.list.label.email = Email
 any.chirp.list.label.creationDate = Fecha de creación
 
+any.chirp.form.label.title = Título
+any.chirp.form.label.author = Autor
+any.chirp.form.label.body = Cuerpo
+any.chirp.form.label.email = Email
+any.chirp.form.label.confirm = Soy consciente de que este mensaje no puede ser borrado ni editado tras su creación
+
+any.chirp.form.button.create = Crear mensaje
+
 any.chirp.form.error.spam = Este campo contiene spam
+any.chirp.form.error.must-confirm = Debes confirmar este campo
