@@ -1,0 +1,8 @@
+# i18n-en.i18n
+
+ 
+administrator.announcement.form.label.title = Title
+administrator.announcement.form.label.body = Body
+administrator.announcement.form.label.critical = Critical?
+administrator.announcement.form.label.url = Url
+administrator.announcement.form.button.create = Create announcement
