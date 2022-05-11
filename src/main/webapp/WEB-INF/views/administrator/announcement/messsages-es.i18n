@@ -1,7 +1,15 @@
 # i18n-en.i18n
 
+## FORM ##
+
 administrator.announcement.form.label.title = Título
 administrator.announcement.form.label.body = Cuerpo
 administrator.announcement.form.label.critical = ¿Crítico?
 administrator.announcement.form.label.url = Url
 administrator.announcement.form.button.create = Crear anuncio
+
+## ERRORS ##
+
+administrator.announcement.form.error.title = El título no puede contener palabras consideradas como spam por el sistema.
+administrator.announcement.form.error.body = El cuerpo del anuncio no puede contener palabras consideradas como spam por el sistema.
+administrator.announcement.form.error.url = La url no puede contener palabras consideradas como spam por el sistema.

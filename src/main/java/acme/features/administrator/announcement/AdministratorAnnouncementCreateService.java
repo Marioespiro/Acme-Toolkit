@@ -24,6 +24,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractCreateService;
+import acme.util.SpamFilterService;
 
 @Service
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
@@ -32,6 +33,9 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 
 	@Autowired
 	protected AdministratorAnnouncementRepository repository;
+	
+	@Autowired
+	protected SpamFilterService spamFilterService;
 
 	// AbstractCreateService<Authenticated, Consumer> ---------------------------
 
@@ -74,7 +78,18 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		
+		if(this.spamFilterService.isSpam(entity.getTitle())) {
+			errors.state(request, false, "title", "administrator.announcement.form.error.title");
+		}
+		
+		if(this.spamFilterService.isSpam(entity.getBody())) {
+			errors.state(request, false, "body", "administrator.announcement.form.error.body");
+		}
+		
+		if(this.spamFilterService.isSpam(entity.getUrl())) {
+			errors.state(request, false, "url", "administrator.announcement.form.error.url");
+		}
 	}
 
 	@Override
