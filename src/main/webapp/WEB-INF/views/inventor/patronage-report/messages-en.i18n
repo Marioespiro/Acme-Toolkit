@@ -21,3 +21,5 @@ inventor.patronageReport.list.label.link = Link
 inventor.patronageReport.form.error.memorandum = The memorandum cannot contain words considered as spam by the system.
 inventor.patronageReport.form.error.link = The link cannot contain words considered as spam by the system.
 inventor.patronageReport.form.button.create = Create
+inventor.patronageReport.form.checkbox.confirm = I am aware this patronage report can't be deleted nor modified after its creation
+inventor.patronageReport.form.error.must-confirm = You must confirm this field

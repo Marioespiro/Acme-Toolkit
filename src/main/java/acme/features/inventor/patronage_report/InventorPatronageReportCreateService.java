@@ -94,6 +94,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		if(this.spamFilterService.isSpam(entity.getLink())) {
 			errors.state(request, false, "link", "inventor.patronageReport.form.error.link");
 		}
+		
+		errors.state(request, request.getModel().getBoolean("confirm"), "confirm", "inventor.patronageReport.form.error.must-confirm");
 
 	}
 

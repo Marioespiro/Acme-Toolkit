@@ -24,6 +24,7 @@
 	<acme:input-textbox code="inventor.patronageReport.list.label.link" path="link"/>
 
 	<jstl:if test="${command == 'create'}">
+		<acme:input-checkbox code="inventor.patronageReport.form.checkbox.confirm" path="confirm"/>
 		<acme:submit code="inventor.patronageReport.form.button.create" action="/inventor/patronage-report/create?masterId=${masterId}"/>
 	</jstl:if>
 		
