@@ -22,3 +22,10 @@ authenticated.inventor.toolkit.form.label.description = Description
 authenticated.inventor.toolkit.form.label.assemblyNotes = Assembly notes
 authenticated.inventor.toolkit.form.label.link = Link
 authenticated.inventor.toolkit.form.label.retailPrice = Retail price
+
+authenticated.inventor.toolkit.form.button.update = Update
+authenticated.inventor.toolkit.form.button.delete = Delete
+authenticated.inventor.toolkit.form.button.publish = Publish
+authenticated.inventor.toolkit.form.button.create = Create
+
+authenticated.inventor.toolkit.form.error.duplicated = This code is used in another toolkit
