@@ -42,7 +42,7 @@ public class AnyChirpCreateTest extends TestHarness {
 		super.signOut();
 	}
 	
-	/*@ParameterizedTest
+	@ParameterizedTest
 	@CsvFileSource(resources = "/any/chirp/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void negativeTest(final int recordIndex, final String title, final String author, final String body, final String email) {
@@ -64,6 +64,6 @@ public class AnyChirpCreateTest extends TestHarness {
 		super.checkErrorsExist();
 
 		super.signOut();
-	}*/
+	}
 	
 }
