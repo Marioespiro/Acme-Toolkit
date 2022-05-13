@@ -69,7 +69,7 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 			errors.state(request, !(!acceptedCurrencies.contains(entity.getRetailPrice().getCurrency()) || entity.getRetailPrice().getCurrency() == null ||
 				entity.getRetailPrice().getCurrency().length() == 0),
 				"retailPrice", "inventor.item.form.error.incorrectCurrency");
-			errors.state(request, !(entity.getRetailPrice().getAmount() < 0.0 || entity.getRetailPrice().getAmount() == null),
+			errors.state(request, !(entity.getRetailPrice().getAmount() <= 0.0 || entity.getRetailPrice().getAmount() == null),
 				"retailPrice", "inventor.item.form.error.incorrectQuantity");
 		}
 		

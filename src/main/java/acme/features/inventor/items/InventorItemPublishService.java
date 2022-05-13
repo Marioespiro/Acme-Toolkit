@@ -81,14 +81,14 @@ public class InventorItemPublishService implements AbstractUpdateService<Invento
 			Item existing;
 
 			existing = this.repository.findItemByCode(entity.getCode());
-			errors.state(request, existing == null || existing.getId() == entity.getId(), "reference", "inventor.item.form.error.duplicated");
+			errors.state(request, existing == null, "reference", "inventor.item.form.error.duplicated");
 		}
 		
 		if(!errors.hasErrors("retailPrice")) {
 			errors.state(request, !(!acceptedCurrencies.contains(entity.getRetailPrice().getCurrency()) || entity.getRetailPrice().getCurrency() == null ||
 				entity.getRetailPrice().getCurrency().length() == 0),
 				"retailPrice", "inventor.item.form.error.incorrectCurrency");
-			errors.state(request, !(entity.getRetailPrice().getAmount() < 0.0 || entity.getRetailPrice().getAmount() == null),
+			errors.state(request, !(entity.getRetailPrice().getAmount() <= 0.0 || entity.getRetailPrice().getAmount() == null),
 				"retailPrice", "inventor.item.form.error.incorrectQuantity");
 		}
 		
