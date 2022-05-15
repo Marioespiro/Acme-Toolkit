@@ -17,3 +17,9 @@ inventor.patronageReport.list.label.automaticSequenceNumber = Número de secuenc
 inventor.patronageReport.list.label.creationMoment = Momento de creación
 inventor.patronageReport.list.label.memorandum = Memorándum
 inventor.patronageReport.list.label.link = Link
+
+inventor.patronageReport.form.error.memorandum = El memorándum no puede contener palabras que sean consideradas spam.
+inventor.patronageReport.form.error.link = El link no puede contener palabras que sean consideradas spam.
+inventor.patronageReport.form.button.create = Crear
+inventor.patronageReport.form.checkbox.confirm = Soy consciente de que este reporte de patrocinio no puede ser borrado ni editado tras su creación
+inventor.patronageReport.form.error.must-confirm = Debes confirmar este campo

@@ -25,3 +25,5 @@ authenticated.inventor.patronage.list.label.budget = Presupuesto
 authenticated.inventor.patronage.list.label.startTime = Fecha de inicio
 authenticated.inventor.patronage.list.label.creationTime = Fecha de creación
 authenticated.inventor.patronage.list.label.endingTime = Fecha de finalización
+
+authenticated.inventor.patronage-report.form.button.create = Crear informe patrocinio
