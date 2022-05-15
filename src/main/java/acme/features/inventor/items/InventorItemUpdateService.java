@@ -76,6 +76,10 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		
 		final List<SystemConfiguration> configurationColl = new ArrayList<>(this.repository.findAllConfigurations());
 		final String acceptedCurrencies = configurationColl.get(0).getAcceptedCurrencies();
+		final List<String> currencies = new ArrayList<String>();
+		for(final String s : acceptedCurrencies.split(";")) {
+			currencies.add(s);
+		}
 
 		if (!errors.hasErrors("code")) {
 			Item existing;
@@ -85,7 +89,7 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		}
 		
 		if(!errors.hasErrors("retailPrice")) {
-			errors.state(request, !(!acceptedCurrencies.contains(entity.getRetailPrice().getCurrency()) || entity.getRetailPrice().getCurrency() == null ||
+			errors.state(request, !(!currencies.contains(entity.getRetailPrice().getCurrency()) || entity.getRetailPrice().getCurrency() == null ||
 				entity.getRetailPrice().getCurrency().length() == 0),
 				"retailPrice", "inventor.item.form.error.incorrectCurrency");
 			errors.state(request, !(entity.getRetailPrice().getAmount() <= 0.0 || entity.getRetailPrice().getAmount() == null),
