@@ -6,9 +6,11 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.items.Item;
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Inventor;
 
 @Repository
 public interface InventorToolkitRepository extends AbstractRepository {
@@ -31,4 +33,13 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	
 	@Query("select t from Toolkit t where t.code = :code")
 	Toolkit findToolkitByCode(String code);
+	
+	@Query("select i from Inventor i where i.id = :id")
+	Inventor findOneInventorById(int id);
+	
+	@Query("select i from Item i where i.inventor.id = :inventorid and i.itemType = acme.entities.items.ItemType.TOOL")
+	Collection<Item> findToolsByInvertor(Integer inventorid);
+
+	@Query("select i from Item i where i.inventor.id = :inventorid and i.itemType = acme.entities.items.ItemType.COMPONENT")
+	Collection<Item> findComponentsByInvertor(Integer inventorid);
 }

@@ -13,6 +13,7 @@ authenticated.inventor.toolkit.list.title = Título
 authenticated.inventor.toolkit.list.description = Descripción
 authenticated.inventor.toolkit.list.assemblyNotes = Notas de montaje
 authenticated.inventor.toolkit.list.link = Link
+authenticated.inventor.toolkit.list.isPublished = Publicado
 
 authenticated.inventor.toolkit.form.button.tools = Herramientas
 authenticated.inventor.toolkit.form.button.component = Componentes
@@ -27,5 +28,7 @@ authenticated.inventor.toolkit.form.button.update = Actualizar
 authenticated.inventor.toolkit.form.button.delete = Borrar
 authenticated.inventor.toolkit.form.button.publish = Publicar
 authenticated.inventor.toolkit.form.button.create = Crear
+
+authenticated.inventor.toolkit.list.button.create = Crear kit herramientas
 
 authenticated.inventor.toolkit.form.error.duplicated = Este código ya se ha usado en otro kit

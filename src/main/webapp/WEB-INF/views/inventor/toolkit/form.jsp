@@ -22,16 +22,26 @@
 	<acme:input-textarea code="authenticated.inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>	
 	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.link" path="link"/>
 	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
-	<jstl:choose>	 
+<%-- 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && isPublished == false}">
 			<acme:submit code="authenticated.inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete?id=${id}"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish?id=${id}"/>
 		</jstl:when>
 		<jstl:when test="${acme:anyOf(command, 'create')}">
-			<acme:button code="authenticated.inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
+		<jstl:set var = "toolsIndex" value = "1"/>
+		<jstl:set var = "amountIndex" value = "101"/>
+			<acme:input-select code="inventor.toolkit.form.label.select.artifacts" path="${toolsIndex}">	
+			<jstl:forEach items="${tools}" var="optionTools">
+				<acme:input-option code="${optionTools.name}" value="${optionTools.name}"/>			
+			</jstl:forEach> 
+			</acme:input-select>
+			<acme:input-textbox code="inventor.toolkit.form.label.artifact.amount" path="${amountIndex}" placeholder="0"/>
+			<jstl:set var = "toolsIndex" value = "${toolsIndex + 1}"/>
+			<jstl:set var = "amountIndex" value = "${amountIndex + 1}"/>
+			<acme:submit code="authenticated.inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
 		</jstl:when>		
-	</jstl:choose>
+	</jstl:choose> --%>
 </acme:form>
 
 	<acme:button code="authenticated.inventor.toolkit.form.button.component" action="/inventor/item/list-component?toolkitId=${id}"/>	

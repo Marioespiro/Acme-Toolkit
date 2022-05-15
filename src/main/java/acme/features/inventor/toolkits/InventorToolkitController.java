@@ -26,6 +26,9 @@ public class InventorToolkitController extends AbstractController<Inventor, Tool
 	@Autowired
 	protected InventorToolkitPublishService publishService;
 	
+	@Autowired
+	protected InventorToolkitCreateService createService;
+	
 	
 	// Constructors
 	
@@ -34,6 +37,7 @@ public class InventorToolkitController extends AbstractController<Inventor, Tool
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
 		super.addCommand("delete", this.deleteService);
+		super.addCommand("create", this.createService);
 		super.addCommand("publish", "update", this.publishService);
 	}
 }
