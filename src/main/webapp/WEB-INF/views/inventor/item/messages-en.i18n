@@ -32,4 +32,7 @@ inventor.component.list.button.create = Create component
 inventor.tool.list.button.create = Create tool
 
 inventor.item.form.error.spam = This field has spam words
+inventor.item.form.error.incorrectQuantity = The quantity is invalid
+inventor.item.form.error.emptyCurrency = The currency is empty
+inventor.item.form.error.incorrectCurrency = This currency is not accepted
 
