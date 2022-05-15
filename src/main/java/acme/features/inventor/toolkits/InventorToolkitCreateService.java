@@ -186,7 +186,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 			  final String index = Integer.toString(i);
 			  final String toolsName = (String) request.getModel().getAttribute(index);
 			  if(!toolsName.equals("none")) {
-				  final Item tool = this.repository.findComponentsByName(toolsName);
+				  final Item tool = this.repository.findToolsByName(toolsName);
 				  final Quantity q = new Quantity();
 					q.setAmount(1);
 					q.setItem(tool);

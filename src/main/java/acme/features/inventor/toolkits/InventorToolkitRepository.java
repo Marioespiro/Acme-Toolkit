@@ -45,4 +45,7 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	
 	@Query("select i from Item i where i.name = :name and i.itemType = acme.entities.items.ItemType.COMPONENT")
 	Item findComponentsByName(String name);
+	
+	@Query("select i from Item i where i.name = :name and i.itemType = acme.entities.items.ItemType.TOOL")
+	Item findToolsByName(String name);
 }
