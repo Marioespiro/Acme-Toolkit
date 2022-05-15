@@ -33,5 +33,6 @@ authenticated.inventor.toolkit.form.label.select.tools = Seleccione la herramien
 authenticated.inventor.toolkit.form.label.select.amount = Seleccione la cantidad:
 
 authenticated.inventor.toolkit.list.button.create = Crear kit herramientas
-
-authenticated.inventor.toolkit.form.error.duplicated = Este código ya se ha usado en otro kit
+authenticated.inventor.toolkit.form.error.duplicated.item = Este objeto ya ha sido seleccionado
+authenticated.inventor.toolkit.form.error.spam = Este campo contiene palabras de spam
+authenticated.inventor.toolkit.form.error.duplicated = Este código ya se ha usado en otro kit de herramientas

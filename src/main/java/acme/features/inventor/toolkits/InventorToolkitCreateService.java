@@ -82,6 +82,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 			  final String toolsName = (String) request.getModel().getAttribute(index);
 			  if(!toolsName.equals("none")) {
 				  final Item tool = this.repository.findComponentsByName(toolsName);
+		
 				  if(!tools.contains(tool)) {
 					  tools.add(tool);
 				  }else {
@@ -108,6 +109,10 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		
 		if(this.spamFilterService.isSpam(entity.getLink())) {
 			errors.state(request, false, "link", "authenticated.inventor.toolkit.form.error.spam");
+		}
+		
+		if(this.spamFilterService.isSpam(entity.getAssemblyNotes())) {
+			errors.state(request, false, "assemblyNotes", "authenticated.inventor.toolkit.form.error.spam");
 		}
 
 	}

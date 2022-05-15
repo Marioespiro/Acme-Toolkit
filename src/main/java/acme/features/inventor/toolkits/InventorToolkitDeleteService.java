@@ -3,8 +3,6 @@ package acme.features.inventor.toolkits;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /*
  * EmployerDutyDeleteService.java
@@ -26,7 +24,6 @@ import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
@@ -52,8 +49,8 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		toolkit = this.repository.findToolkitById(id);
 		Principal principal;
 		principal = request.getPrincipal();
-		final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
-		return !toolkit.isPublished() && toolkits.contains(id);
+		final Collection<Toolkit> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId());
+		return !toolkit.isPublished() && toolkits.contains(toolkit);
 	}
 
 	@Override
@@ -123,7 +120,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		if(!entity.isPublished()) {
 			Collection<Quantity> quantities;
 
-			quantities = this.repository.findAllDutiesByToolkitId(entity.getId());
+			quantities = this.repository.findAllQuantitiesByToolkitId(entity.getId());
 			for (final Quantity qty : quantities) {
 				this.repository.deleteQuantityById(qty.getId());
 			}

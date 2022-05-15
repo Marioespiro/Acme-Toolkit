@@ -25,7 +25,7 @@ public interface InventorToolkitRepository extends AbstractRepository {
 	Collection<Object[]> retailPriceByCurrency(Integer id);
 	
 	@Query("select qty from Quantity qty where qty.toolkit.id = :id")
-	Collection<Quantity> findAllDutiesByToolkitId(int id);
+	Collection<Quantity> findAllQuantitiesByToolkitId(int id);
 	
 	@Modifying
 	@Query("delete from Quantity q where q.id = :id")
