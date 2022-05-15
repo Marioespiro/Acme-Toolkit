@@ -1,5 +1,6 @@
 package acme.features.inventor.toolkits;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /*
@@ -19,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.entities.quantities.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -53,25 +55,59 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		Integer toolsSize;
+		Integer componentsSize;
+		final ArrayList<Item> components = new ArrayList<Item>();
+		final ArrayList<Item> tools = new ArrayList<Item>();
+		
+		toolsSize = this.repository.findToolsByInvertor(request.getPrincipal().getActiveRoleId()).size();
+		componentsSize = this.repository.findComponentsByInvertor(request.getPrincipal().getActiveRoleId()).size();
+		for (int i = 1; i < componentsSize+1; i++) {
+			  final String index = Integer.toString(i);
+			  final String componentName = (String) request.getModel().getAttribute(index);
+			  if(!componentName.equals("none")) {
+				  final Item component = this.repository.findComponentsByName(componentName);
+				  if(!components.contains(component)) {
+					  components.add(component);
+				  }else {
+					  errors.state(request, false, index, "authenticated.inventor.toolkit.form.error.duplicated.item");
+				  }
+			  }
+
+		}
+		for (int i = 1; i < toolsSize+1; i++) {
 			
+			  final String index = Integer.toString(i);
+			  final String toolsName = (String) request.getModel().getAttribute(index);
+			  if(!toolsName.equals("none")) {
+				  final Item tool = this.repository.findComponentsByName(toolsName);
+				  if(!tools.contains(tool)) {
+					  tools.add(tool);
+				  }else {
+					  errors.state(request, false, index, "authenticated.inventor.toolkit.form.error.duplicated.item");
+				  }
+			  }
+
+		}
 
 		if (!errors.hasErrors("code")) {
 			Toolkit existing;
 
 			existing = this.repository.findToolkitByCode(entity.getCode());
-			errors.state(request, existing == null, "code", "inventor.item.form.error.duplicated");
+			errors.state(request, existing == null, "code", "authenticated.inventor.toolkit.form.error.duplicated");
 		}
 		
 		if(this.spamFilterService.isSpam(entity.getDescription())) {
-			errors.state(request, false, "description", "inventor.item.form.error.spam");
+			errors.state(request, false, "description", "authenticated.inventor.toolkit.form.error.spam");
 		}
 		
 		if(this.spamFilterService.isSpam(entity.getTitle())) {
-			errors.state(request, false, "title", "inventor.item.form.error.spam");
+			errors.state(request, false, "title", "authenticated.inventor.toolkit.form.error.spam");
 		}
 		
 		if(this.spamFilterService.isSpam(entity.getLink())) {
-			errors.state(request, false, "link", "inventor.item.form.error.spam");
+			errors.state(request, false, "link", "authenticated.inventor.toolkit.form.error.spam");
 		}
 
 	}
@@ -82,7 +118,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "code", "description", "link", "link");
+		request.bind(entity, errors, "title", "code", "description", "assemblyNotes", "link");
 		
 	}
 
@@ -92,11 +128,11 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model != null;
 		
-		final Collection<Item> tools = this.repository.findComponentsByInvertor(request.getPrincipal().getActiveRoleId());
+		final Collection<Item> tools = this.repository.findToolsByInvertor(request.getPrincipal().getActiveRoleId());
 		final Collection<Item> components = this.repository.findComponentsByInvertor(request.getPrincipal().getActiveRoleId());
 
 
-		request.unbind(entity, model, "title", "code", "description", "link", "isPublished");
+		request.unbind(entity, model, "title", "code", "description","assemblyNotes", "link", "isPublished");
 		model.setAttribute("tools", tools);
 		model.setAttribute("components", components);
 	}
@@ -119,6 +155,41 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 
 		this.repository.save(entity);
+		
+		Integer toolsSize;
+		Integer componentsSize;
+		toolsSize = this.repository.findToolsByInvertor(request.getPrincipal().getActiveRoleId()).size();
+		componentsSize = this.repository.findComponentsByInvertor(request.getPrincipal().getActiveRoleId()).size();
+		
+		for (int i = 1; i < componentsSize+1; i++) {
+			  final String index = Integer.toString(i);
+			  final String componentName = (String) request.getModel().getAttribute(index);
+			  if(!componentName.equals("none")) {
+				  final Item component = this.repository.findComponentsByName(componentName);
+				  final String amountIndex = Integer.toString(i+100);
+				  final String amount = (String) request.getModel().getAttribute(amountIndex);
+				  final Quantity q = new Quantity();
+					q.setAmount(Integer.parseInt(amount));
+					q.setItem(component);
+					q.setToolkit(entity);
+					this.repository.save(q);
+			  }
+
+		}
+		
+		for (int i = 1; i < toolsSize+1; i++) {
+			  final String index = Integer.toString(i);
+			  final String toolsName = (String) request.getModel().getAttribute(index);
+			  if(!toolsName.equals("none")) {
+				  final Item tool = this.repository.findComponentsByName(toolsName);
+				  final Quantity q = new Quantity();
+					q.setAmount(1);
+					q.setItem(tool);
+					q.setToolkit(entity);
+					this.repository.save(q);
+			  }
+
+		}
 	}
 
 }

@@ -28,7 +28,12 @@ authenticated.inventor.toolkit.form.button.update = Update
 authenticated.inventor.toolkit.form.button.delete = Delete
 authenticated.inventor.toolkit.form.button.publish = Publish
 authenticated.inventor.toolkit.form.button.create = Create
+authenticated.inventor.toolkit.form.label.select.components = Select the component:
+authenticated.inventor.toolkit.form.label.select.tools = Select the tool:
+authenticated.inventor.toolkit.form.label.select.amount = Select the amount:
 
 authenticated.inventor.toolkit.list.button.create = Create toolkit
 
 authenticated.inventor.toolkit.form.error.duplicated = This code is used in another toolkit
+authenticated.inventor.toolkit.form.error.spam = This field has spam words
+authenticated.inventor.toolkit.form.error.duplicated.item = This item is already selected
