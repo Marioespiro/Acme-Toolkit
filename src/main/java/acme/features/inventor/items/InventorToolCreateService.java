@@ -12,11 +12,15 @@
 
 package acme.features.inventor.items;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
 import acme.entities.items.ItemType;
+import acme.entities.system_configurations.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -50,6 +54,13 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final List<SystemConfiguration> configurationColl = new ArrayList<>(this.repository.findAllConfigurations());
+		final String acceptedCurrencies = configurationColl.get(0).getAcceptedCurrencies();
+		final List<String> currencies = new ArrayList<String>();
+		for(final String s : acceptedCurrencies.split(";")) {
+			currencies.add(s);
+		}
 
 		if (!errors.hasErrors("code")) {
 			Item existing;
@@ -58,12 +69,20 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 			errors.state(request, existing == null, "code", "inventor.item.form.error.duplicated");
 		}
 		
-		if(this.spamFilterService.isSpam(entity.getDescription())) {
-			errors.state(request, false, "description", "inventor.item.form.error.spam");
+		if(!errors.hasErrors("retailPrice")) {
+			errors.state(request, !(!currencies.contains(entity.getRetailPrice().getCurrency()) || entity.getRetailPrice().getCurrency() == null ||
+				entity.getRetailPrice().getCurrency().length() == 0),
+				"retailPrice", "inventor.item.form.error.incorrectCurrency");
+			errors.state(request, !(entity.getRetailPrice().getAmount() <= 0.0 || entity.getRetailPrice().getAmount() == null),
+				"retailPrice", "inventor.item.form.error.incorrectQuantity");
 		}
 		
-		if(this.spamFilterService.isSpam(entity.getName())) {
-			errors.state(request, false, "name", "inventor.item.form.error.spam");
+		if(!errors.hasErrors("description")) {
+			errors.state(request, !this.spamFilterService.isSpam(entity.getDescription()), "description", "inventor.item.form.error.spam");
+		}
+		
+		if(!errors.hasErrors("name")) {
+			errors.state(request, !this.spamFilterService.isSpam(entity.getName()), "name", "inventor.item.form.error.spam");
 		}
 
 	}
