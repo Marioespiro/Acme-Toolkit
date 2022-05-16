@@ -8,6 +8,7 @@
 	<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
 	<acme:input-url code="administrator.announcement.form.label.url" path="url"/>
 	<acme:input-checkbox code="administrator.announcement.form.label.critical" path="critical"/>
+		<acme:input-checkbox code="administrator.announcement.form.label.confirm" path="confirm"/>
 	
 	<acme:submit test="${command == 'create'}" code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
 </acme:form>

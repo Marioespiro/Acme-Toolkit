@@ -28,14 +28,14 @@ import acme.util.SpamFilterService;
 
 @Service
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
-	
+
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AdministratorAnnouncementRepository repository;
-	
+	protected AdministratorAnnouncementRepository	repository;
+
 	@Autowired
-	protected SpamFilterService spamFilterService;
+	protected SpamFilterService						spamFilterService;
 
 	// AbstractCreateService<Authenticated, Consumer> ---------------------------
 
@@ -53,7 +53,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 		request.bind(entity, errors, "title", "body", "critical", "url");
-		
+
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "title", "body", "critical", "url");
-		
+
 	}
 
 	@Override
@@ -78,18 +78,12 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-		if(this.spamFilterService.isSpam(entity.getTitle())) {
-			errors.state(request, false, "title", "administrator.announcement.form.error.title");
-		}
-		
-		if(this.spamFilterService.isSpam(entity.getBody())) {
-			errors.state(request, false, "body", "administrator.announcement.form.error.body");
-		}
-		
-		if(this.spamFilterService.isSpam(entity.getUrl())) {
-			errors.state(request, false, "url", "administrator.announcement.form.error.url");
-		}
+
+		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), "title", "administrator.announcement.form.error.title");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getBody()), "body", "administrator.announcement.form.error.body");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getUrl()), "url", "administrator.announcement.form.error.url");
+		errors.state(request, request.getModel().getBoolean("confirm"), "confirm", "any.chirp.form.error.must-confirm");
+
 	}
 
 	@Override
@@ -98,12 +92,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 
 		this.repository.save(entity);
-		
+
 	}
 
-	
-	
-
 }
-
-

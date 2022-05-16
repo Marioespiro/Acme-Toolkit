@@ -13,3 +13,5 @@ administrator.announcement.form.button.create = Crear anuncio
 administrator.announcement.form.error.title = El título no puede contener palabras consideradas como spam por el sistema.
 administrator.announcement.form.error.body = El cuerpo del anuncio no puede contener palabras consideradas como spam por el sistema.
 administrator.announcement.form.error.url = La url no puede contener palabras consideradas como spam por el sistema.
+administrator.announcement.form.label.confirm = Soy consciente de que una vez publicado no podrá modificarse ni eliminarse este anuncio.
+administrator.announcement.form.error.must-confirm = Debes confirmar este campo
