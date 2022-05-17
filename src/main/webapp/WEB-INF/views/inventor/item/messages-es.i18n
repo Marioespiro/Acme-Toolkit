@@ -31,3 +31,5 @@ inventor.component.list.button.create = Crear componente
 inventor.tool.list.button.create = Crear herramienta
 
 inventor.item.form.error.spam = Este campo tiene palabras spam
+inventor.item.form.error.incorrectQuantity = La cantidad es inválida
+inventor.item.form.error.incorrectCurrency = Este tipo de moneda no está aceptado

@@ -42,7 +42,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert request != null;
 		int id;
 		Principal principal;
+		Item item;
 		principal = request.getPrincipal();
+		id = request.getModel().getInteger("id");
+		item = this.repository.findItemById(id);
+		
 		if (request.getModel().hasAttribute("toolkitId")) {
 			final List<Integer> toolkits = this.repository.findAllTookitsByInventorId(principal.getActiveRoleId()).stream().map(AbstractEntity::getId).collect(Collectors.toList());
 			id = request.getModel().getInteger("toolkitId");
@@ -50,6 +54,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 				return false;
 			}
 		}
+		
+		if(item.getInventor().getUserAccount().getId() != principal.getAccountId()) {
+			return false;
+		}
+		
 		return true;
 
 	}
