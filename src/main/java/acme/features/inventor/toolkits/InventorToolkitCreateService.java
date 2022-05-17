@@ -77,11 +77,10 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 
 		}
 		for (int i = 1; i < toolsSize+1; i++) {
-			
-			  final String index = Integer.toString(i);
+			  final String index = Integer.toString(i+200);
 			  final String toolsName = (String) request.getModel().getAttribute(index);
 			  if(!toolsName.equals("none")) {
-				  final Item tool = this.repository.findComponentsByName(toolsName);
+				  final Item tool = this.repository.findToolsByName(toolsName);
 		
 				  if(!tools.contains(tool)) {
 					  tools.add(tool);
@@ -165,7 +164,6 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		Integer componentsSize;
 		toolsSize = this.repository.findToolsByInvertor(request.getPrincipal().getActiveRoleId()).size();
 		componentsSize = this.repository.findComponentsByInvertor(request.getPrincipal().getActiveRoleId()).size();
-		
 		for (int i = 1; i < componentsSize+1; i++) {
 			  final String index = Integer.toString(i);
 			  final String componentName = (String) request.getModel().getAttribute(index);
@@ -183,7 +181,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		}
 		
 		for (int i = 1; i < toolsSize+1; i++) {
-			  final String index = Integer.toString(i);
+			  final String index = Integer.toString(i+200);
 			  final String toolsName = (String) request.getModel().getAttribute(index);
 			  if(!toolsName.equals("none")) {
 				  final Item tool = this.repository.findToolsByName(toolsName);

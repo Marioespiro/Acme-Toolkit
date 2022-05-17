@@ -15,13 +15,15 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:form>
+<acme:form readonly="false">
     <acme:input-textbox code="authenticated.inventor.toolkit.form.label.code" path="code"/>	
 	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.title" path="title"/>	
 	<acme:input-textarea code="authenticated.inventor.toolkit.form.label.description" path="description"/>	
 	<acme:input-textarea code="authenticated.inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>	
 	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.link" path="link"/>
- 
+	<jstl:if test="${acme:anyOf(command, 'show')}">
+	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
+	</jstl:if>	 
 		<jstl:if test="${acme:anyOf(command, 'show, update, delete, publish') && isPublished == false}">
 			<acme:submit code="authenticated.inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete?id=${id}"/>
@@ -29,7 +31,7 @@
 		</jstl:if>
 		<jstl:if test="${acme:anyOf(command, 'create')}">
 		<jstl:set var = "componentsIndex" value = "1"/>
-		<jstl:set var = "toolsIndex" value = "1"/>
+		<jstl:set var = "toolsIndex" value = "201"/>
 		<jstl:set var = "amountIndex" value = "101"/>
 		<jstl:forEach items="${components}" var="optionComponents">
 			<acme:input-select code="authenticated.inventor.toolkit.form.label.select.components" path="${componentsIndex}">	
@@ -49,15 +51,13 @@
 				<acme:input-option code="${optionTools.name}" value="${optionTools.name}"/>			
 			</jstl:forEach> 
 			</acme:input-select>
-			<jstl:set var = "toolsIndex" value = "${toolsIndex + 1}"/>
+			<jstl:set var="toolsIndex" value="${toolsIndex + 1}"/>
 		</jstl:forEach>
 		</jstl:if>		
 	<jstl:if test="${acme:anyOf(command, 'create')}">
 	<acme:submit code="authenticated.inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
 	</jstl:if>
-	<jstl:if test="${acme:anyOf(command, 'show') && isPublished == true}">
-		<acme:input-textbox code="authenticated.inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
-	</jstl:if>	
+	
 </acme:form>
 <jstl:if test="${acme:anyOf(command, 'show')}">
 	<acme:button code="authenticated.inventor.toolkit.form.button.component" action="/inventor/item/list-component?toolkitId=${id}"/>	
