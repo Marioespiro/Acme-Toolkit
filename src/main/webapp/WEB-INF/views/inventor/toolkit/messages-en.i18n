@@ -25,12 +25,14 @@ authenticated.inventor.toolkit.form.label.link = Link
 authenticated.inventor.toolkit.form.label.retailPrice = Retail price
 
 authenticated.inventor.toolkit.form.button.update = Update
+authenticated.inventor.toolkit.form.button.updateItems = Change the items
 authenticated.inventor.toolkit.form.button.delete = Delete
 authenticated.inventor.toolkit.form.button.publish = Publish
 authenticated.inventor.toolkit.form.button.create = Create
 authenticated.inventor.toolkit.form.label.select.components = Select the component:
 authenticated.inventor.toolkit.form.label.select.tools = Select the tool:
 authenticated.inventor.toolkit.form.label.select.amount = Select the amount:
+authenticated.inventor.toolkit.form.button.quantity = Items
 
 authenticated.inventor.toolkit.list.button.create = Create toolkit
 

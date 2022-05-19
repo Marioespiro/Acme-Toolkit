@@ -23,5 +23,4 @@
 	<acme:list-column code="authenticated.inventor.toolkit.list.link" path="link" width="20%"/>
 	<acme:list-column code="authenticated.inventor.toolkit.list.isPublished" path="isPublished" width="10%"/>
 </acme:list>
-
 <acme:button code="authenticated.inventor.toolkit.list.button.create" action="/inventor/toolkit/create"/>

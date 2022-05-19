@@ -158,7 +158,6 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert request != null;
 		assert entity != null;
 
-		this.repository.save(entity);
 		
 		Integer toolsSize;
 		Integer componentsSize;
@@ -193,6 +192,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 			  }
 
 		}
+		this.repository.save(entity);
 	}
 
 }
