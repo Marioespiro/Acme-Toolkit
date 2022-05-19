@@ -1,9 +1,15 @@
 package acme.features.patron.patronage;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
+import acme.entities.system_configurations.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -65,12 +71,54 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
-
+			
+			final List<SystemConfiguration> configurationColl = new ArrayList<>(this.repository.findAllConfigurations());
+			final String acceptedCurrencies = configurationColl.get(0).getAcceptedCurrencies();
+			final List<String> currencies = new ArrayList<String>();
+			for(final String s : acceptedCurrencies.split(";")) {
+				currencies.add(s);
+			}
+			
 			if (!errors.hasErrors("code")) {
 				Patronage existing;
 
 				existing = this.repository.findPatronageByCode(entity.getCode());
-				errors.state(request, existing == null || existing.getId() == entity.getId(), "reference", "patron.patronage.form.error.duplicated");
+				errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "patron.patronage.form.error.duplicated");
+			}
+			
+			if(!errors.hasErrors("budget")) {
+				errors.state(request, !(!currencies.contains(entity.getBudget().getCurrency()) || entity.getBudget().getCurrency() == null ||
+					entity.getBudget().getCurrency().length() == 0),
+					"budget", "patron.patronage.form.error.incorrectCurrency");
+				errors.state(request, !(entity.getBudget().getAmount() <= 0.0 || entity.getBudget().getAmount() == null),
+					"budget", "patron.patronage.form.error.incorrectQuantity");
+			}
+			
+			if(!errors.hasErrors("startTime")) {
+				final Date creationTime = entity.getCreationTime();
+				final Calendar calCreation = Calendar.getInstance();
+				calCreation.setTime(creationTime);
+				calCreation.add(Calendar.MONTH, 1);
+				final Date creationDateAfterMonth = calCreation.getTime();
+				final Date startTime = entity.getStartTime();
+				
+				errors.state(request, (startTime.after(creationDateAfterMonth)),
+					"startTime", "patron.patronage.form.error.creationDateAfterMonth");
+			}
+			
+			if(!errors.hasErrors("endTime")) {
+				if(entity.getStartTime() != null) {
+					final Date startTime = entity.getStartTime();
+					final Calendar calStart = Calendar.getInstance();
+					calStart.setTime(startTime);
+					calStart.add(Calendar.MONTH, 1);
+					
+					final Date startDateAfterMonth = calStart.getTime();
+					final Date endingTime = entity.getEndingTime();
+					
+					errors.state(request, (endingTime.after(startDateAfterMonth)),
+						"endingTime", "patron.patronage.form.error.startDateAfterMonth");
+				}		
 			}
 
 		}
@@ -81,7 +129,9 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startTime", "creationTime", "endingTime", "link", "inventor", "isPublished");
+			
+			model.setAttribute("inventors", this.repository.findInventors());
+			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startTime", "creationTime", "endingTime", "link", "inventor", "isPublished", "inventors");
 		}
 
 

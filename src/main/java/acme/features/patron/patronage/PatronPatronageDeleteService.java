@@ -1,8 +1,11 @@
 package acme.features.patron.patronage;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.patronage_reports.PatronageReport;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -43,7 +46,7 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
-
+			
 			request.bind(entity, errors, "code", "legalStuff", "budget", "startTime", "creationTime", "endingTime", "link");
 		}
 
@@ -52,8 +55,9 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 			assert request != null;
 			assert entity != null;
 			assert model != null;
-
-			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startTime", "creationTime", "endingTime", "link", "inventor", "isPublished");
+			
+			model.setAttribute("inventors", this.repository.findInventors());
+			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startTime", "creationTime", "endingTime", "link", "inventor", "isPublished", "inventors");
 		}
 
 		@Override
@@ -83,6 +87,12 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 			assert entity != null;
 
 			if(!entity.isPublished()) {
+				final Collection<PatronageReport> patronageReports;
+
+				patronageReports = this.repository.findAllPatronageReportsByPatronageId(entity.getId());
+				for (final PatronageReport pr : patronageReports) {
+					this.repository.deletePatronageReportById(pr.getId());
+				}
 				this.repository.delete(entity);
 			}
 		}
