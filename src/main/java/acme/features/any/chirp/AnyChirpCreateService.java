@@ -1,5 +1,6 @@
 package acme.features.any.chirp;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,11 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		result.setTitle("");
 		result.setAuthor("");
 		result.setBody("");
-		result.setCreationDate(new Date());
+		final Date dateNow = new Date();
+		final Calendar cal = Calendar.getInstance();
+		cal.setTime(dateNow);
+		cal.add(Calendar.MILLISECOND, -100);
+		result.setCreationDate(cal.getTime());
 		result.setEmail("");
 		
 		return result;
