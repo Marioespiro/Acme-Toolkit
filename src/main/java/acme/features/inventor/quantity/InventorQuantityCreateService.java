@@ -80,7 +80,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 			errors.state(request, entity.getAmount()<=1, "amount", "authenticated.inventor.quantity.form.error.amount");
 		}
 		if(this.repository.findQuantityByToolkit(entity.getToolkit().getId()).stream().anyMatch(x->x.getItem() == entity.getItem())) {
-			errors.state(request, entity.getAmount()<=1, "itemName", "authenticated.inventor.quantity.form.error.duplicated.item");
+			errors.state(request, false, "itemName", "authenticated.inventor.quantity.form.error.duplicated.item");
 		}
 		
 
