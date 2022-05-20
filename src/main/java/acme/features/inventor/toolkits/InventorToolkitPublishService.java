@@ -1,11 +1,13 @@
 package acme.features.inventor.toolkits;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.quantities.Quantity;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -96,6 +98,11 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert entity != null;
 
 		entity.setPublished(true);
+		final Collection<Quantity> quantities =this.repository.findAllQuantitiesByToolkitId(entity.getId());
+		for(final Quantity q: quantities) {
+			q.getItem().setPublished(true);
+			this.repository.save(q);
+		}
 		this.repository.save(entity);
 	}
 
