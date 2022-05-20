@@ -1,0 +1,10 @@
+recordIndex,systemCurrency,acceptedCurrencies,strongSpamTerms,strongSpamThreshold,weakSpamTerms,weakSpamThreshold
+0,,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,10.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,25.00
+1,USD,,sex;hardcore;viagra;cialis;sexo;viagra;cialis,10.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,25.00
+2,USD,EUR;USD;JPY,,10.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,25.00
+3,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,25.00
+4,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,10.00,,25.00
+5,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,10.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,
+6,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,200.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,25.00
+7,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,10.00,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,-25.00
+8,USD,EUR;USD;JPY,sex;hardcore;viagra;cialis;sexo;viagra;cialis,aoaoa,sexy;nigeria;you've won;one million;sexy;nigeria;has ganado;un millón;morbius,-25.00
