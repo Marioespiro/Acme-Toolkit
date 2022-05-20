@@ -32,7 +32,8 @@ authenticated.inventor.toolkit.form.button.create = Create
 authenticated.inventor.toolkit.form.label.select.components = Select the component:
 authenticated.inventor.toolkit.form.label.select.tools = Select the tool:
 authenticated.inventor.toolkit.form.label.select.amount = Select the amount:
-authenticated.inventor.toolkit.form.button.quantity = Items
+authenticated.inventor.toolkit.form.button.quantity = View quantities
+authenticated.inventor.toolkit.form.button.quantity.create = Create quantities
 
 authenticated.inventor.toolkit.list.button.create = Create toolkit
 

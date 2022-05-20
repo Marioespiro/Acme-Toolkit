@@ -18,11 +18,6 @@
 <acme:form>
 <jstl:if test="${acme:anyOf(command, 'show')}">
 	<acme:input-textbox code="inventor.item.form.label.name" path="itemName"/>	
-	<acme:input-textbox code="inventor.item.form.label.code" path="itemCode"/>	
-	<acme:input-textbox code="inventor.item.form.label.technology" path="itemTechnology"/>
-	<acme:input-textarea code="inventor.item.form.label.description" path="itemDescription"/>
-	<acme:input-money code="inventor.item.form.label.retailPrice" path="itemRetailPrice"/>
-	<acme:input-textbox code="inventor.item.form.label.link" path="itemLink"/>
 	<acme:input-textbox code="authenticated.inventor.quantity.list.label.amount" path="amount"/>
 </jstl:if>
 <jstl:if test="${acme:anyOf(command, 'show') && isPublished == false}">

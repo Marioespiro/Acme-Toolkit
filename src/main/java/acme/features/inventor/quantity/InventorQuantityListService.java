@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.quantities.Quantity;
+import acme.entities.toolkit.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
@@ -28,18 +29,10 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		assert request != null;
 		Principal principal;
 		principal = request.getPrincipal();
-		final Collection<Quantity> quantities;
 		final Integer toolkitId = request.getModel().getInteger("toolkitId");
 		final int activeId = principal.getActiveRoleId();
-		quantities = this.repository.findQuantityByToolkit(toolkitId);
-		final Collection<Quantity> toolkits = this.repository.findAllQuantitiesByInventorId(principal.getActiveRoleId());
-		boolean result = true;
-		for(final Quantity q: quantities) {
-			if(q.getItem().getInventor().getId()!=activeId) {
-				result = false;
-		}
-			}
-		return result;
+		final Toolkit toolkit = this.repository.findToolkitById(toolkitId);
+		return toolkit.getInventor().getId() == activeId;
 	}
 	
 	@Override
@@ -58,6 +51,8 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		int toolkitId;
 		toolkitId = request.getModel().getInteger("toolkitId");
 		model.setAttribute("toolkitId", toolkitId);
+		final Toolkit toolkit = this.repository.findToolkitById(toolkitId);
+		model.setAttribute("isPublished", toolkit.isPublished());
 
 	}
 	

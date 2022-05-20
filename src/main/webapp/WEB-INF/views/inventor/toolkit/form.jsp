@@ -25,7 +25,7 @@
 	<acme:input-textbox code="authenticated.inventor.toolkit.form.label.retailPrice" path="retailPrice"/>	 
 	</jstl:if>
 		<jstl:if test="${acme:anyOf(command, 'show, update, delete, publish') && isPublished == false}">
-			<acme:button code="authenticated.inventor.toolkit.form.button.quantity" action="/inventor/quantity/list?toolkitId=${id}"/>
+			<acme:button code="authenticated.inventor.toolkit.form.button.quantity.create" action="/inventor/quantity/list?toolkitId=${id}"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete?id=${id}"/>
 			<acme:submit code="authenticated.inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish?id=${id}"/>
@@ -36,6 +36,5 @@
 	
 </acme:form>
 <jstl:if test="${acme:anyOf(command, 'show') && isPublished == true}">
-	<acme:button code="authenticated.inventor.toolkit.form.button.component" action="/inventor/item/list-component?toolkitId=${id}"/>	
-	<acme:button code="authenticated.inventor.toolkit.form.button.tools" action="/inventor/item/list-tool?toolkitId=${id}"/>
+	<acme:button code="authenticated.inventor.toolkit.form.button.quantity" action="/inventor/quantity/list?toolkitId=${id}"/>
 </jstl:if>	

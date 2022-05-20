@@ -31,7 +31,7 @@ public class InventorQuantityCreateService implements AbstractCreateService<Inve
 		assert request != null;
 		final int inventorid = request.getPrincipal().getActiveRoleId();
 		final Toolkit toolkit =  this.repository.findToolkitById(request.getModel().getInteger("toolkitId"));
-		return this.repository.findQuantityByToolkit(toolkit.getId()).stream().allMatch(x-> x.getItem().getInventor().getId() == inventorid) && !toolkit.isPublished();
+		return toolkit.getInventor().getId() == inventorid && !toolkit.isPublished();
 	}
 
 	@Override
