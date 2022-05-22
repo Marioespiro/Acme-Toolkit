@@ -30,6 +30,9 @@ import acme.util.SpamFilterService;
 public class InventorPatronageReportCreateService implements AbstractCreateService<Inventor, PatronageReport> {
 
 	// Internal state ---------------------------------------------------------
+	
+	private final String MEMORANDUM = "memorandum";
+	private final String MASTERID = "masterId";
 
 	@Autowired
 	protected InventorPatronageReportRepository repository;
@@ -52,7 +55,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "memorandum", "link");
+		request.bind(entity, errors, this.MEMORANDUM, "link");
 
 	}
 
@@ -61,9 +64,9 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "memorandum", "link");
+		request.unbind(entity, model, this.MEMORANDUM, "link");
 
-		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
+		model.setAttribute(this.MASTERID, request.getModel().getAttribute(this.MASTERID));
 
 	}
 
@@ -73,7 +76,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		int patronageId;
 		Patronage patronage;
 		final PatronageReport result = new PatronageReport();
-		patronageId = request.getModel().getInteger("masterId");
+		patronageId = request.getModel().getInteger(this.MASTERID);
 		patronage = this.repository.findPatronageById(patronageId);
 		result.setCreationMoment(Date.from(Instant.now()));
 		result.setPatronage(patronage);
@@ -88,7 +91,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert errors != null;
 
 		if(this.spamFilterService.isSpam(entity.getMemorandum())) {
-			errors.state(request, false, "memorandum", "inventor.patronageReport.form.error.memorandum");
+			errors.state(request, false, this.MEMORANDUM, "inventor.patronageReport.form.error.memorandum");
 		}
 
 		if(this.spamFilterService.isSpam(entity.getLink())) {

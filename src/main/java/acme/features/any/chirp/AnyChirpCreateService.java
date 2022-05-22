@@ -19,6 +19,11 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 	
 	// Internal state
 	
+	private final String AUTHOR = "author";
+	private final String TITLE = "title";
+	private final String SPAM_ERROR = "any.chirp.form.error.spam";
+	private final String CONFIRM = "confirm";
+	
 	@Autowired
 	protected AnyChirpRepository repository;
 	
@@ -60,7 +65,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "title", "author", "body", "email");
+		request.bind(entity, errors, this.TITLE, this.AUTHOR, "body", "email");
 	}
 	
 	@Override
@@ -70,11 +75,11 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert errors != null;
 		
 		
-		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), "title", "any.chirp.form.error.spam");
-		errors.state(request, !this.spamFilterService.isSpam(entity.getAuthor()), "author", "any.chirp.form.error.spam");
-		errors.state(request, !this.spamFilterService.isSpam(entity.getBody()), "body", "any.chirp.form.error.spam");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), this.TITLE, this.SPAM_ERROR);
+		errors.state(request, !this.spamFilterService.isSpam(entity.getAuthor()), this.AUTHOR, this.SPAM_ERROR);
+		errors.state(request, !this.spamFilterService.isSpam(entity.getBody()), "body", this.SPAM_ERROR);
 		
-		errors.state(request, request.getModel().getBoolean("confirm"), "confirm", "any.chirp.form.error.must-confirm");
+		errors.state(request, request.getModel().getBoolean(this.CONFIRM), this.CONFIRM, "any.chirp.form.error.must-confirm");
 	}
 	
 	@Override
@@ -83,8 +88,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "author", "body", "email", "creationDate");
-		model.setAttribute("confirm", "false");
+		request.unbind(entity, model, this.TITLE, this.AUTHOR, "body", "email", "creationDate");
+		model.setAttribute(this.CONFIRM, "false");
 	}
 	
 	@Override
