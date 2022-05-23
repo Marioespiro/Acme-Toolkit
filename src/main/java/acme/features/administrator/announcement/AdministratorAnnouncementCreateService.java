@@ -30,6 +30,8 @@ import acme.util.SpamFilterService;
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
+	
+	private final String TITLE = "title";
 
 	@Autowired
 	protected AdministratorAnnouncementRepository	repository;
@@ -52,7 +54,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "title", "body", "critical", "url");
+		request.bind(entity, errors, this.TITLE, "body", "critical", "url");
 
 	}
 
@@ -61,7 +63,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "body", "critical", "url");
+		request.unbind(entity, model, this.TITLE, "body", "critical", "url");
 
 	}
 
@@ -79,7 +81,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 
-		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), "title", "administrator.announcement.form.error.title");
+		errors.state(request, !this.spamFilterService.isSpam(entity.getTitle()), this.TITLE, "administrator.announcement.form.error.title");
 		errors.state(request, !this.spamFilterService.isSpam(entity.getBody()), "body", "administrator.announcement.form.error.body");
 		errors.state(request, !this.spamFilterService.isSpam(entity.getUrl()), "url", "administrator.announcement.form.error.url");
 		errors.state(request, request.getModel().getBoolean("confirm"), "confirm", "any.chirp.form.error.must-confirm");
