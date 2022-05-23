@@ -14,6 +14,7 @@ authenticated.item.form.label.description = Description
 authenticated.item.form.label.technology = Technology
 authenticated.item.form.label.retailPrice = Price
 authenticated.item.form.label.link = Optional link
+authenticated.item.form.button.findBy = List toolkits with this item
 authenticated.item.form.label.published = Is published
 	
 

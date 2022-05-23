@@ -17,6 +17,9 @@ public interface AnyToolkitRepository extends AbstractRepository {
 	@Query("select i from Toolkit i where i.isPublished = TRUE")
 	Collection<Toolkit> findAllPublishedToolkits();
 	
+	@Query("select q.toolkit from Quantity q where q.toolkit.isPublished = TRUE and q.item.id = :id")
+	Collection<Toolkit> findAllToolkitsWithItem(int id);
+	
 	@Query("select sum(q.amount * i.retailPrice.amount) as suma, i.retailPrice.currency as currency from Quantity q, Item i where q.toolkit.id = :id and q.item = i.id group by i.retailPrice.currency")
-	Collection<Object[]> retailPriceByCurrency(Integer id);
+	Collection<Object[]> retailPriceByCurrency(int id);
 }

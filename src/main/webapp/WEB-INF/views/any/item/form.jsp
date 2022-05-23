@@ -22,4 +22,5 @@
 	<acme:input-textarea code="authenticated.item.form.label.description" path="description"/>
 	<acme:input-textbox code="authenticated.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="authenticated.item.form.label.link" path="link"/>
+	<acme:button code="authenticated.item.form.button.findBy" action="/any/toolkit/list-with-item?id=${id}"/>
 </acme:form>

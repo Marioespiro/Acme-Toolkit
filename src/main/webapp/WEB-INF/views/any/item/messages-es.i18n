@@ -14,6 +14,7 @@ authenticated.item.form.label.description = Descripción
 authenticated.item.form.label.technology = Tecnologia
 authenticated.item.form.label.retailPrice = Precio
 authenticated.item.form.label.link = Enlace opcional
+authenticated.item.form.button.findBy = Listar kits con este item
 authenticated.item.form.label.published = Está publicado
 
 authenticated.item.list.label.name = Nombre
