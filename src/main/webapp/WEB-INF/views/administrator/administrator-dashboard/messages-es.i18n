@@ -28,3 +28,4 @@ administrator.dashboard.form.label.deviation-retail-price = Patrocinio presupues
 administrator.dashboard.form.label.minimum-retail-price = Presupuesto mínimo de patrocinio
 administrator.dashboard.form.label.maximum-retail-price = Presupuesto máximo de patrocinio
 administrator.dashboard.form.label.number.patronages = Número de patrocinios
+administrator.dashboard.form.description-table = Datos del panel de control

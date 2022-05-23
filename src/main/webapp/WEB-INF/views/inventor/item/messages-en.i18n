@@ -1,0 +1,38 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+	
+inventor.item.form.label.name = Name
+inventor.item.form.label.code = Code
+inventor.item.form.label.description = Description
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.retailPrice = Price
+inventor.item.form.label.link = Optional link
+inventor.item.form.label.published = Is published
+	
+
+inventor.item.list.label.name = Name
+inventor.item.list.label.code = Code
+inventor.item.list.label.technology = Technology
+inventor.item.list.label.price = Price
+
+inventor.item.form.button.update = Update item
+inventor.item.form.button.delete = Delete item
+inventor.item.form.button.publish = Publish item
+inventor.item.form.button.createComponent = Create component
+inventor.item.form.button.createTool = Create tool
+
+inventor.component.list.button.create = Create component
+inventor.tool.list.button.create = Create tool
+
+inventor.item.form.error.spam = This field has spam words
+inventor.item.form.error.incorrectQuantity = The quantity is invalid
+inventor.item.form.error.emptyCurrency = The currency is empty
+inventor.item.form.error.incorrectCurrency = This currency is not accepted
+

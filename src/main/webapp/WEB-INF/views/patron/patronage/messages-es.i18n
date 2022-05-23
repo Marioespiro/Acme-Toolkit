@@ -1,0 +1,27 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.patron.patronage.form.label.status = Estado
+authenticated.patron.patronage.form.label.code = Código
+authenticated.patron.patronage.form.label.legalStuff = Material legal
+authenticated.patron.patronage.form.label.budget = Presupuesto
+authenticated.patron.patronage.form.label.startTime = Fecha de inicio
+authenticated.patron.patronage.form.label.creationTime = Fecha de creación
+authenticated.patron.patronage.form.label.endingTime = Fecha de finalización
+authenticated.patron.patronage.form.label.link = Link
+authenticated.patron.patronage.form.button.inventor = Inventor
+
+authenticated.patron.patronage.list.label.status = Estado
+authenticated.patron.patronage.list.label.code = Código
+authenticated.patron.patronage.list.label.legalStuff = Material legal
+authenticated.patron.patronage.list.label.budget = Presupuesto
+authenticated.patron.patronage.list.label.startTime = Fecha de inicio
+authenticated.patron.patronage.list.label.creationTime = Fecha de creación
+authenticated.patron.patronage.list.label.endingTime = Fecha de finalización

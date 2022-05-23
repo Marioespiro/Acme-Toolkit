@@ -1,5 +1,7 @@
 package acme.features.any.toolkit;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,14 +42,23 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit> 
 		String res = "";
 		int i = 0;
 		for(final Object[] obj: retailPrice) {
+			
+			final Double aux = Double.parseDouble(obj[0].toString());
+			final NumberFormat formatter = new DecimalFormat("#0.00");
+			final String formattedNumber = formatter.format(aux);
+			
 			if(i == 0) {
-				res =res.concat(obj[0].toString()).concat(obj[1].toString());
+				
+				res =res.concat(formattedNumber).concat(obj[1].toString());
 			}else {
-				res = res.concat("+").concat(obj[0].toString()).concat(obj[1].toString());
+				res = res.concat("+").concat(formattedNumber).concat(obj[1].toString());
 			}
 			i++;
 			
 		}
+		
+		
+		
 		model.setAttribute("retailPrice", res);
 	}
 

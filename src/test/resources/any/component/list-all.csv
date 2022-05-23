@@ -1,0 +1,5 @@
+recordIndex,name,code,technology,price,description,url,isPublished
+0,"Item-02","CBA-321","Technology-02","EUR 15,000.98","Description of the item 02","https://www.google.com/",true
+1,"Item-04","CPA-421","Technology-02","EUR 15,000.98","Description of the item 04","https://www.google.com/",true
+2,"Item-06","PBA-341","Technology-02","EUR 15,000.98","Description of the item 06","https://www.google.com/",true
+3,"Item-07","LBA-341","Technology-02","USD 15,000.98","Description of the item 07","https://www.google.com/",true

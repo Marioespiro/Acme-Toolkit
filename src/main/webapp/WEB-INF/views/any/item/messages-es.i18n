@@ -15,8 +15,11 @@ authenticated.item.form.label.technology = Tecnologia
 authenticated.item.form.label.retailPrice = Precio
 authenticated.item.form.label.link = Enlace opcional
 authenticated.item.form.button.findBy = Listar kits con este item
+authenticated.item.form.label.published = Está publicado
 
 authenticated.item.list.label.name = Nombre
 authenticated.item.list.label.code = Código
 authenticated.item.list.label.technology = Tecnología
 authenticated.item.list.label.price = Precio
+
+inventor.item.form.error.duplicated = Ese código ya está en uso

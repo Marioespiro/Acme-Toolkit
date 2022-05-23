@@ -15,9 +15,13 @@ authenticated.item.form.label.technology = Technology
 authenticated.item.form.label.retailPrice = Price
 authenticated.item.form.label.link = Optional link
 authenticated.item.form.button.findBy = List toolkits with this item
+authenticated.item.form.label.published = Is published
 	
 
 authenticated.item.list.label.name = Name
 authenticated.item.list.label.code = Code
 authenticated.item.list.label.technology = Technology
 authenticated.item.list.label.price = Price
+
+inventor.item.form.error.duplicated = That code is already being used
+

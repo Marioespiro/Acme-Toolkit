@@ -31,36 +31,26 @@ master.menu.anonymous.favourite-link-ezequiel = 45814719F: Pérez Sosa, Ezequiel
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.announcement = Crear anuncio
 master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.dashboard = Panel de control
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Proveedor
-master.menu.provider.favourite-link = Enlace favorito
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumidor
-master.menu.consumer.favourite-link = Enlace favorito
-
 # master.menu.patron ####################################################
 
 master.menu.patron = Patrón
 master.menu.patron.dashboard = Panel Control Patrón
+master.menu.patron.list-patronages = Listar patrocinios
 master.menu.patron.list-patronage-reports = Listar informes de patrocinios
 
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
-master.menu.user-account.provider = Datos de proveedor
-master.menu.user-account.become-provider = Hazte proveedor
-master.menu.user-account.consumer = Datos de consumidor
-master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.become-inventor = Convertirse en inventor
+master.menu.user-account.become-patron = Convertirse en patrón
 
 # master.menu.authenticated ####################################################
 
@@ -83,3 +73,7 @@ master.menu.any.list-chirps = Listar mensajes
 master.menu.inventor = Inventor
 master.menu.inventor.list-patronages = Listar patrocinios
 master.menu.inventor.list-patronage-reports = Listar informes de patrocinios
+master.menu.inventor.list-toolkits = Listar kits de herramientas
+master.menu.inventor.list-components = Listar componentes
+master.menu.inventor.list-tools = Listar herramientas
+master.menu.inventor.create-patronage-reports = Crear informe de patrocinio

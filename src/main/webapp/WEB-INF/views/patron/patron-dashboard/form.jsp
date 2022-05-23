@@ -1,26 +1,76 @@
+<%--
+- form.jsp
+-
+- Copyright (C) 2012-2022 Rafael Corchuelo.
+-
+- In keeping with the traditional purpose of furthering education and research, it is
+- the policy of the copyright owner to permit non-commercial use and redistribution of
+- this software. It has been tested carefully, but it is not guaranteed for any particular
+- purposes.  The copyright owner does not offer any warranties or representations, nor do
+- they accept any liabilities with respect to them.
+--%>
+
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <h2>
-	<acme:message code="patron.dashboard.list.title"/>
+	<acme:message code="patron.dashboard.form.title"/>
 </h2>
-<acme:form readonly="true">
-	<acme:input-textbox code="patron.dashboard.list.label.totalProposed" path="totalNumberOfProposedPatronage"/>
-	<acme:input-textbox code="patron.dashboard.list.label.totalAccepted" path="totalNumberOfAcceptedPatronage"/>
-	<acme:input-textbox code="patron.dashboard.list.label.totalDenied" path="totalNumberOfDeniedPatronage"/>
-	<acme:input-textbox code="patron.dashboard.list.label.averageDenied" path="averageDeniedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.averageAccepted" path="averageAcceptedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.averageProposed" path="averageProposedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.deviationDenied" path="deviationDeniedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.deviationAccepted" path="deviationAcceptedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.deviationProposed" path="deviationProposedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.minDenied" path="minDeniedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.minAccepted" path="minAcceptedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.minProposed" path="minProposedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.maxDenied" path="maxDeniedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.maxAccepted" path="maxAcceptedPatronages"/>
-	<acme:input-textbox code="patron.dashboard.list.label.maxProposed" path="maxProposedPatronages"/>				
+<table class="table table-sm">
+	<caption><acme:message code="patron.dashboard.form.description-table"/></caption>
+		<tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.total"/>
+		</th>
+		<td>
+			<c:forEach items="${totalNumberOfProposedPatronagesByStatus}" var="entry">
+	    		${entry.key} = ${entry.value}<br>
+			</c:forEach>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.average"/>
+		</th>
+		<td>
+			<c:forEach items="${averageBudgetOfPatronagesStatusByCurrency}" var="entry">
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
+			</c:forEach>
+		</td>
+	</tr><tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.deviation"/>
+		</th>
+		<td>
+			<c:forEach items="${deviationBudgetOfPatronagesStatusByCurrency}" var="entry">
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
+			</c:forEach>
+		</td>
+	</tr><tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.max"/>
+		</th>
+		<td>
+			<c:forEach items="${maximumBudgetOfPatronagesStatusByCurrency}" var="entry">
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
+			</c:forEach>
+		</td>
+	</tr><tr>
+		<th scope="row">
+			<acme:message code="patron.dashboard.form.label.min"/>
+		</th>
+		<td>
+			<c:forEach items="${minimumBudgetOfPatronagesStatusByCurrency}" var="entry">
+				${entry.key} = <fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${entry.value}"/><br>
+			</c:forEach>
+		</td>
+	</tr>
+</table>
 
-</acme:form>
+
+
+

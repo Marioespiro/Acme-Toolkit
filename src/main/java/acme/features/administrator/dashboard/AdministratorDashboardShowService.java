@@ -13,9 +13,9 @@
 package acme.features.administrator.dashboard;
 
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
@@ -54,10 +54,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			"averageRetailPriceOfToolsByCurrency", "deviationRetailPriceOfToolsByCurrency", "minimumRetailPriceOfToolsByCurrency", "maximumRetailPriceOfToolsByCurrency",
 			"totalNumberOfPatronagesByStatus", "averagePatronagesBudgetByStats", "deviationPatronagesBudgetByStats", "minimumPatronagesBudgetByStats", "maximumPatronagesBudgetByStats");
 	}
-	/*
-	 * 
-	EnumMap<PatronageStatus, Double>		maximumPatronagesBudgetByStats;
-	 */
+
 
 	@Override
 	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
@@ -69,53 +66,37 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final EnumMap<PatronageStatus, Double> mapDeviationPD = new EnumMap<>(PatronageStatus.class);
 		final EnumMap<PatronageStatus, Double> mapMinumumPD = new EnumMap<>(PatronageStatus.class);
 		final EnumMap<PatronageStatus, Double> mapMaximumPD = new EnumMap<>(PatronageStatus.class);
-		final Map<String, Double> avrRtBC = new HashedMap();
-		final Map<String, Double> dvaRtBC = new HashedMap();
-		final Map<String, Double> minRtBC = new HashedMap();
-		final Map<String, Double> maxRtBC = new HashedMap();
-		final Map<Pair<String, String>, Double> avrRtBCT = new HashedMap();
-		final Map<Pair<String, String>, Double> dvaRtBCT = new HashedMap();
-		final Map<Pair<String, String>, Double> minRtBCT = new HashedMap();
-		final Map<Pair<String, String>, Double> maxRtBCT = new HashedMap();
+		final Map<String, Double> avrRtBC = new HashMap<>();
+		final Map<String, Double> dvaRtBC = new HashMap<>();
+		final Map<String, Double> minRtBC = new HashMap<>();
+		final Map<String, Double> maxRtBC = new HashMap<>();
+		final Map<Pair<String, String>, Double> avrRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> dvaRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> minRtBCT = new HashMap<>();
+		final Map<Pair<String, String>, Double> maxRtBCT = new HashMap<>();
 		
 		for(final PatronageStatus type: PatronageStatus.values()) {
-			mapTotalNumberPI.put(type, this.repository.totalNumberOfPatronagesByStatus(type));
-			mapAveragePD.put(type, this.repository.averageBugdetProposedPatronage(type));
-			mapDeviationPD.put(type, this.repository.deviationBugdetPatronage(type));
-			mapMinumumPD.put(type, this.repository.minimumBugdetPatronage(type));
-			mapMaximumPD.put(type, this.repository.maximumBugdetPatronage(type));
+			for(final Object[] obj: this.repository.operationsPatronagesByStatus(type)) {
+				mapTotalNumberPI.put(type, Integer.valueOf(obj[0].toString()));
+				mapAveragePD.put(type, Double.valueOf(obj[1].toString()));
+				mapDeviationPD.put(type, Double.valueOf(obj[2].toString()));
+				mapMinumumPD.put(type, Double.valueOf(obj[3].toString()));
+				mapMaximumPD.put(type, Double.valueOf(obj[4].toString()));
+			}
 		}
 		
-		for(final Object[] obj: this.repository.averageRetailPriceItemsByC(ItemType.TOOL)) {
+		for(final Object[] obj: this.repository.operationsRetailPriceItemsByC(ItemType.TOOL)) {
 			avrRtBC.put(obj[0].toString(), Double.valueOf(obj[1].toString()));
+			dvaRtBC.put(obj[0].toString(), Double.valueOf(obj[2].toString()));
+			minRtBC.put(obj[0].toString(), Double.valueOf(obj[3].toString()));
+			maxRtBC.put(obj[0].toString(), Double.valueOf(obj[4].toString()));
 		}
 		
-		for(final Object[] obj: this.repository.deviationRetailPriceItemsByC(ItemType.TOOL)) {
-			dvaRtBC.put(obj[0].toString(), Double.valueOf(obj[1].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.minRetailPriceItemsByC(ItemType.TOOL)) {
-			minRtBC.put(obj[0].toString(), Double.valueOf(obj[1].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.maxRetailPriceItemsByC(ItemType.TOOL)) {
-			maxRtBC.put(obj[0].toString(), Double.valueOf(obj[1].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.averageRetailPriceItemsByTC(ItemType.TOOL)) {
+		for(final Object[] obj: this.repository.operationsRetailPriceItemsByTC(ItemType.TOOL)) {
 			avrRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[2].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.deviationRetailPriceItemsByTC(ItemType.TOOL)) {
-			dvaRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[2].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.minRetailPriceItemsByTC(ItemType.TOOL)) {
-			minRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[2].toString()));
-		}
-		
-		for(final Object[] obj: this.repository.maxRetailPriceItemsByTC(ItemType.TOOL)) {
-			maxRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[2].toString()));
+			dvaRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[3].toString()));
+			minRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[4].toString()));
+			maxRtBCT.put(Pair.of(obj[0].toString(), obj[1].toString()), Double.valueOf(obj[5].toString()));
 		}
 		
 		result.setTotalNumberOfTools(this.repository.totalItems(ItemType.TOOL));
@@ -138,3 +119,5 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	
 
 }
+
+

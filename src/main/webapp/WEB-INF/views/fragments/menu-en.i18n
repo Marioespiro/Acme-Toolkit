@@ -31,35 +31,25 @@ master.menu.anonymous.favourite-link-ezequiel = 45814719F: Pérez Sosa, Ezequiel
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.announcement = Create announcement
 master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.dashboard = Dashboard
 
-# master.menu.provider ########################################################
-
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-
-# master.menu.consumer ##########################################################
-
-master.menu.consumer = Consumer
-master.menu.consumer.favourite-link = Favourite link
-
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
-master.menu.user-account.provider = Provider data
-master.menu.user-account.become-provider = Become a provider
-master.menu.user-account.consumer = Consumer data
-master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.become-inventor = Become an Inventor
+master.menu.user-account.become-patron = Become a Patron
 
 # master.menu.patron ####################################################
 
 master.menu.patron = Patron
 master.menu.patron.dashboard = Patron Dashboard
+master.menu.patron.list-patronages = List patronages
 master.menu.patron.list-patronage-reports = List patronage reports
 
 # master.menu.authenticated ####################################################
@@ -82,3 +72,7 @@ master.menu.any.list-chirps = List chirps
 master.menu.inventor = Inventor
 master.menu.inventor.list-patronages = List patronages
 master.menu.inventor.list-patronage-reports = List patronage reports
+master.menu.inventor.list-toolkits = List toolkits
+master.menu.inventor.list-components = List components
+master.menu.inventor.list-tools = List tools
+master.menu.inventor.create-patronage-reports = Create patronage reports

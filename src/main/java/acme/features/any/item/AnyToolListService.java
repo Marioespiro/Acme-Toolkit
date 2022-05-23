@@ -37,7 +37,6 @@ public class AnyToolListService implements AbstractListService<Any, Item> {
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-
 		return true;
 	}
 	
