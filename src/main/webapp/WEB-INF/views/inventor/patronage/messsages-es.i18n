@@ -25,3 +25,8 @@ authenticated.inventor.patronage.list.label.budget = Presupuesto
 authenticated.inventor.patronage.list.label.startTime = Fecha de inicio
 authenticated.inventor.patronage.list.label.creationTime = Fecha de creación
 authenticated.inventor.patronage.list.label.endingTime = Fecha de finalización
+
+authenticated.inventor.patronage.form.label.deny = Denegar patronage
+authenticated.inventor.patronage.form.label.accept = Aceptar patronage
+
+inventor.patronage.form.error.status = El estatus debe ser propuesto

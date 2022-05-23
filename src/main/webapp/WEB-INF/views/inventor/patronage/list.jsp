@@ -23,4 +23,4 @@
 	<acme:list-column code="authenticated.inventor.patronage.list.label.startTime" path="startTime" width="20%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.creationTime" path="creationTime" width="10%"/>
 	<acme:list-column code="authenticated.inventor.patronage.list.label.endingTime" path="endingTime" width="10%"/>
-</acme:list>
+</acme:list>	
