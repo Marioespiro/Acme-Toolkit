@@ -27,4 +27,8 @@ authenticated.inventor.patronage.list.label.startTime = Starting time
 authenticated.inventor.patronage.list.label.creationTime = Creation Time
 authenticated.inventor.patronage.list.label.endingTime = Ending Time
 
+authenticated.inventor.patronage.form.label.deny = Deny patronage
+authenticated.inventor.patronage.form.label.accept = Accept patronage
+
+inventor.patronage.form.error.status = The status must be proposed
 authenticated.inventor.patronage-report.form.button.create = Create patronage report

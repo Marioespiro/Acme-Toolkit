@@ -15,7 +15,8 @@ authenticated.patron.patronage.form.label.budget = Budget
 authenticated.patron.patronage.form.label.startTime = Starting time
 authenticated.patron.patronage.form.label.creationTime = Creation Time
 authenticated.patron.patronage.form.label.endingTime = Ending Time
-authenticated.patron.patronage.form.label.link = Link
+authenticated.patron.patronage.form.label.link = Optional link
+authenticated.patron.patronage.form.label.published = Is published
 authenticated.patron.patronage.form.button.inventor = Inventor
 
 authenticated.patron.patronage.list.label.status = Status
@@ -25,3 +26,18 @@ authenticated.patron.patronage.list.label.budget = Budget
 authenticated.patron.patronage.list.label.startTime = Starting time
 authenticated.patron.patronage.list.label.creationTime = Creation Time
 authenticated.patron.patronage.list.label.endingTime = Ending Time
+
+authenticated.patron.patronage.form.button.update = Update patronage
+authenticated.patron.patronage.form.button.delete = Delete patronage
+authenticated.patron.patronage.form.button.publish = Publish patronage
+authenticated.patron.patronage.form.button.createPatronage = Create patronage
+
+authenticated.patron.patronage.list.button.create = Create patronage
+
+patron.patronage.form.label.inventor = Select inventor
+
+patron.patronage.form.error.duplicated = There already exists a patronage with that code
+patron.patronage.form.error.startDateAfterMonth = The ending date must be 1 month after the starting date
+patron.patronage.form.error.creationDateAfterMonth = The starting date must be 1 month after the actual date
+patron.patronage.form.error.incorrectQuantity = The quantity is invalid
+patron.patronage.form.error.incorrectCurrency = This currency is not accepted

@@ -15,7 +15,8 @@ authenticated.patron.patronage.form.label.budget = Presupuesto
 authenticated.patron.patronage.form.label.startTime = Fecha de inicio
 authenticated.patron.patronage.form.label.creationTime = Fecha de creación
 authenticated.patron.patronage.form.label.endingTime = Fecha de finalización
-authenticated.patron.patronage.form.label.link = Link
+authenticated.patron.patronage.form.label.link = Link opcional
+authenticated.patron.patronage.form.label.published = Está publicado
 authenticated.patron.patronage.form.button.inventor = Inventor
 
 authenticated.patron.patronage.list.label.status = Estado
@@ -25,3 +26,18 @@ authenticated.patron.patronage.list.label.budget = Presupuesto
 authenticated.patron.patronage.list.label.startTime = Fecha de inicio
 authenticated.patron.patronage.list.label.creationTime = Fecha de creación
 authenticated.patron.patronage.list.label.endingTime = Fecha de finalización
+
+authenticated.patron.patronage.form.button.update = Actualizar patronage
+authenticated.patron.patronage.form.button.delete = Eliminar patronage
+authenticated.patron.patronage.form.button.publish = Publicar patronage
+authenticated.patron.patronage.form.button.createPatronage = Crear patronage
+
+authenticated.patron.patronage.list.button.create = Crear patronage
+
+patron.patronage.form.label.inventor = Seleccionar inventor
+
+patron.patronage.form.error.duplicated = Ya existe un patronage con ese código
+patron.patronage.form.error.startDateAfterMonth = La fecha de finalización debe ser 1 mes después que la fecha de inicio
+patron.patronage.form.error.creationDateAfterMonth = La fecha de inicio debe ser 1 mes después que la fecha actual
+patron.patronage.form.error.incorrectQuantity = La cantidad es inválida
+patron.patronage.form.error.incorrectCurrency = Este tipo de moneda no está aceptado

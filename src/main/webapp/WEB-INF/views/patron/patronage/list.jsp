@@ -25,3 +25,7 @@
 	<acme:list-column code="authenticated.patron.patronage.list.label.endingTime" path="endingTime" width="10%"/>
 </acme:list>
 
+<jstl:if test="${acme:anyOf(command, 'list')}">
+	<acme:button code="authenticated.patron.patronage.list.button.create" action="/patron/patronage/create"/>
+</jstl:if>	
+

@@ -1,10 +1,10 @@
-key,status,code,legalStuff,budget,startTime,creationTime,endingTime,link,key:inventor,key:patron
-patronage-01,PROPOSED,"DEF-456","Some legal stuff","USD 20,000.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-01
-patronage-02,DENIED,"FDE-465","Some legal stuff","USD 30,000.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-02,patron-01
-patronage-03,ACCEPTED,"EFD-564","Some legal stuff","USD 44,400.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-02
-patronage-04,PROPOSED,"DGF-356","Some legal stuff","EUR 10,070.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-01
-patronage-05,DENIED,"FGE-435","Some legal stuff","EUR 45,600.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-02,patron-01
-patronage-06,ACCEPTED,"GFD-563","Some legal stuff","EUR 29,401.90",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-02
-patronage-07,PROPOSED,"DGT-352","Some legal stuff","USD 70,210.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-01
-patronage-08,DENIED,"FTE-431","Some legal stuff","EUR 67,690.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-02,patron-01
-patronage-09,ACCEPTED,"GFT-263","Some legal stuff","USD 13,910.90",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",inventor-01,patron-02
+key,status,code,legalStuff,budget,startTime,creationTime,endingTime,link,isPublished,key:inventor,key:patron
+patronage-01,PROPOSED,"DEF-456","Some legal stuff","USD 20,000.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",true,inventor-01,patron-01
+patronage-02,DENIED,"FDE-465","Some legal stuff","USD 30,000.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",true,inventor-02,patron-01
+patronage-03,ACCEPTED,"EFD-564","Some legal stuff","USD 44,400.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",true,inventor-01,patron-02
+patronage-04,PROPOSED,"DGF-356","Some legal stuff","EUR 10,070.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",false,inventor-01,patron-01
+patronage-05,DENIED,"FGE-435","Some legal stuff","EUR 45,600.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",false,inventor-02,patron-01
+patronage-06,ACCEPTED,"GFD-563","Some legal stuff","EUR 29,401.90",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",true,inventor-01,patron-02
+patronage-07,PROPOSED,"DGT-352","Some legal stuff","USD 70,210.00",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",false,inventor-01,patron-01
+patronage-08,DENIED,"FTE-431","Some legal stuff","EUR 67,690.20",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",true,inventor-02,patron-01
+patronage-09,ACCEPTED,"GFT-263","Some legal stuff","USD 13,910.90",2022/01/01 08:00, 2022/01/01 08:00, 2022/01/01 08:00,"https://www.google.com/",false,inventor-01,patron-02
