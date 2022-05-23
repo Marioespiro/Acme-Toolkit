@@ -10,6 +10,7 @@
 
 authenticated.inventor.quantity.list.label.name = Name
 authenticated.inventor.quantity.list.label.amount = Amount
+authenticated.inventor.quantity.list.label.type = Item type
 
 authenticated.inventor.quantity.form.button.update = Update
 authenticated.inventor.quantity.form.button.updateItems = Change the items
@@ -24,4 +25,4 @@ authenticated.inventor.quantity.list.button.create = Create toolkit
 authenticated.inventor.quantity.form.error.duplicated = This code is used in another toolkit
 authenticated.inventor.quantity.form.error.spam = This field has spam words
 authenticated.inventor.quantity.form.error.duplicated.item = This item is already selected
-authenticated.inventor.quantity.form.error.amount = You can only add one tool
+authenticated.inventor.quantity.form.error.amount = You can only add one unit of each tool

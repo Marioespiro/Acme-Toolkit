@@ -19,6 +19,10 @@
 <jstl:if test="${acme:anyOf(command, 'show')}">
 	<acme:input-textbox code="inventor.item.form.label.name" path="itemName"/>	
 	<acme:input-textbox code="authenticated.inventor.quantity.list.label.amount" path="amount"/>
+	<acme:input-textbox code="inventor.item.form.label.code" path="itemCode"/>	
+	<acme:input-textbox code="inventor.item.form.label.description" path="itemDescription"/>
+	<acme:input-textbox code="inventor.item.form.label.technology" path="itemTechnology"/>	
+	<acme:input-textbox code="inventor.item.form.label.link" path="itemLink"/>	
 </jstl:if>
 <jstl:if test="${acme:anyOf(command, 'show') && isPublished == false}">
 <acme:submit code="authenticated.inventor.toolkit.form.button.delete" action="/inventor/quantity/delete?id=${id}"/>

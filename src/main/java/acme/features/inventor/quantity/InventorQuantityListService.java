@@ -44,19 +44,6 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 	}
 	
 	@Override
-	public void unbind(final Request<Quantity> request, final Collection<Quantity> entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-		int toolkitId;
-		toolkitId = request.getModel().getInteger("toolkitId");
-		model.setAttribute("toolkitId", toolkitId);
-		final Toolkit toolkit = this.repository.findToolkitById(toolkitId);
-		model.setAttribute("isPublished", toolkit.isPublished());
-
-	}
-	
-	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
@@ -66,6 +53,8 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		model.setAttribute("itemName", name);
 
 		request.unbind(entity, model, "amount");
+		model.setAttribute("itemType", entity.getItem().getItemType().toString().toLowerCase());
+		model.setAttribute("itemDescription", entity.getItem().getDescription());
 	}
 	
 	

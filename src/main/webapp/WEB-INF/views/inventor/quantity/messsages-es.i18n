@@ -10,6 +10,7 @@
 
 authenticated.inventor.quantity.list.label.name = Nombre
 authenticated.inventor.quantity.list.label.amount = Cantidad
+authenticated.inventor.quantity.list.label.type = Tipo de item
 
 authenticated.inventor.quantity.form.button.update = Actualizar
 authenticated.inventor.quantity.form.button.updateItems = Cambiar los items
@@ -23,4 +24,4 @@ authenticated.inventor.quantity.list.button.create = Crear kit herramientas
 authenticated.inventor.quantity.form.error.duplicated.item = Este objeto ya ha sido seleccionado
 authenticated.inventor.quantity.form.error.spam = Este campo contiene palabras de spam
 authenticated.inventor.quantity.form.error.duplicated = Este código ya se ha usado en otro kit de herramientas
-authenticated.inventor.quantity.form.error.amount = Solo puedes añadir una herramienta
+authenticated.inventor.quantity.form.error.amount = Solo puedes añadir una unidad de cada herramienta
