@@ -56,7 +56,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "description", "link", "title", "assemblyNotes");
+		request.unbind(entity, model, "code", "description", "link", "title", "assemblyNotes", "isPublished");
 		int id;
 		id = request.getModel().getInteger("id");
 		final Collection<Object[]> retailPrice;

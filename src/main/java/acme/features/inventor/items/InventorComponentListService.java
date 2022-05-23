@@ -32,7 +32,7 @@ public class InventorComponentListService implements AbstractListService<Invento
 
 	// Internal state ---------------------------------------------------------
 
-	private static final String			TOOLKITID	= "toolkitId";
+	private static final String	TOOLKITID	= "toolkitId";
 
 	@Autowired
 	protected InventorItemRepository	repository;
@@ -79,6 +79,11 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert model != null;
 
 		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
+		if (request.getModel().hasAttribute(InventorComponentListService.TOOLKITID)) {
+			model.setAttribute("toolkit", true);	
+		}else {
+			model.setAttribute("toolkit", false);
+		}
 	}
 
 }
