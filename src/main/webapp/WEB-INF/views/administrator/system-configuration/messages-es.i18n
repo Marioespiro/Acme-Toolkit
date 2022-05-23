@@ -11,9 +11,12 @@
 administrator.configuration.form.title.general-indicators = Configuración del sistema
 
 administrator.configuration.form.label.system-currency = Moneda del sistema
-administrator.configuration.form.label.accepted-currencies = Monedas aceptadas
-administrator.configuration.form.label.strong-spam-terms = Palabras spam fuertes
+administrator.configuration.form.label.accepted-currencies = Monedas aceptadas (las monedas deben tener 3 letras, separadas por ";")
+administrator.configuration.form.label.strong-spam-terms = Palabras spam fuertes (las palabras spam fuertes deben estar separadas por ";")
 administrator.configuration.form.label.strong-spam-threshold = Umbral de spam fuerte
-administrator.configuration.form.label.weak-spam-terms = Palabras spam débiles
+administrator.configuration.form.label.weak-spam-terms = Palabras spam débiles (las palabras spam débiles deben estar separadas por ";")
 administrator.configuration.form.label.weak-spam-threshold = Umbral de spam débil
 administrator.item.form.button.update = Actualizar sistema de configuración
+
+admin.systemConfiguration.form.error.currencyNotBelonging = La moneda por defecto debe pertenecer a las monedas aceptadas
+admin.systemConfiguration.form.error.wrongCurrencies = Las monedas deben tener 3 letras, separadas por ";"

@@ -1,5 +1,8 @@
 package acme.features.administrator.system_configuration;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,7 +65,27 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 
 	@Override
 	public void validate(final Request<SystemConfiguration> request, final SystemConfiguration entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 		
+		
+		if(!errors.hasErrors("systemCurrency")) {
+			final List<String> currencies = Arrays.asList(request.getModel().getString("acceptedCurrencies").split(";"));
+			errors.state(request, currencies.contains(request.getModel().getString("systemCurrency")), "systemCurrency", "admin.systemConfiguration.form.error.currencyNotBelonging");
+		}
+		
+		if(!errors.hasErrors("acceptedCurrencies")) {
+			final List<String> currencies = Arrays.asList(request.getModel().getString("acceptedCurrencies").split(";"));
+			Boolean ac = true;
+			for(final String currency : currencies) {
+				if(currency.length()!=3) {
+					ac = false;
+				}
+			}
+			errors.state(request, ac, "acceptedCurrencies", "admin.systemConfiguration.form.error.wrongCurrencies");
+		}
+
 	}
 
 	@Override
@@ -70,6 +93,10 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert request != null;
 		assert entity != null;
 
+		final String currencies = entity.getAcceptedCurrencies();
+		final String currency = entity.getSystemCurrency();
+		entity.setSystemCurrency(currency.toUpperCase());
+		entity.setAcceptedCurrencies(currencies.toUpperCase());
 		this.repository.save(entity);
 		
 	}

@@ -11,9 +11,12 @@
 administrator.configuration.form.title.general-indicators = System configuration
 
 administrator.configuration.form.label.system-currency = System currency
-administrator.configuration.form.label.accepted-currencies = Accepted currencies
-administrator.configuration.form.label.strong-spam-terms = Strong spam terms
+administrator.configuration.form.label.accepted-currencies = Accepted currencies (currencies must be 3 letters long, separated by ";")
+administrator.configuration.form.label.strong-spam-terms = Strong spam terms (strong spam terms must be separated by ";")
 administrator.configuration.form.label.strong-spam-threshold = Strong spam threshold
-administrator.configuration.form.label.weak-spam-terms = Weak spam terms
+administrator.configuration.form.label.weak-spam-terms = Weak spam terms (weak spam terms must be separated by ";")
 administrator.configuration.form.label.weak-spam-threshold = Weak spam threshold
 administrator.item.form.button.update = Update system configuration
+
+admin.systemConfiguration.form.error.currencyNotBelonging = The default currency must belong to the accpeted currencies
+admin.systemConfiguration.form.error.wrongCurrencies = The currencies must be 3 letters long, separated by ";"
