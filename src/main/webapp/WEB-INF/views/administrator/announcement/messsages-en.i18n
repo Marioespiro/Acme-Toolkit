@@ -1,0 +1,17 @@
+# i18n-en.i18n
+
+## FORM ##
+ 
+administrator.announcement.form.label.title = Title
+administrator.announcement.form.label.body = Body
+administrator.announcement.form.label.critical = Critical?
+administrator.announcement.form.label.url = Url
+administrator.announcement.form.button.create = Create announcement
+
+## ERRORS ##
+
+administrator.announcement.form.error.title = The title cannot contain words considered as spam by the system.
+administrator.announcement.form.error.body = The body cannot contain words considered as spam by the system.
+administrator.announcement.form.error.url = The url cannot contain words considered as spam by the system.
+administrator.announcement.form.label.confirm = I am aware that once published, this announcement cannot be modified or deleted.
+administrator.announcement.form.error.must-confirm = You must confirm this field

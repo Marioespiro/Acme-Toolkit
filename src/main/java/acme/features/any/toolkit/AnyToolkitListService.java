@@ -19,7 +19,7 @@ public class AnyToolkitListService implements AbstractListService<Any, Toolkit> 
 	@Autowired
 	protected AnyToolkitRepository repository;
 
-	// AbstractListService<Administrator, Item> interface --------------
+	// AbstractListService<Any, Toolkit> interface --------------
 
 
 	@Override

@@ -16,3 +16,4 @@ administrator.configuration.form.label.strong-spam-terms = Strong spam terms
 administrator.configuration.form.label.strong-spam-threshold = Strong spam threshold
 administrator.configuration.form.label.weak-spam-terms = Weak spam terms
 administrator.configuration.form.label.weak-spam-threshold = Weak spam threshold
+administrator.item.form.button.update = Update system configuration

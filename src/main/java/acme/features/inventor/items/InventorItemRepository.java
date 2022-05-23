@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.items.Item;
 import acme.entities.quantities.Quantity;
+import acme.entities.system_configurations.SystemConfiguration;
 import acme.entities.toolkit.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
@@ -60,6 +61,9 @@ public interface InventorItemRepository extends AbstractRepository {
 
 	@Query("select i from Item i where i.inventor.id = :inventorid and i.itemType = acme.entities.items.ItemType.COMPONENT")
 	Collection<Item> findComponentsByInvertor(Integer inventorid);
+	
+	@Query("select sc from SystemConfiguration sc")
+	Collection<SystemConfiguration> findAllConfigurations();
 	
 	@Query("select i from Inventor i where i.id = :id")
 	Inventor findOneInventorById(int id);

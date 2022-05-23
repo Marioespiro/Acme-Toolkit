@@ -30,3 +30,4 @@ authenticated.inventor.patronage.form.label.deny = Denegar patronage
 authenticated.inventor.patronage.form.label.accept = Aceptar patronage
 
 inventor.patronage.form.error.status = El estatus debe ser propuesto
+authenticated.inventor.patronage-report.form.button.create = Crear informe de patrocinio

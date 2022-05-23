@@ -19,11 +19,15 @@
 	<acme:message code="administrator.configuration.form.title.general-indicators"/>
 </h2>
 
-<acme:form readonly="true">
-	<acme:input-textbox code="administrator.configuration.form.label.system-currency" path="systemCurrency"/>	
+<acme:form readonly="false">
+<acme:input-textbox code="administrator.configuration.form.label.system-currency" path="systemCurrency"/>	
 	<acme:input-textbox code="administrator.configuration.form.label.accepted-currencies" path="acceptedCurrencies"/>	
 	<acme:input-textbox code="administrator.configuration.form.label.strong-spam-terms" path="strongSpamTerms"/>
 	<acme:input-textbox code="administrator.configuration.form.label.strong-spam-threshold" path="strongSpamThreshold"/>
 	<acme:input-textbox code="administrator.configuration.form.label.weak-spam-terms" path="weakSpamTerms"/>
 	<acme:input-textbox code="administrator.configuration.form.label.weak-spam-threshold" path="weakSpamThreshold"/>
+	<acme:submit code="administrator.item.form.button.update" action="/administrator/system-configuration/update"/>
 </acme:form>
+			
+
+

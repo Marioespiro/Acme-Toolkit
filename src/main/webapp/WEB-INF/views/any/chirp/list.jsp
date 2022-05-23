@@ -23,3 +23,4 @@
 	<acme:list-column code="any.chirp.list.label.email" path="email" width="10%"/>
 </acme:list>
 
+<acme:button code="any.chirp.form.button.create" action="/any/chirp/create"/>

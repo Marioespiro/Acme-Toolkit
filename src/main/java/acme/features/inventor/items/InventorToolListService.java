@@ -80,6 +80,12 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		assert model != null;
 
 		request.unbind(entity, model, "code", "name", "technology", "retailPrice");
+		model.setAttribute("toolkit", false);	
+		if (request.getModel().hasAttribute(InventorToolListService.TOOLKITID)) {
+			model.setAttribute("toolkit", true);	
+		}else {
+			model.setAttribute("toolkit", false);
+		}
 	}
 
 }
