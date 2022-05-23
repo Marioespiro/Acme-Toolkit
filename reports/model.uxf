@@ -183,7 +183,7 @@ Patronage
 + budget: Money 
 + startTime: Date {Temporal(TIMESTAMP)}
 + creationTime: Date {Temporal(TIMESTAMP), NotNull, Past}
-+ endingTime: Date {Temporal(TIMESTAMP), NotNull, Past}
++ endingTime: Date {Temporal(TIMESTAMP), NotNull}
 + retailPrice: Money
 + link: String {URL}
 

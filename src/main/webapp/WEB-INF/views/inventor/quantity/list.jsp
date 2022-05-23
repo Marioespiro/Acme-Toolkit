@@ -22,5 +22,5 @@
 	<acme:list-column code="inventor.item.form.label.description" path="itemDescription" width="35%"/>
 </acme:list>
 <jstl:if test="${isPublished == false}">
-<acme:button code="authenticated.inventor.quantity.form.button.create" action="/inventor/quantity/create?toolkitId=${toolkitId}"/>
+	<acme:button code="authenticated.inventor.quantity.form.button.create" action="/inventor/quantity/create?toolkitId=${toolkitId}"/>
 </jstl:if>

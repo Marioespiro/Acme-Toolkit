@@ -57,6 +57,19 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 		model.setAttribute("itemDescription", entity.getItem().getDescription());
 	}
 	
+	@Override
+    public void unbind(final Request<Quantity> request, final Collection<Quantity> entity, final Model model) {
+        assert request != null;
+        assert entity != null;
+        assert model != null;
+        int toolkitId;
+        toolkitId = request.getModel().getInteger("toolkitId");
+        model.setAttribute("toolkitId", toolkitId);
+        final Toolkit toolkit = this.repository.findToolkitById(toolkitId);
+        model.setAttribute("isPublished", toolkit.isPublished());
+
+    }
+	
 	
 	
 	
