@@ -24,6 +24,7 @@ public class InventorItemDeleteTest extends TestHarness {
 		super.checkFormExists();
 		super.clickOnSubmit("Delete item");
 		super.clickOnMenu("Inventor", "List tools");
+		
 		super.checkColumnHasValue(1, 0, "Item-05");
 		
 		super.signOut();
